@@ -71,6 +71,11 @@ npm i typings -g
 typings i lodash -S
 ```
 
-## 3-5 由浅入深 webpack - 打包公共代码（1）
+## 3-5, 3-6 由浅入深 webpack - 打包公共代码
 
 - 减少代码冗余, 加快速度
+
+```shell
+npm i webpack -D
+npm i lodash -S
+```
