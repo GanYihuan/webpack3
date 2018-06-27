@@ -1,5 +1,5 @@
 ﻿module.exports = {
-  // mode: 'production',
+  mode: 'production',
   entry: {
     app: './app.js'
   },
@@ -13,9 +13,8 @@
         use: {
           loader: 'babel-loader',
           options: {
-            // babel-presets: 规范
             presets: [
-              ['@babel/preset-env', {
+              ['babel-preset-env', {
                 targets: {
                   browsers: ['> 1%', 'last 2 versions']
                 }
