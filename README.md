@@ -2,12 +2,14 @@
 
 ## 3-1 由浅入深 webpack - 使用 webpack
 
+- ✨✨
+
 ```shell
 webpack -h
 webpack -v
 ```
 
-- webpack-cli: 交互式初始化项目, 迁移v1->v2, 目前不完善
+- webpack-cli: 交互式初始化项目, 迁移 v1->v2, 目前不完善
 
 ```shell
 npm install webpack-cli -g
@@ -15,13 +17,15 @@ webpack-cli -h
 webpack-cli init webpack-addons-demo
 ```
 
-- 指定webpack文件来启动
+- 指定 webpack 文件来启动
 
 ```shell
 webpack --config webpack.conf.dev.js
 ```
 
 ## 3-2 由浅入深 webpack - 打包 JS
+
+- ✨✨
 
 ```shell
 <!-- 打包 -->
@@ -43,7 +47,7 @@ npm i babel-loader babel-core -D
 npm i babel-preset-env -D
 ```
 
-- babel polyfill: 全局垫片, 能写es7, es8等新方法, 为应用开发准备
+- babel polyfill: 全局垫片, 能写 es7, es8 等新方法, 为应用开发准备
 
 ```shell
 npm i babel-polyfill -S
