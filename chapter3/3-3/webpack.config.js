@@ -13,8 +13,9 @@
         use: {
           loader: 'babel-loader',
           options: {
+            /* 规范的总结 */ 
             presets: [
-              ['babel-preset-env', {
+              ['@babel/preset-env', {
                 targets: {
                   browsers: ['> 1%', 'last 2 versions']
                 }
@@ -28,6 +29,7 @@
             ]
           }
         },
+        /* 排除规则之外 */ 
         exclude: '/node_modules/'
       }
     ]

@@ -5,6 +5,7 @@ let func = () => {}
 let arr = [1, 2, 3]
 let arrB = arr.map(item => item * 2)
 
+/* ES7 */
 arr.includes(8)
 
 console.log('Set(arrB)', new Set(arrB))

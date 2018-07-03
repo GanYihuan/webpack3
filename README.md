@@ -36,31 +36,35 @@ webpack --config webpack-selfdefind.js
 
 ## 3-3 由浅入深 webpack - 编译 ES6
 
+- ✨✨
 - Babel Presets: 规范的总结, 指定浏览器, 环境, 为应用开发准备
-- env: 包含所有规范
-
-```shell
-npm init
-npm i babel-loader babel-core -D
-npm i babel-preset-env -D
-```
-
+- env: 包含所有规范, es2015, es2016, es2017
 - babel polyfill: 全局垫片, 能写 es7, es8 等新方法, 为应用开发准备
-
-```shell
-npm i babel-polyfill -S
-```
-
 - babel runtime transform: 局部垫片, 为开发框架库准备
 
 ```shell
-npm i babel-plugin-transform-runtime -D
+npm init
+npm i babel-polyfill -S
+
+npm install babel-loader@8.0.0-beta.0 @babel/core
+<!-- 上下二选一,选上 -->
+npm i babel-loader babel-core -D
+
+npm i @babel/preset-env -D
+<!-- 上下二选一,选上 -->
+npm i babel-preset-env -D
+
 npm i @babel/plugin-transform-runtime -D
-npm i babel-runtime -S
+<!-- 上下二选一,选上 -->
+npm i babel-plugin-transform-runtime -D
+
 npm i @babel/runtime -S
+<!-- 上下二选一,选上 -->
+npm i babel-runtime -S
 ```
 
-- config .babelrc
+- 应用开发(runtime), config .babelrc presets, 不会污染全局
+- 开发ui组件库时, import babel-prolyfill
 
 ## 3-4 由浅入深 webpack - 编译 typescript
 
