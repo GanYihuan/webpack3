@@ -1,3 +1,3 @@
 ﻿import './moduleA'
 
-export default 'subPageB'
+export default 'subPageA'
