@@ -28,12 +28,10 @@ webpack --config webpack.conf.dev.js
 - ✨✨
 
 ```shell
-<!-- 打包 -->
-webpack app.js bundle.js
 <!-- 调用webpack配置文件 -->
 webpack
 <!-- 使用自定义webpack名称调用webpack -->
-webpack --config webpack-conf.js
+webpack --config webpack-selfdefind.js
 ```
 
 ## 3-3 由浅入深 webpack - 编译 ES6
