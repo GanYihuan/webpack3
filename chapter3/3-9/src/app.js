@@ -1,10 +1,10 @@
-﻿import './css/base.css'
-import './css/common.css'
+﻿// import './css/base.css'
+// import './css/common.css'
 
 
-/* style-loader/useable */ 
-// import base from './css/base.css'
-// import common from './css/common.css'
+/* style-loader/useable */
+import base from './css/base.css'
+import common from './css/common.css'
 
 // var flag = false
 
@@ -16,3 +16,6 @@ import './css/common.css'
 //   }
 //   flag = !flag
 // }, 500)
+
+var app = document.getElementById('app')
+app.innerHTML = '<div class="' + base.box + '"></div>'

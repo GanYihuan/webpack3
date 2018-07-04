@@ -1,3 +1,11 @@
 ﻿html {
   background: #f00
 }
+
+.box {
+  composes: bigBox from './common.css'; /* 放第一行 */
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+  background: #333;
+}

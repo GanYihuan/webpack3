@@ -95,9 +95,9 @@ npm i lodash -S
 
 - ✨✨✨✨✨ bug!!! 和 3-5，3-6 相关联
 
-## 3-9, 3-10: 由浅入深 webpack - 处理 CSS - style-loader
+## 3-9, 3-10, 3-11: 由浅入深 webpack - 处理 CSS - style-loader CSS-Loader
 
-- ✨✨✨✨✨
+- ✨✨✨✨ 没听懂
 - style-loader: 创建 style 标签, 里面是 css 内容
 - css-loader: js import css 进来
 
@@ -115,3 +115,10 @@ npm i style-loader css-loader file-loader -D
 - css-loader options
   alias(解析别名)
   importLoader(@import)
+  Minimize(是否压缩)
+  modules(启动css-modules)
+- css-Modules
+  :local(局部)
+  :global(全局)
+  compose(继承)
+  compose ... from path(import)
