@@ -122,3 +122,9 @@ npm i style-loader css-loader file-loader -D
   :global(全局)
   compose(继承)
   compose ... from path(import)
+
+## 3-12 由浅入深 webpack - 处理 CSS - 配置 Less - Sass
+
+- ✨✨✨✨
+- npm i less-loader less -D
+- npm i sass-loader node-sass -D

@@ -1,5 +1,5 @@
 {
-  "name": "3-9",
+  "name": "3-12",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,8 @@
   "devDependencies": {
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0"
   }
 }
