@@ -64,7 +64,7 @@ npm i babel-runtime -S
 ```
 
 - 应用开发(runtime), config .babelrc presets, 不会污染全局
-- 开发ui组件库时, import babel-prolyfill
+- 开发 ui 组件库时, import babel-prolyfill
 
 ## 3-4 由浅入深 webpack - 编译 typescript
 
@@ -90,3 +90,28 @@ typings i lodash -S
 npm i webpack -D
 npm i lodash -S
 ```
+
+## 3-7, 3-8: 由浅入深 webpack - 代码分割和懒加载
+
+- ✨✨✨✨✨ bug!!! 和 3-5，3-6 相关联
+
+## 3-9, 3-10: 由浅入深 webpack - 处理 CSS - style-loader
+
+- ✨✨✨✨✨
+- style-loader: 创建 style 标签, 里面是 css 内容
+- css-loader: js import css 进来
+
+```shell
+npm i style-loader css-loader file-loader -D
+```
+
+- style-loader/url
+- style-loader/useable
+- style-loader options
+  insertAt(插入位置)
+  insertInto(插入到 dom)
+  singleton(是否只使用一个 style 标签)
+  transform(转化, 浏览下, 插入页面前, 根据不同浏览器配置不同样式)
+- css-loader options
+  alias(解析别名)
+  importLoader(@import)
