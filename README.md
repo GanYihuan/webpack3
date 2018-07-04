@@ -93,7 +93,7 @@ npm i lodash -S
 
 ## 3-7, 3-8: 由浅入深 webpack - 代码分割和懒加载
 
-- ✨✨✨✨✨ bug!!! 和 3-5，3-6 相关联
+- ✨✨✨✨✨ bug 和 3-5，3-6 相关联
 
 ## 3-9, 3-10, 3-11: 由浅入深 webpack - 处理 CSS - style-loader CSS-Loader
 
@@ -125,6 +125,25 @@ npm i style-loader css-loader file-loader -D
 
 ## 3-12 由浅入深 webpack - 处理 CSS - 配置 Less - Sass
 
-- ✨✨✨✨
+- ✨✨
 - npm i less-loader less -D
 - npm i sass-loader node-sass -D
+
+## 3-13 由浅入深 webpack - 处理 CSS - 提取 CSS
+
+- ✨✨✨✨✨ bug
+- extract-loader
+- npm install extract-text-webpack-plugin webpack -D
+
+## 3-14 由浅入深 webpack - PostCSS-in-webpack
+
+- ✨✨✨✨✨ bug 和 3-13 相关联
+- PostCss(css transforming, 打包时期)
+- npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
+- autoprefixer(加css各浏览器前缀)
+- css-nano(压缩css)
+- css-next(使用未来的css语法)
+
+## 3-15 由浅入深 webpack - Tree-shaking - JS Tree-shaking
+
+- ✨✨✨✨✨ bug 和 3-13 相关联
