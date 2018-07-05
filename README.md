@@ -157,6 +157,8 @@ npm i style-loader css-loader file-loader -D
 ## 3-16 由浅入深 webpack - Tree-shaking - CSS Tree-shaking
 
 - ✨✨✨✨✨
+- npm i glob-all -D
+- npm i purifycss-webpack -D
 
 ## 4-1 文件处理（1）- 图片处理 - CSS中引入图片、Base64编码
 

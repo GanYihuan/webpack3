@@ -1,0 +1,27 @@
+﻿$homecolor: #ff0;
+
+html {
+  background: $homecolor;
+}
+
+.box {
+  composes: bigBox from './common.scss';
+  /* 放第一行 */
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+  background: #333;
+  transition: transform 1s;
+}
+
+.smallBox {
+  height: 100px;
+  width: 100px;
+  border: 5px;
+}
+
+.bigBox {
+  height: 400px;
+  width: 400px;
+  border: 5px;
+}
