@@ -148,7 +148,15 @@ npm i style-loader css-loader file-loader -D
 
 ## 3-15 由浅入深 webpack - Tree-shaking - JS Tree-shaking
 
-- ✨✨✨✨✨ bug 和 3-13 相关联
+- ✨✨✨✨✨
+- bug fix: [https://github.com/webpack-contrib/uglifyjs-webpack-plugin](webpack.optimize.UglifyJsPlugin版本没有跟上webpack4导致问题) babel-env出现问题参考3-3
+- npm i -D uglifyjs-webpack-plugin
+- npm i lodash-es -S
+- npm i babel-loader babel-core babel-preset-env babel-plugin-lodash -D
+
+## 3-16 由浅入深 webpack - Tree-shaking - CSS Tree-shaking
+
+- ✨✨✨✨✨
 
 ## 4-1 文件处理（1）- 图片处理 - CSS中引入图片、Base64编码
 
