@@ -19,3 +19,8 @@ import base from './css/base.scss'
 
 var app = document.getElementById('app')
 app.innerHTML = '<div class="' + base.box + '"></div>'
+
+/* webpackChunk: 'a'= */
+import('./css/components/a.scss').then(function () {
+  console.log(a)
+})

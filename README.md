@@ -131,9 +131,11 @@ npm i style-loader css-loader file-loader -D
 
 ## 3-13 由浅入深 webpack - 处理 CSS - 提取 CSS
 
-- ✨✨✨✨✨ bug
+- ✨✨✨✨✨
+- bug fix: [https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/701](extract-text-webpack-plugin版本没有跟上webpack4导致问题)
 - extract-loader
 - npm install extract-text-webpack-plugin webpack -D
+- npm i -D extract-text-webpack-plugin@next
 
 ## 3-14 由浅入深 webpack - PostCSS-in-webpack
 
@@ -147,3 +149,11 @@ npm i style-loader css-loader file-loader -D
 ## 3-15 由浅入深 webpack - Tree-shaking - JS Tree-shaking
 
 - ✨✨✨✨✨ bug 和 3-13 相关联
+
+## 4-1 文件处理（1）- 图片处理 - CSS中引入图片、Base64编码
+
+- ✨✨✨✨✨
+- file-loader
+- url-loader
+- img-loader
+- postcss-sprites

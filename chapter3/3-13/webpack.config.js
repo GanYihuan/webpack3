@@ -8,7 +8,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     // publicPath: './dist/',
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js'
   },
   module: {
     rules: [{
@@ -46,6 +47,7 @@ module.exports = {
   plugins: [
     new ExtractTextWebpackPlugin({
       filename: '[name].min.css',
+      /* 指定提取css范围, 提取初始化 */ 
       allChunks: false
     })
   ]
