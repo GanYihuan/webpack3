@@ -139,7 +139,7 @@ npm i style-loader css-loader file-loader -D
 
 ## 3-14 由浅入深 webpack - PostCSS-in-webpack
 
-- ✨✨✨✨✨ bug 和 3-13 相关联
+- ✨✨✨✨✨
 - PostCss(css transforming, 打包时期)
 - npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
 - autoprefixer(加css各浏览器前缀)
