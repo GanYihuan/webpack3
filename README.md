@@ -17,7 +17,7 @@ webpack-cli -h
 webpack-cli init webpack-addons-demo
 ```
 
-- 指定 webpack 文件来启动
+- 指定 webpack 文件(webpack.conf.dev.js)来启动
 
 ```shell
 webpack --config webpack.conf.dev.js
@@ -36,11 +36,11 @@ webpack --config webpack-selfdefind.js
 
 ## 3-3 由浅入深 webpack - 编译 ES6
 
-- ✨✨
+- ✨✨✨
 - Babel Presets: 规范的总结, 指定浏览器, 环境, 为应用开发准备
 - env: 包含所有规范, es2015, es2016, es2017
-- babel polyfill: 全局垫片, 能写 es7, es8 等新方法, 为应用开发准备
-- babel runtime transform: 局部垫片, 为开发框架库准备
+- babel polyfill: 全局垫片, 能写 es7, es8 等新方法, 为应用开发准备, import 'babel-polyfill', 会污染全局, config .babelrc presets
+- babel runtime transform: 局部垫片, 为开发框架库准备, 不会污染全局
 
 ```shell
 npm init
@@ -62,9 +62,6 @@ npm i @babel/runtime -S
 <!-- 上下二选一,选上 -->
 npm i babel-runtime -S
 ```
-
-- 应用开发(runtime), config .babelrc presets, 不会污染全局
-- 开发 ui 组件库时, import babel-prolyfill
 
 ## 3-4 由浅入深 webpack - 编译 typescript
 
