@@ -113,8 +113,8 @@ npm i lodash -S
 npm i style-loader css-loader file-loader -D
 ```
 
-- style-loader/url
-- style-loader/useable
+- style-loader/url(不常用)
+- style-loader/useable(控制样式是否插入页面中)
 - style-loader options
   insertAt(插入位置)
   insertInto(插入到 dom)
