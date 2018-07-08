@@ -65,7 +65,7 @@ npm i babel-runtime -S
 
 ## 3-4 由浅入深 webpack - 编译 typescript
 
-- ✨✨
+- ✨✨✨
 - js 超集
 
 ```shell
@@ -80,8 +80,19 @@ typings i lodash -S
 
 ## 3-5, 3-6 由浅入深 webpack - 打包公共代码
 
-- ✨✨✨✨✨ bug!!!
+- ✨✨✨
 - 减少代码冗余, 加快速度
+- webpack4 删除webpack.optimize.CommonsChunkPlugin
+
+```webpack
+// webpack4替代 webpack.optimize.CommonsChunkPlugin
+optimization: {
+  splitChunks: {
+    chunks: 'all'
+  },
+  runtimeChunk: true
+},
+```
 
 ```shell
 npm i webpack -D
@@ -90,11 +101,11 @@ npm i lodash -S
 
 ## 3-7, 3-8: 由浅入深 webpack - 代码分割和懒加载
 
-- ✨✨✨✨✨ bug 和 3-5，3-6 相关联
+- ✨✨✨
 
-## 3-9, 3-10, 3-11: 由浅入深 webpack - 处理 CSS - style-loader CSS-Loader
+## 3-9 由浅入深 webpack - 处理 CSS - style-loader
 
-- ✨✨✨✨ 没听懂
+- ✨✨✨✨
 - style-loader: 创建 style 标签, 里面是 css 内容
 - css-loader: js import css 进来
 
