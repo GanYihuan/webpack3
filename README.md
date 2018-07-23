@@ -34,10 +34,10 @@ webpack --config webpack.conf.dev.js
 
 ## 3-2 由浅入深 webpack - 打包 JS
 
-```shell
-<!-- 调用webpack配置文件 -->
+```node
+<!-- 调用 webpack 配置文件 -->
 webpack
-<!-- 使用自定义webpack名称调用webpack -->
+<!-- 使用自定义webpack名称调用 webpack -->
 webpack --config webpack-selfdefind.js
 ```
 

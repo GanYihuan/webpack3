@@ -1,6 +1,3 @@
-﻿chapter3/*/node_modules
-chapter3/*/dist
-chapter3/*/typings
-chapter4/*/node_modules
-chapter4/*/dist
-chapter4/*/typings
+﻿*/*/node_modules
+*/*/dist
+*/*/typings
