@@ -12,9 +12,10 @@
 
 ## 3-1 由浅入深 webpack - 使用 webpack
 
-```shell
+```node
 webpack -h
 webpack -v
+webpack <entry> <output>
 ```
 
 - webpack-cli: 交互式初始化项目, 迁移 v1->v2, 目前不完善
