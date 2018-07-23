@@ -1,8 +1,16 @@
 ﻿# webpack
 
-## 3-1 由浅入深 webpack - 使用 webpack
+## 2-5 学习准备 - webpack 核心概念
 
-- ✨✨
+- entry: 打包入口
+- output: 打包生成的文件
+- loaders: 转化为模块
+- plugins: 参与打包过程, 打包优化, 编译变量
+- chunk: 代码块
+- bundle: 被打包后的
+- module: 模块
+
+## 3-1 由浅入深 webpack - 使用 webpack
 
 ```shell
 webpack -h
@@ -25,8 +33,6 @@ webpack --config webpack.conf.dev.js
 
 ## 3-2 由浅入深 webpack - 打包 JS
 
-- ✨✨
-
 ```shell
 <!-- 调用webpack配置文件 -->
 webpack
@@ -36,7 +42,6 @@ webpack --config webpack-selfdefind.js
 
 ## 3-3 由浅入深 webpack - 编译 ES6
 
-- ✨✨✨
 - Babel Presets: 规范的总结, 指定浏览器, 环境, 为应用开发准备
 - env: 包含所有规范, es2015, es2016, es2017
 - babel polyfill: 全局垫片, 能写 es7, es8 等新方法, 为应用开发准备, import 'babel-polyfill', 会污染全局, config .babelrc presets
@@ -65,7 +70,6 @@ npm i babel-runtime -S
 
 ## 3-4 由浅入深 webpack - 编译 typescript
 
-- ✨✨✨
 - js 超集
 
 ```shell
@@ -80,7 +84,6 @@ typings i lodash -S
 
 ## 3-5, 3-6 由浅入深 webpack - 打包公共代码
 
-- ✨✨✨
 - 减少代码冗余, 加快速度
 - webpack4 删除webpack.optimize.CommonsChunkPlugin
 
@@ -101,11 +104,8 @@ npm i lodash -S
 
 ## 3-7, 3-8: 由浅入深 webpack - 代码分割和懒加载
 
-- ✨✨✨
-
 ## 3-9 由浅入深 webpack - 处理 CSS - style-loader
 
-- ✨✨✨✨
 - style-loader: 创建 style 标签, 里面是 css 内容
 - css-loader: js import css 进来
 
@@ -133,13 +133,11 @@ npm i style-loader css-loader file-loader -D
 
 ## 3-12 由浅入深 webpack - 处理 CSS - 配置 Less - Sass
 
-- ✨✨
 - npm i less-loader less -D
 - npm i sass-loader node-sass -D
 
 ## 3-13 由浅入深 webpack - 处理 CSS - 提取 CSS
 
-- ✨✨✨✨✨
 - bug fix: [https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/701](extract-text-webpack-plugin版本没有跟上webpack4导致问题)
 - extract-loader
 - npm install extract-text-webpack-plugin webpack -D
@@ -147,7 +145,6 @@ npm i style-loader css-loader file-loader -D
 
 ## 3-14 由浅入深 webpack - PostCSS-in-webpack
 
-- ✨✨✨✨✨
 - PostCss(css transforming, 打包时期)
 - npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
 - autoprefixer(加css各浏览器前缀)
@@ -156,7 +153,6 @@ npm i style-loader css-loader file-loader -D
 
 ## 3-15 由浅入深 webpack - Tree-shaking - JS Tree-shaking
 
-- ✨✨✨✨✨
 - bug fix: [https://github.com/webpack-contrib/uglifyjs-webpack-plugin](webpack.optimize.UglifyJsPlugin版本没有跟上webpack4导致问题) babel-env出现问题参考3-3
 - npm i -D uglifyjs-webpack-plugin
 - npm i lodash-es -S
@@ -164,13 +160,11 @@ npm i style-loader css-loader file-loader -D
 
 ## 3-16 由浅入深 webpack - Tree-shaking - CSS Tree-shaking
 
-- ✨✨✨✨✨
 - npm i glob-all -D
 - npm i purifycss-webpack -D
 
 ## 4-1 文件处理（1）- 图片处理 - CSS中引入图片、Base64编码
 
-- ✨✨✨✨✨
 - file-loader
 - url-loader
 - img-loader
