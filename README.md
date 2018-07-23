@@ -43,29 +43,29 @@ webpack --config webpack-selfdefind.js
 
 ## 3-3 由浅入深 webpack - 编译 ES6
 
-- Babel Presets: 规范的总结, 指定浏览器, 环境, 为应用开发准备
+- babel preset: 规范的总结, 指定浏览器环境(为应用)
 - env: 包含所有规范, es2015, es2016, es2017
-- babel polyfill: 全局垫片, 能写 es7, es8 等新方法, 为应用开发准备, import 'babel-polyfill', 会污染全局, config .babelrc presets
-- babel runtime transform: 局部垫片, 为开发框架库准备, 不会污染全局
+- babel polyfill: 全局垫片, 能写 es7, es8 新方法, 会污染全局 .babelrc(为应用)
+- babel runtime transform: 局部垫片, 不会污染全局(为框架)
 
-```shell
-npm init
-npm i babel-polyfill -S
-
+```node
 npm install babel-loader@8.0.0-beta.0 @babel/core
-<!-- 上下二选一,选上 -->
+<!-- 选上 -->
 npm i babel-loader babel-core -D
 
 npm i @babel/preset-env -D
-<!-- 上下二选一,选上 -->
+<!-- 选上 -->
 npm i babel-preset-env -D
 
+<!-- import 'babel-polyfill' -->
+npm i babel-polyfill -S
+
 npm i @babel/plugin-transform-runtime -D
-<!-- 上下二选一,选上 -->
+<!-- 选上 -->
 npm i babel-plugin-transform-runtime -D
 
 npm i @babel/runtime -S
-<!-- 上下二选一,选上 -->
+<!-- 选上 -->
 npm i babel-runtime -S
 ```
 
