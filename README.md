@@ -172,11 +172,9 @@ npm i purifycss-webpack -D
 npm i file-loader url-loader img-loader postcss-sprites -D
 ```
 
-## 4-2 文件处理（2）- 图片处理 - 压缩图片、自动合成雪碧图sprite、retina处理
+## 4-2, 4-3 文件处理（2）- 图片处理 - 压缩图片、自动合成雪碧图sprite、retina处理 处理字体文件
 
 - 1@2x.png retina 屏幕上用的图片
-
-## 4-3 文件处理（3）- 处理字体文件
 
 ## 4-4 文件处理（4）- 处理第三方 JS 库（providePlugin、imports-loader）
 
@@ -186,3 +184,19 @@ npm i imports-loader -D
 ```
 
 - 如果不 install jquery, resolve 可以找到本地 jquery
+
+## 4-5 html in webpack（1） - 生成 HTML
+
+- HtmlWebpackPlugin
+
+```node
+npm i html-webpack-plugin -S
+```
+
+## 4-6 html in webpack（2） - HTML 中引入图片
+
+- html-loader
+
+```node
+npm i html-loader -S
+```
