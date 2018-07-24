@@ -141,11 +141,16 @@ npm i -D extract-text-webpack-plugin@next
 
 ## 3-14 由浅入深 webpack - PostCSS-in-webpack
 
-- PostCss(css transforming, 打包时期)
-- npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
+- postcss(js 转换 css, 打包时期)
+
+```node
+npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
+```
+
 - autoprefixer(加 css 各浏览器前缀)
 - css-nano(压缩 css)
 - css-next(使用未来的 css 语法)
+- browserslist(浏览器限制) **package.json**
 
 ## 3-15 由浅入深 webpack - Tree-shaking - JS Tree-shaking
 

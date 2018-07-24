@@ -7,7 +7,6 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    // publicPath: './dist/',
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js'
   },
@@ -18,19 +17,13 @@ module.exports = {
         /* 提取出文件用什么处理 */
         fallback: {
           loader: 'style-loader',
-          /* 小众功能, 使用link标签, 不能处理多个样式 */
-          // loader: 'style-loader/url'
           options: {
-            // insertInto: '#app',
             singleton: true,
             transform: './css.transform.js'
           }
         },
-        use: [
-          {
+        use: [{
             loader: 'css-loader',
-            /* 小众功能, 使用link标签, 不能处理多个样式 */
-            // loader: 'file-loader'
             options: {
               minimize: true,
               modules: true,
@@ -42,8 +35,11 @@ module.exports = {
             options: {
               ident: 'postcss',
               plugins: [
+                /* 加 css 各浏览器前缀 */
                 require('autoprefixer')(),
+                /* 使用未来的 css 语法 */
                 require('postcss-cssnext')(),
+                /* 压缩 css */
                 require('cssnano')()
               ]
             }
@@ -56,9 +52,10 @@ module.exports = {
     }]
   },
   plugins: [
+    /* 提取 css */
     new ExtractTextWebpackPlugin({
       filename: '[name].min.css',
-      /* 指定提取css范围, 提取初始化 */ 
+      /* 指定提取css范围, 提取初始化 */
       allChunks: false
     })
   ]
