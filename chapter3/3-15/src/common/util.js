@@ -6,4 +6,4 @@ export function b() {
 }
 export function c() {
   return 'this is c'
-} 
+}

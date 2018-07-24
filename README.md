@@ -152,17 +152,26 @@ npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
 - css-next(使用未来的 css 语法)
 - browserslist(浏览器限制) **package.json**
 
-## 3-15 由浅入深 webpack - Tree-shaking - JS Tree-shaking
+## 3-15, 3-16 由浅入深 webpack - Tree-shaking - JS CSS Tree-shaking
 
+- Tree-shaking 没使用到的代码删除掉
 - bug fix: [https://github.com/webpack-contrib/uglifyjs-webpack-plugin](webpack.optimize.UglifyJsPlugin版本没有跟上webpack4导致问题) babel-env 出现问题参考 3-3
-- npm i -D uglifyjs-webpack-plugin
-- npm i lodash-es -S
-- npm i babel-loader babel-core babel-preset-env babel-plugin-lodash -D
+
+```node
+npm i uglifyjs-webpack-plugin -D
+npm i lodash-es -S
+npm i babel-loader babel-core babel-preset-env  babel-plugin-lodash -D
+<!-- CSS -->
+npm i glob-all -D
+npm i purifycss-webpack -D
+```
 
 ## 3-16 由浅入深 webpack - Tree-shaking - CSS Tree-shaking
 
-- npm i glob-all -D
-- npm i purifycss-webpack -D
+```node
+npm i glob-all -D
+npm i purifycss-webpack -D
+```
 
 ## 4-1 文件处理（1）- 图片处理 - CSS 中引入图片、Base64 编码
 

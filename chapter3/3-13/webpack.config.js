@@ -2,6 +2,7 @@ var path = require('path')
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
+  mode: 'production',
   entry: {
     app: './src/app.js'
   },

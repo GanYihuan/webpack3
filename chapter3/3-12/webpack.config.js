@@ -1,6 +1,7 @@
 var path = require('path')
 
 module.exports = {
+  mode: 'production',
   entry: {
     app: './src/app.js'
   },
