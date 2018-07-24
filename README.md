@@ -75,10 +75,13 @@ npm i babel-runtime -S
 
 ```shell
 npm i webpack typescript ts-loader awesome-typescript-loader -D
-npm i loadash -S
+
 <!-- 说明文件, 编译出问题能抛出问题 -->
 npm i @types/lodash -S
-<!-- 类型文件管理, 和上面一样 -->
+<!-- 选上 -->
+npm i loadash -S
+
+<!-- 类型文件管理 -->
 npm i typings -g
 typings i lodash -S
 ```
@@ -86,19 +89,21 @@ typings i lodash -S
 ## 3-5, 3-6 由浅入深 webpack - 打包公共代码
 
 - 减少代码冗余, 加快速度
-- webpack4 删除webpack.optimize.CommonsChunkPlugin
+- webpack4 删除 webpack.optimize.CommonsChunkPlugin
 
-```webpack
+```json
 // webpack4替代 webpack.optimize.CommonsChunkPlugin
 optimization: {
   splitChunks: {
-    chunks: 'all'
+    chunks: 'all',
+    // 提取公共代码次数
+    minChunks: Infinity
   },
   runtimeChunk: true
-},
+}
 ```
 
-```shell
+```node
 npm i webpack -D
 npm i lodash -S
 ```
@@ -125,7 +130,7 @@ npm i style-loader css-loader file-loader -D
   alias(解析别名)
   importLoader(@import)
   Minimize(是否压缩)
-  modules(启动css-modules)
+  modules(启动 css-modules)
 - css-Modules
   :local(局部)
   :global(全局)
@@ -148,13 +153,13 @@ npm i style-loader css-loader file-loader -D
 
 - PostCss(css transforming, 打包时期)
 - npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
-- autoprefixer(加css各浏览器前缀)
-- css-nano(压缩css)
-- css-next(使用未来的css语法)
+- autoprefixer(加 css 各浏览器前缀)
+- css-nano(压缩 css)
+- css-next(使用未来的 css 语法)
 
 ## 3-15 由浅入深 webpack - Tree-shaking - JS Tree-shaking
 
-- bug fix: [https://github.com/webpack-contrib/uglifyjs-webpack-plugin](webpack.optimize.UglifyJsPlugin版本没有跟上webpack4导致问题) babel-env出现问题参考3-3
+- bug fix: [https://github.com/webpack-contrib/uglifyjs-webpack-plugin](webpack.optimize.UglifyJsPlugin版本没有跟上webpack4导致问题) babel-env 出现问题参考 3-3
 - npm i -D uglifyjs-webpack-plugin
 - npm i lodash-es -S
 - npm i babel-loader babel-core babel-preset-env babel-plugin-lodash -D
@@ -164,7 +169,7 @@ npm i style-loader css-loader file-loader -D
 - npm i glob-all -D
 - npm i purifycss-webpack -D
 
-## 4-1 文件处理（1）- 图片处理 - CSS中引入图片、Base64编码
+## 4-1 文件处理（1）- 图片处理 - CSS 中引入图片、Base64 编码
 
 - file-loader
 - url-loader
