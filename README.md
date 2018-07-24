@@ -166,16 +166,12 @@ npm i glob-all -D
 npm i purifycss-webpack -D
 ```
 
-## 3-16 由浅入深 webpack - Tree-shaking - CSS Tree-shaking
-
-```node
-npm i glob-all -D
-npm i purifycss-webpack -D
-```
-
 ## 4-1 文件处理（1）- 图片处理 - CSS 中引入图片、Base64 编码
 
-- file-loader
-- url-loader
-- img-loader
-- postcss-sprites
+```node
+npm i file-loader url-loader img-loader postcss-sprites -D
+```
+
+## 4-2 文件处理（2）- 图片处理 - 压缩图片、自动合成雪碧图sprite、retina处理
+
+- 1@2x.png retina 屏幕上用的图片
