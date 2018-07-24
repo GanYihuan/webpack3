@@ -200,3 +200,12 @@ npm i html-webpack-plugin -S
 ```node
 npm i html-loader -S
 ```
+
+## 4-7 html in webpack（3） - 配合优化
+
+- bug!
+- 提取载入 webpack 加载代码
+
+```node
+npm i html-webpack-inline-chunk-plugin -D
+```
