@@ -1,11 +1,10 @@
 ﻿$homecolor: #ff0;
-
 html {
   background: $homecolor;
 }
 
 .box {
-  composes: bigBox from './common.scss';
+  // composes: bigBox from './common.scss';
   /* 放第一行 */
   height: 200px;
   width: 200px;

@@ -6,7 +6,7 @@
 import base from './css/base.scss'
 // import common from './css/common.scss'
 
-// var flag = false
+// let flag = false
 
 // setInterval(function () {
 //   if (flag) {
@@ -17,10 +17,10 @@ import base from './css/base.scss'
 //   flag = !flag
 // }, 500)
 
-var app = document.getElementById('app')
+let app = document.getElementById('app')
 app.innerHTML = '<div class="' + base.box + '"></div>'
 
 /* webpackChunk: 'a'= */
-import('./css/components/a.scss').then(function () {
-  console.log(a)
-})
+// import ('./css/components/a.scss').then(function () {
+//   console.log(a)
+// })
