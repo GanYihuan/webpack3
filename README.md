@@ -110,6 +110,9 @@ npm i lodash -S
 
 ## 3-7, 3-8: 由浅入深 webpack - 代码分割和懒加载
 
+- require.ensure 动态加载模块
+- require.include 引入模块
+
 ## 3-9 由浅入深 webpack - 处理 CSS - style-loader
 
 - style-loader: 创建 style 标签, 里面是 css 内容
