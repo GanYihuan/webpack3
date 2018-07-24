@@ -133,8 +133,11 @@ npm i sass-loader node-sass -D
 
 - bug fix: [https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/701](extract-text-webpack-plugin版本没有跟上webpack4导致问题)
 - extract-loader
-- npm install extract-text-webpack-plugin webpack -D
-- npm i -D extract-text-webpack-plugin@next
+
+```node
+npm install extract-text-webpack-plugin webpack -D
+npm i -D extract-text-webpack-plugin@next
+```
 
 ## 3-14 由浅入深 webpack - PostCSS-in-webpack
 
