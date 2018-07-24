@@ -35,8 +35,11 @@ module.exports = {
           /* 小众功能, 使用link标签, 不能处理多个样式 */
           // loader: 'file-loader'
           options: {
+            /* 是否压缩 */
             minimize: true,
+            /* 启用 css-modules */
             modules: true,
+            /* 定义编译出来的名称 */
             localIdentName: '[path][name]_[local]_[hash:base64:5]'
           }
         }

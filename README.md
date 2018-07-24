@@ -113,7 +113,7 @@ npm i lodash -S
 - require.ensure 动态加载模块
 - require.include 引入模块
 
-## 3-9 由浅入深 webpack - 处理 CSS - style-loader
+## 3-9, 3-10, 3-11 由浅入深 webpack - 处理 CSS - style-loader
 
 - style-loader: 创建 style 标签
 - css-loader: js import css
@@ -124,8 +124,10 @@ npm i style-loader css-loader file-loader -D
 
 ## 3-12 由浅入深 webpack - 处理 CSS - 配置 Less - Sass
 
-- npm i less-loader less -D
-- npm i sass-loader node-sass -D
+```node
+npm i less-loader less -D
+npm i sass-loader node-sass -D
+```
 
 ## 3-13 由浅入深 webpack - 处理 CSS - 提取 CSS
 

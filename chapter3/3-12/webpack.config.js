@@ -10,35 +10,28 @@ module.exports = {
     filename: '[name].bundle.js'
   },
   module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'style-loader',
-            /* 小众功能, 使用link标签, 不能处理多个样式 */ 
-            // loader: 'style-loader/url'
-            options: {
-              // insertInto: '#app',
-              singleton: true,
-              transform: './css.transform.js'
-            }
-          },
-          {
-            loader: 'css-loader',
-            /* 小众功能, 使用link标签, 不能处理多个样式 */ 
-            // loader: 'file-loader'
-            options: {
-              minimize: true,
-              modules: true,
-              localIdentName: '[path][name]_[local]_[hash:base64:5]'
-            }
-          },
-          {
-            loader: 'sass-loader'
+    rules: [{
+      test: /\.scss$/,
+      use: [{
+          loader: 'style-loader',
+          options: {
+            singleton: true,
+            transform: './css.transform.js'
           }
-        ]
-      }
-    ]
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            minimize: true,
+            modules: true,
+            localIdentName: '[path][name]_[local]_[hash:base64:5]'
+          }
+        },
+        {
+          /* 放置 css-loader 下面 */
+          loader: 'sass-loader'
+        }
+      ]
+    }]
   }
 }
