@@ -115,30 +115,12 @@ npm i lodash -S
 
 ## 3-9 由浅入深 webpack - 处理 CSS - style-loader
 
-- style-loader: 创建 style 标签, 里面是 css 内容
-- css-loader: js import css 进来
+- style-loader: 创建 style 标签
+- css-loader: js import css
 
-```shell
+```node
 npm i style-loader css-loader file-loader -D
 ```
-
-- style-loader/url(不常用)
-- style-loader/useable(控制样式是否插入页面中)
-- style-loader options
-  insertAt(插入位置)
-  insertInto(插入到 dom)
-  singleton(是否只使用一个 style 标签)
-  transform(转化, 浏览下, 插入页面前, 根据不同浏览器配置不同样式)
-- css-loader options
-  alias(解析别名)
-  importLoader(@import)
-  Minimize(是否压缩)
-  modules(启动 css-modules)
-- css-Modules
-  :local(局部)
-  :global(全局)
-  compose(继承)
-  compose ... from path(import)
 
 ## 3-12 由浅入深 webpack - 处理 CSS - 配置 Less - Sass
 
