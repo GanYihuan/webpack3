@@ -175,3 +175,14 @@ npm i file-loader url-loader img-loader postcss-sprites -D
 ## 4-2 文件处理（2）- 图片处理 - 压缩图片、自动合成雪碧图sprite、retina处理
 
 - 1@2x.png retina 屏幕上用的图片
+
+## 4-3 文件处理（3）- 处理字体文件
+
+## 4-4 文件处理（4）- 处理第三方 JS 库（providePlugin、imports-loader）
+
+```node
+npm i jquery -S
+npm i imports-loader -D
+```
+
+- 如果不 install jquery, resolve 可以找到本地 jquery
