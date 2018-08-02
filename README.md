@@ -41,8 +41,8 @@ webpack --config webpack-selfdefind.js
 - env: 包含所有规范, es2015, es2016, es2017
 - babel-preset-env: 可以根据配置的目标浏览器或者运行环境来自动将ES2015+的代码转换为es5
 - 可以通过 .babelrc 文件来指定特定的目标浏览器
-- babel-polyfill: 全局垫片污染全局, 能写 es7/8 新方法, 对编译的代码中新的API进行处理, 适合在业务项目中使用
-- babel-runtime-transform: 局部垫片不会污染全局, 能写 es7/8 新方法, 对编译的代码中新的API进行处理, 适合在组件类库项目中使用
+- babel-polyfill: 全局垫片污染全局, 能写 es7/8 新方法, 对编译的代码中新的API进行处理, 适合在业务项目中使用, 在 main.js 中引用 `import babel-polyfill`
+- babel-runtime-transform: 局部垫片不会污染全局, 能写 es7/8 新方法, 对编译的代码中新的API进行处理, 适合在组件类库项目中使用, 在 .babelrc 文件中使用
 
 ```console
 npm install babel-loader@8.0.0-beta.0 @babel/core
