@@ -83,17 +83,17 @@ typings i lodash -S
 ## 3-5, 3-6 由浅入深 webpack - 打包公共代码
 
 - 减少代码冗余, 加快速度
-- webpack4 删除 webpack.optimize.CommonsChunkPlugin
+- webpack4 删除了 webpack.optimize.CommonsChunkPlugin
 
 ```json
-// webpack4替代 webpack.optimize.CommonsChunkPlugin
+// webpack4 替代 webpack.optimize.CommonsChunkPlugin
 optimization: {
-  splitChunks: {
-    chunks: 'all',
+  "splitChunks": {
+    "chunks": "all",
     // 提取公共代码次数
-    minChunks: Infinity
+    "minChunks": "Infinity"
   },
-  runtimeChunk: true
+  "runtimeChunk": "true"
 }
 ```
 
