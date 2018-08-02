@@ -11,6 +11,7 @@ if (page === 'subPageA') {
   errorCallback(可省略)
   chunkName
   */
+  /* ensure 会把没有使用过的require资源进行独立分成成一个js文件 */
   require.ensure(['./subPageA.js'], function () {
     /* 真正执行代码 */
     let subPageA = require('./subPageA')

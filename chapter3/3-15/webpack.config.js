@@ -88,7 +88,7 @@ module.exports = {
         path.join(__dirname, './src/*.js')
       ])
     }),
-    /* 去除多余的 js */
+    /* 对 js 文件进行压缩 */
     new UglifyJsPlugin
   ]
 }

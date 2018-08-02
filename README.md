@@ -87,20 +87,24 @@ typings i lodash -S
 - 减少代码冗余, 加快速度
 - webpack4 删除了 webpack.optimize.CommonsChunkPlugin
 
-```json
+```webpack
 // webpack4 替代 webpack.optimize.CommonsChunkPlugin
 optimization: {
-  "splitChunks": {
-    "chunks": "all",
-    // 提取公共代码次数
-    "minChunks": "Infinity"
+    splitChunks: {
+    name: 'vendor',
+      chunks: "initial", // 必须三选一： "initial" | "all"(默认就是all) | "async",
+      minSize: 0, // 最小尺寸，默认0
+      minChunks: 1, // 最小 chunk ，默认1
+      maxAsyncRequests: 1, // 最大异步请求数， 默认1
+      maxInitialRequests : 1, // 最大初始化请求书，默认1
   },
-  "runtimeChunk": "true"
+  runtimeChunk: true
 }
 ```
 
 ```console
 npm i webpack -D
+<!-- lodash 封装了诸多对字符串、数组、对象等常见数据类型的处理函数 -->
 npm i lodash -S
 ```
 
