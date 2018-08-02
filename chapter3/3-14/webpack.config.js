@@ -19,15 +19,20 @@ module.exports = {
         fallback: {
           loader: 'style-loader',
           options: {
+            /* singleton(是否只使用一个 style 标签) */
             singleton: true,
+            /* transform(转化, 浏览下, 插入页面前, 根据不同浏览器配置不同样式) */
             transform: './css.transform.js'
           }
         },
         use: [{
             loader: 'css-loader',
             options: {
+              /* 是否压缩 */
               minimize: true,
+              /* 启用 css-modules */
               modules: true,
+              /* 定义编译出来的名称 */
               localIdentName: '[path][name]_[local]_[hash:base64:5]'
             }
           },
@@ -40,7 +45,7 @@ module.exports = {
                 require('autoprefixer')(),
                 /* 使用未来的 css 语法 */
                 require('postcss-cssnext')(),
-                /* 压缩 css */
+                /* 压缩优化 css */
                 require('cssnano')()
               ]
             }
