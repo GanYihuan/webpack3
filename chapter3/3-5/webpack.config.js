@@ -20,7 +20,7 @@ module.exports = {
   optimization: {
     splitChunks: {
       name: 'vendor',
-      chunks: "all", // 必须三选一： "initial" | "all"(默认就是all) | "async",
+      chunks: "initial", // 必须三选一： "initial" | "all"(默认就是all) | "async",
       minSize: 0, // 最小尺寸，默认0
       minChunks: 1, // 最小 chunk ，默认1
       maxAsyncRequests: 1, // 最大异步请求数， 默认1
