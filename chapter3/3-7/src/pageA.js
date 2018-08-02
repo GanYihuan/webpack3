@@ -4,10 +4,10 @@ require.include('./moduleA.js')
 let page = 'subPageA'
 
 if (page === 'subPageA') {
-  /* 动态加载模块, 懒加载 */
   /*
+  动态加载模块, 懒加载
   []: dependencies(不执行代码)
-  callback(真正执行代码)
+  callback(执行代码)
   errorCallback(可省略)
   chunkName
   */
@@ -15,7 +15,7 @@ if (page === 'subPageA') {
     /* 真正执行代码 */
     let subPageA = require('./subPageA')
   }, 'subPageA')
-  /* 动态import会马上执行代码 */
+  /* 动态 import 会马上执行代码 */
   // import('./subPageA').then(function (subPageA) {  
   //   console.log(subPageA)
   // })
@@ -26,11 +26,11 @@ if (page === 'subPageA') {
   }, 'subPageB')
 }
 
-/* 第三方模块lodash与业务代码分离 */
+/* 第三方模块 lodash 与业务代码分离 */
 require.ensure(['lodash'], function () {
   /* 真正执行代码 */
   let _ = require('lodash')
-  /* 使用lodash方法join() */
+  /* 使用 lodash 方法 join() */
   _.join(['1', '2'], 3)
 }, 'vendor')
 

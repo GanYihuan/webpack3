@@ -104,8 +104,9 @@ npm i lodash -S
 
 ## 3-7, 3-8: 由浅入深 webpack - 代码分割和懒加载
 
-- require.ensure 动态加载模块
-- require.include 引入模块
+- **src/pageA**
+- require.ensure 动态加载模块, callback 才执行
+- require.include 引入模块(提取引入公共模块))
 
 ## 3-9, 3-10, 3-11 由浅入深 webpack - 处理 CSS - style-loader
 
