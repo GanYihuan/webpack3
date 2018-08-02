@@ -165,7 +165,6 @@ module.exports = {
     new UglifyJsPlugin,
     /* 第三方 js 库 */
     new webpack.ProvidePlugin({
-      /* 使用 install jquery */
       $: 'jquery'
     })
   ]

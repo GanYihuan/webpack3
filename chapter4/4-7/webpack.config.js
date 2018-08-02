@@ -190,21 +190,26 @@ module.exports = {
       /* 使用 install jquery */
       $: 'jquery'
     }),
-    /* 生成 HTML */
+    /* 生成创建 html 入口文件 */
     new HtmlWebpackPlugin({
-      /* 输出位置文件 */
+      /* filename: 输出文件的名字 */
       filename: 'index.html',
-      /* 模板文件 */
+      /* template: 本地模版的位置 */
       template: './index.html',
-      /* css, js 通过标签形式插入页面中 */
+      /* 向 template 或者 templateContent 中注入所有静态资源 */
       // inject: false,
-      /* 指定有哪些要加入到页面来 */
-      // chunks: ['app'],
+      /* 允许插入到模板中的一些chunk */
+      chunks: ['app'],
       /* 压缩 */
       minify: {
         collapseWhitespace: true
       }
     }),
+    /*
+    它内联您使用HtmlWebpackPlugin编写为链接或脚本的块。
+    它可用于在脚本标记内嵌入清单以保存http请求，如本示例中所述。 
+    它不仅限于清单块，而是可以内联任何其他块。
+    */
     new HtmlInlineChunkPlugin({
       inlineChunks: ['manifest']
     })

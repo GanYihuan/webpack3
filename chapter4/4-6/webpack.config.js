@@ -155,6 +155,7 @@ module.exports = {
       {
         test: /\.html$/,
         use: [{
+          /* 将 HMTL 模板文件当做一个 string 输出 */
           loader: 'html-loader',
           options: {
             attrs: ['img:src', 'img:data-src']
@@ -183,15 +184,15 @@ module.exports = {
       /* 使用 install jquery */
       $: 'jquery'
     }),
-    /* 生成 HTML */
+    /* 生成创建 html 入口文件 */
     new HtmlWebpackPlugin({
-      /* 输出位置文件 */
+      /* filename: 输出文件的名字 */
       filename: 'index.html',
-      /* 模板文件 */
+      /* template: 本地模版的位置 */
       template: './index.html',
-      /* css, js 通过标签形式插入页面中 */
+      /* 向 template 或者 templateContent 中注入所有静态资源 */
       // inject: false,
-      /* 指定有哪些要加入到页面来 */
+      /* 允许插入到模板中的一些chunk */
       chunks: ['app'],
       /* 压缩 */
       minify: {

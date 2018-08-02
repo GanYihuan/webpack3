@@ -143,6 +143,7 @@ module.exports = {
         }]
       },
       {
+        /* 第三方 js 库 */
         test: path.resolve(__dirname, 'src/app.js'),
         use: [{
           loader: 'imports-loader',
@@ -169,8 +170,8 @@ module.exports = {
     }),
     /* 去除多余的 js */
     new UglifyJsPlugin,
+    /* 第三方 js 库 */
     new webpack.ProvidePlugin({
-      /* 使用 install jquery */
       $: 'jquery'
     }),
     /* 生成 HTML */
