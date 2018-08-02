@@ -12,7 +12,7 @@
 
 ## 3-1 由浅入深 webpack - 使用 webpack
 
-```node
+```console
 webpack -h
 webpack -v
 webpack <entry> <output>
@@ -20,7 +20,7 @@ webpack <entry> <output>
 
 - webpack-cli: 交互式初始化项目, 迁移 v1->v2, 目前不完善
 
-```shell
+```console
 npm install webpack-cli -g
 webpack-cli -h
 webpack-cli init webpack-addons-demo
@@ -28,13 +28,13 @@ webpack-cli init webpack-addons-demo
 
 - 指定 webpack 文件(webpack.conf.dev.js)来启动
 
-```shell
+```console
 webpack --config webpack.conf.dev.js
 ```
 
 ## 3-2 由浅入深 webpack - 打包 JS
 
-```node
+```console
 <!-- 调用 webpack 配置文件 -->
 webpack
 <!-- 使用自定义webpack名称调用 webpack -->
@@ -48,7 +48,7 @@ webpack --config webpack-selfdefind.js
 - babel polyfill: 全局垫片, 能写 es7, es8 新方法, 会污染全局 .babelrc(为应用)
 - babel runtime transform: 局部垫片, 不会污染全局(为框架)
 
-```node
+```console
 npm install babel-loader@8.0.0-beta.0 @babel/core
 <!-- 选上 -->
 npm i babel-loader babel-core -D
@@ -73,7 +73,7 @@ npm i babel-runtime -S
 
 - js 超集
 
-```shell
+```console
 npm i webpack typescript ts-loader awesome-typescript-loader -D
 
 <!-- 说明文件, 编译出问题能抛出问题 -->
@@ -103,7 +103,7 @@ optimization: {
 }
 ```
 
-```node
+```console
 npm i webpack -D
 npm i lodash -S
 ```
@@ -118,15 +118,15 @@ npm i lodash -S
 - style-loader: 创建 style 标签
 - css-loader: js import css
 
-```node
+```console
 npm i style-loader css-loader file-loader -D
 ```
 
 ## 3-12 由浅入深 webpack - 处理 CSS - 配置 Less - Sass
 
-```node
+```console
 npm i less-loader less -D
-npm i sass-loader node-sass -D
+npm i sass-loader console-sass -D
 ```
 
 ## 3-13 由浅入深 webpack - 处理 CSS - 提取 CSS
@@ -134,7 +134,7 @@ npm i sass-loader node-sass -D
 - bug fix: [https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/701](extract-text-webpack-plugin版本没有跟上webpack4导致问题)
 - extract-loader
 
-```node
+```console
 npm install extract-text-webpack-plugin webpack -D
 npm i -D extract-text-webpack-plugin@next
 ```
@@ -143,7 +143,7 @@ npm i -D extract-text-webpack-plugin@next
 
 - postcss(js 转换 css, 打包时期)
 
-```node
+```console
 npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
 ```
 
@@ -157,7 +157,7 @@ npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
 - Tree-shaking 没使用到的代码删除掉
 - bug fix: [https://github.com/webpack-contrib/uglifyjs-webpack-plugin](webpack.optimize.UglifyJsPlugin版本没有跟上webpack4导致问题) babel-env 出现问题参考 3-3
 
-```node
+```console
 npm i uglifyjs-webpack-plugin -D
 npm i lodash-es -S
 npm i babel-loader babel-core babel-preset-env  babel-plugin-lodash -D
@@ -168,7 +168,7 @@ npm i purifycss-webpack -D
 
 ## 4-1 文件处理（1）- 图片处理 - CSS 中引入图片、Base64 编码
 
-```node
+```console
 npm i file-loader url-loader img-loader postcss-sprites -D
 ```
 
@@ -178,7 +178,7 @@ npm i file-loader url-loader img-loader postcss-sprites -D
 
 ## 4-4 文件处理（4）- 处理第三方 JS 库（providePlugin、imports-loader）
 
-```node
+```console
 npm i jquery -S
 npm i imports-loader -D
 ```
@@ -189,7 +189,7 @@ npm i imports-loader -D
 
 - HtmlWebpackPlugin
 
-```node
+```console
 npm i html-webpack-plugin -S
 ```
 
@@ -197,7 +197,7 @@ npm i html-webpack-plugin -S
 
 - html-loader
 
-```node
+```console
 npm i html-loader -S
 ```
 
@@ -206,6 +206,6 @@ npm i html-loader -S
 - bug!
 - 提取载入 webpack 加载代码
 
-```node
+```console
 npm i html-webpack-inline-chunk-plugin -D
 ```
