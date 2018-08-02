@@ -167,13 +167,11 @@ npm i glob-all -D
 npm i purifycss-webpack -D
 ```
 
-## 4-1 文件处理（1）- 图片处理 - CSS 中引入图片、Base64 编码
+## 4-1, 4-2, 4-3 文件处理（2）- 图片处理 - 压缩图片、自动合成雪碧图 Base64 编码 sprite、retina 处理 处理字体文件
 
 ```console
 npm i file-loader url-loader img-loader postcss-sprites -D
 ```
-
-## 4-2, 4-3 文件处理（2）- 图片处理 - 压缩图片、自动合成雪碧图sprite、retina处理 处理字体文件
 
 - 1@2x.png retina 屏幕上用的图片
 
@@ -184,7 +182,9 @@ npm i jquery -S
 npm i imports-loader -D
 ```
 
-- 如果不 install jquery, resolve 可以找到本地 jquery
+- resolve 可以找到本地 jquery
+- imports-loader
+- webpack.ProvidePlugin
 
 ## 4-5 html in webpack（1） - 生成 HTML
 

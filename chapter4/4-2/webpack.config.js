@@ -47,7 +47,7 @@ module.exports = {
                   require('postcss-cssnext')(),
                   /* 压缩 css */
                   require('cssnano')(),
-                  /* 图片合并成一张图 */
+                  /* 雪碧图 图片合并成一张图 */
                   require('postcss-sprites')({
                     spritePath: 'dist/assets/imgs/sprites',
                     retina: true
@@ -88,6 +88,7 @@ module.exports = {
           //   }
           // },
           {
+            /* base64 */
             loader: 'url-loader',
             options: {
               name: '[name]-[hash:5].[ext]',
@@ -102,6 +103,7 @@ module.exports = {
             }
           },
           {
+            /* 压缩图片 */
             loader: 'img-loader',
             options: {
               pngquant: {

@@ -136,6 +136,7 @@ module.exports = {
         }]
       },
       {
+        /* 第三方 js 库 */
         test: path.resolve(__dirname, 'src/app.js'),
         use: [{
           loader: 'imports-loader',
@@ -150,7 +151,7 @@ module.exports = {
     /* 提取 css */
     new ExtractTextWebpackPlugin({
       filename: '[name].min.css',
-      /* 指定提取css范围, 提取初始化 */
+      /* 指定提取 css 范围, 提取初始化 */
       allChunks: false
     }),
     /* 去除多余的 css */
@@ -162,6 +163,7 @@ module.exports = {
     }),
     /* 去除多余的 js */
     new UglifyJsPlugin,
+    /* 第三方 js 库 */
     new webpack.ProvidePlugin({
       /* 使用 install jquery */
       $: 'jquery'
