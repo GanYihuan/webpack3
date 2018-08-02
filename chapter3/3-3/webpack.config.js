@@ -16,6 +16,8 @@
           presets: [
             ['@babel/preset-env', {
               targets: {
+                /* 指定 Node.js 的版本 */
+                "node": "current",
                 browsers: ['> 1%', 'last 2 versions']
               }
             }]
