@@ -26,27 +26,21 @@ webpack-cli -h
 webpack-cli init webpack-addons-demo
 ```
 
-- 指定 webpack 文件(webpack.conf.dev.js)来启动
-
-```console
-webpack --config webpack.conf.dev.js
-```
-
 ## 3-2 由浅入深 webpack - 打包 JS
 
+- 调用 webpack; 使用自定义 webpack 名称调用 webpack
+
 ```console
-<!-- 调用 webpack 配置文件 -->
 webpack
-<!-- 使用自定义webpack名称调用 webpack -->
 webpack --config webpack-selfdefind.js
 ```
 
 ## 3-3 由浅入深 webpack - 编译 ES6
 
-- babel preset: 规范的总结, 指定浏览器环境(为应用)
+- babel-preset: 规范的总结, 指定浏览器环境(为应用)
 - env: 包含所有规范, es2015, es2016, es2017
-- babel polyfill: 全局垫片, 能写 es7, es8 新方法, 会污染全局 .babelrc(为应用)
-- babel runtime transform: 局部垫片, 不会污染全局(为框架)
+- babel-polyfill: 全局垫片, 能写 es7, es8 新方法, 会污染全局, .babelrc(为应用)
+- babel-runtime-transform: 局部垫片, 能写 es7, es8 新方法, 不会污染全局(为框架)
 
 ```console
 npm install babel-loader@8.0.0-beta.0 @babel/core
