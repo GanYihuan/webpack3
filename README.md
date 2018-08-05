@@ -305,6 +305,89 @@ npm i file-loader url-loader img-loader postcss-sprites -D
 
 - 1@2x.png retina 屏幕上用的图片
 
+```js
+{
+  /* 将css3属性添加上厂商前缀 */
+  loader: 'postcss-loader',
+  options: {
+    ident: 'postcss',
+    plugins: [
+      /* 加 css 各浏览器前缀 */
+      require('autoprefixer')(),
+      /* 使用未来的 css 语法 */
+      require('postcss-cssnext')(),
+      /* 压缩 css */
+      require('cssnano')(),
+      /* 雪碧图 图片合并成一张图 */
+      require('postcss-sprites')({
+        spritePath: 'dist/assets/imgs/sprites',
+        retina: true
+      })
+    ]
+  }
+},
+{
+  test: /\.(png|jpg|jpeg|gif)$/,
+  use: [
+    // {
+    //   loader: 'file-loader',
+    //   options: {
+    //     limit: 1000,
+    //     /* 图片地址不对, 设置绝对路径 */
+    //     publicPath: '',
+    //     /* 放到 dist 目录 */
+    //     outputPath: 'dist/',
+    //     /* 设置相对路径 */
+    //     useRelativePath: true
+    //   }
+    // },
+    {
+      /* base64 */
+      loader: 'url-loader',
+      options: {
+        name: '[name]-[hash:5].[ext]',
+        /* 超出 1000 处理成 base64 */
+        limit: 1000,
+        /* 图片地址不对, 设置绝对路径 */
+        publicPath: '',
+        /* 放到 dist 目录 */
+        outputPath: 'dist/',
+        /* 设置相对路径 */
+        useRelativePath: true
+      }
+    },
+    {
+      /* 压缩图片 */
+      loader: 'img-loader',
+      options: {
+        pngquant: {
+          /* 压缩 png */
+          quality: 80
+        }
+      }
+    }
+  ]
+},
+{
+  /* 字体文件 */
+  test: /\.(eot|woff2?|ttf|svg)$/,
+  use: [{
+    loader: 'url-loader',
+    options: {
+      name: '[name]-[hash:5].[ext]',
+      /* 超出 5000 处理成 base64 */
+      limit: 5000,
+      /* 图片地址不对, 设置绝对路径 */
+      publicPath: '',
+      /* 放到 dist 目录 */
+      outputPath: 'dist/',
+      /* 设置相对路径 */
+      useRelativePath: true
+    }
+  }]
+}
+```
+
 ## 4-4 文件处理（4）- 处理第三方 JS 库（providePlugin、imports-loader）
 
 ```console
