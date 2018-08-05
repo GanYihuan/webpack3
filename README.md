@@ -216,6 +216,7 @@ npm i -D extract-text-webpack-plugin@next
 ```
 
 ```js
+var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 plugins: [
   /* 提取 css */
   new ExtractTextWebpackPlugin({
@@ -306,6 +307,9 @@ npm i file-loader url-loader img-loader postcss-sprites -D
 - 1@2x.png retina 屏幕上用的图片
 
 ```js
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+var PurifyCss = require('purifycss-webpack')
+var glob = require('glob-all')
 {
   /* 将css3属性添加上厂商前缀 */
   loader: 'postcss-loader',
@@ -429,6 +433,25 @@ new webpack.ProvidePlugin({
 
 ```console
 npm i html-webpack-plugin -S
+```
+
+```js
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+/* 生成 HTML */
+new HtmlWebpackPlugin({
+  /* 输出位置文件 */
+  filename: 'index.html',
+  /* 模板文件 */
+  template: './index.html',
+  /* css, js 通过标签形式插入页面中 */
+  // inject: false,
+  /* 指定有哪些要加入到页面来 */
+  chunks: ['app'],
+  /* 压缩 */
+  minify: {
+    collapseWhitespace: true
+  }
+})
 ```
 
 ## 4-6 html in webpack（2） - HTML 中引入图片
