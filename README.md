@@ -483,3 +483,15 @@ npm i html-loader -S
 ```console
 npm i html-webpack-inline-chunk-plugin -D
 ```
+
+```js
+var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
+/*
+它内联您使用HtmlWebpackPlugin编写为链接或脚本的块。
+它可用于在脚本标记内嵌入清单以保存http请求，如本示例中所述。 
+它不仅限于清单块，而是可以内联任何其他块。
+*/
+new HtmlInlineChunkPlugin({
+  inlineChunks: ['manifest']
+})
+```
