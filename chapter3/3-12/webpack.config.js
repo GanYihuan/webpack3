@@ -6,6 +6,7 @@ module.exports = {
     app: './src/app.js'
   },
   output: {
+    /* 输出到指定目录下 */
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js'
   },
@@ -13,7 +14,7 @@ module.exports = {
     rules: [{
       test: /\.scss$/,
       use: [{
-          /* style-loader 创造一个 style 标签，将引入的 css 放置进去 */
+          /* 在引入css时，在最后生成的js文件中进行处理，动态创建style标签，塞到head标签里 */
           loader: 'style-loader',
           /* 小众功能, 使用link标签, 不能处理多个样式 */
           // loader: 'style-loader/url',
@@ -29,7 +30,7 @@ module.exports = {
           }
         },
         {
-          /* css-loader 将 CSS 文件引入到对应的入口文件里 */
+          /* 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
           loader: 'css-loader',
           /* 小众功能, 使用link标签, 不能处理多个样式 */
           // loader: 'file-loader'

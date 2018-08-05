@@ -16,7 +16,7 @@ module.exports = {
     chunkFilename: '[name].chunk.js'
   },
   /* optimization 配置自己的自定义模式 */
-  /* webpack4替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码 */
+  /* webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码 */
   optimization: {
     splitChunks: {
       name: 'vendor',

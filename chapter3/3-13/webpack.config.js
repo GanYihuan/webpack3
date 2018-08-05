@@ -7,6 +7,7 @@ module.exports = {
     app: './src/app.js'
   },
   output: {
+    /* 输出到指定目录下 */
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js'
@@ -14,9 +15,11 @@ module.exports = {
   module: {
     rules: [{
       test: /\.scss$/,
+      /* 提取 css */
       use: ExtractTextWebpackPlugin.extract({
         /* 提取出来的文件用什么处理 */
         fallback: {
+          /* 在引入css时，在最后生成的js文件中进行处理，动态创建style标签，塞到head标签里 */
           loader: 'style-loader',
           options: {
             /* singleton(是否只使用一个 style 标签) */
@@ -26,6 +29,7 @@ module.exports = {
           }
         },
         use: [{
+            /* 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
             loader: 'css-loader',
             options: {
               /* 是否压缩 */
@@ -37,6 +41,7 @@ module.exports = {
             }
           },
           {
+            /* 放置 css-loader 下面 */
             loader: 'sass-loader'
           }
         ]

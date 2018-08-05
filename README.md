@@ -65,9 +65,33 @@ npm i @babel/runtime -S
 npm i babel-runtime -S
 ```
 
+```js
+{
+  test: /\.js$/,
+  use: {
+    loader: 'babel-loader',
+    options: {
+      /* 规范的总结 */
+      presets: [
+        ['@babel/preset-env', {
+          targets: {
+            /* 指定 Node.js 的版本 */
+            "node": "current",
+            browsers: ['> 1%', 'last 2 versions']
+          }
+        }]
+      ]
+    }
+  },
+  /* 排除规则之外 */
+  exclude: '/node_modules/'
+}
+```
+
 ## 3-4 由浅入深 webpack - 编译 typescript
 
 - js 超集
+- lodash: 封装了诸多对字符串、数组、对象等常见数据类型的处理函数
 
 ```console
 npm i webpack typescript ts-loader awesome-typescript-loader -D
@@ -84,11 +108,18 @@ typings i lodash -S
 
 ## 3-5, 3-6 由浅入深 webpack - 打包公共代码
 
-- 减少代码冗余, 加快速度
+- 分割 Chunk, 减少代码冗余, 加快速度
+- lodash: 封装了诸多对字符串、数组、对象等常见数据类型的处理函数
 - webpack4 删除了 webpack.optimize.CommonsChunkPlugin
 
-```webpack
-// webpack4 替代 webpack.optimize.CommonsChunkPlugin
+```console
+npm i webpack -D
+npm i lodash -S
+```
+
+```js
+/* optimization 配置自己的自定义模式 */
+/* webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码 */
 optimization: {
     splitChunks: {
     name: 'vendor',
@@ -102,25 +133,62 @@ optimization: {
 }
 ```
 
-```console
-npm i webpack -D
-<!-- lodash 封装了诸多对字符串、数组、对象等常见数据类型的处理函数 -->
-npm i lodash -S
-```
-
 ## 3-7, 3-8: 由浅入深 webpack - 代码分割和懒加载
 
 - **src/pageA**
-- require.ensure 动态加载模块, callback 才执行
-- require.include 引入模块(提取引入公共模块))
+- require.ensure: 动态加载模块, callback 才执行
+- require.include: 引入模块(提取引入公共模块))
+
+```js
+/* 引入模块, 但不执行, 提前加载第三方模块, 减少加载次数 */
+require.include('./moduleA.js')
+/* ensure 会把没有使用过的 require 资源进行独立分成成一个js文件 */
+require.ensure(['./subPageA.js'], function () {
+  /* 真正执行代码 */
+  let subPageA = require('./subPageA')
+}, 'subPageA')
+```
 
 ## 3-9, 3-10, 3-11 由浅入深 webpack - 处理 CSS - style-loader
 
-- style-loader: 创建 style 标签
-- css-loader: js import css
+- style-loader: 在引入css时，在最后生成的js文件中进行处理，动态创建style标签，塞到head标签里
+- css-loader: 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了
 
 ```console
 npm i style-loader css-loader file-loader -D
+```
+
+```js
+{
+  /* 在引入css时，在最后生成的js文件中进行处理，动态创建style标签，塞到head标签里 */
+  loader: 'style-loader',
+  /* 小众功能, 使用 link 标签, 不能处理多个样式 */
+  // loader: 'style-loader/url',
+  // loader: 'style-loader/useable'
+  options: {
+    /* insertAt(插入位置) */
+    /* insertInto(插入到 dom) */
+    /* insertInto: '#app', */
+    /* singleton (是否只使用一个 style 标签) */
+    singleton: true,
+    /* transform 在样式加载器加载到页面之前修改 CSS */
+    transform: './css.transform.js'
+  }
+},
+{
+  /* 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
+  loader: 'css-loader',
+  /* 小众功能, 使用 link 标签, 不能处理多个样式 */
+  // loader: 'file-loader'
+  options: {
+    /* 是否压缩 */
+    minimize: true,
+    /* 启用 css-modules */
+    modules: true,
+    /* 定义编译出来的名称 */
+    localIdentName: '[path][name]_[local]_[hash:base64:5]'
+  }
+}
 ```
 
 ## 3-12 由浅入深 webpack - 处理 CSS - 配置 Less - Sass
@@ -128,6 +196,13 @@ npm i style-loader css-loader file-loader -D
 ```console
 npm i less-loader less -D
 npm i sass-loader console-sass -D
+```
+
+```js
+{
+  /* 放置 css-loader 下面 */
+  loader: 'sass-loader'
+}
 ```
 
 ## 3-13 由浅入深 webpack - 处理 CSS - 提取 CSS
@@ -140,6 +215,26 @@ npm install extract-text-webpack-plugin webpack -D
 npm i -D extract-text-webpack-plugin@next
 ```
 
+```js
+plugins: [
+  /* 提取 css */
+  new ExtractTextWebpackPlugin({
+    /* 提取出来的 css 文件名字 */
+    filename: '[name].min.css',
+    /* 指定提取 css 范围, 提取初始化 */
+    allChunks: false
+  })
+]
+```
+
+```js
+use: ExtractTextWebpackPlugin.extract({
+  /* 提取出来的文件用什么处理 */
+  fallback: {},
+  use: [{}]
+})
+```
+
 ## 3-14 由浅入深 webpack - PostCSS-in-webpack
 
 - postcss(js 转换 css, 打包时期)
@@ -148,10 +243,32 @@ npm i -D extract-text-webpack-plugin@next
 npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
 ```
 
-- autoprefixer(加 css 各浏览器前缀)
-- css-nano(压缩 css)
-- css-next(使用未来的 css 语法)
+```js
+{
+  /* 将css3属性添加上厂商前缀 */
+  loader: 'postcss-loader',
+  options: {
+    ident: 'postcss',
+    plugins: [
+      /* 加 css 各浏览器前缀 */
+      require('autoprefixer')(),
+      /* 使用未来的 css 语法 */
+      require('postcss-cssnext')(),
+      /* 压缩优化 css */
+      require('cssnano')()
+    ]
+  }
+},
+```
+
 - browserslist(浏览器限制) **package.json**
+
+```json
+"browserslist": [
+  ">= 1%",
+  "last 2 versions"
+]
+```
 
 ## 3-15, 3-16 由浅入深 webpack - Tree-shaking - JS CSS Tree-shaking
 
@@ -165,6 +282,19 @@ npm i babel-loader babel-core babel-preset-env  babel-plugin-lodash -D
 <!-- CSS -->
 npm i glob-all -D
 npm i purifycss-webpack -D
+```
+
+```js
+/* 放 ExtractTextWebpackPlugin 后面 */
+/* 去除多余的 css */
+new PurifyCss({
+  paths: glob.sync([
+    path.join(__dirname, './*.html'),
+    path.join(__dirname, './src/*.js')
+  ])
+}),
+/* 对 js 文件进行压缩 */
+new UglifyJsPlugin
 ```
 
 ## 4-1, 4-2, 4-3 文件处理（2）- 图片处理 - 压缩图片、自动合成雪碧图 Base64 编码 sprite、retina 处理 处理字体文件
