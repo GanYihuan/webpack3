@@ -462,6 +462,19 @@ new HtmlWebpackPlugin({
 npm i html-loader -S
 ```
 
+```js
+{
+  test: /\.html$/,
+  use: [{
+    /* 将 HMTL 模板文件当做一个 string 输出 */
+    loader: 'html-loader',
+    options: {
+      attrs: ['img:src', 'img:data-src']
+    }
+  }]
+}
+```
+
 ## 4-7 html in webpack（3） - 配合优化
 
 - bug!
