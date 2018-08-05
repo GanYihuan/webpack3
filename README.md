@@ -395,9 +395,33 @@ npm i jquery -S
 npm i imports-loader -D
 ```
 
-- resolve 可以找到本地 jquery
+- resolve: 可以找到本地 jquery
 - imports-loader
 - webpack.ProvidePlugin
+
+```js
+/* resolve: 可以找到本地 jquery */
+resolve: {
+  alias: {
+    /* 找到本地的 jquery */
+    jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
+  }
+},
+{
+  /* 第三方 js 库 */
+  test: path.resolve(__dirname, 'src/app.js'),
+  use: [{
+    loader: 'imports-loader',
+    options: {
+      $: 'jquery'
+    }
+  }]
+}
+/* 第三方 js 库 */
+new webpack.ProvidePlugin({
+  $: 'jquery'
+})
+```
 
 ## 4-5 html in webpack（1） - 生成 HTML
 

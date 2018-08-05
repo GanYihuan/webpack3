@@ -11,10 +11,12 @@ module.exports = {
     app: './src/app.js'
   },
   output: {
+    /* 输出到指定目录下 */
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js'
   },
+  /* resolve: 可以找到本地 jquery */
   resolve: {
     alias: {
       /* 找到本地的 jquery */
@@ -24,25 +26,35 @@ module.exports = {
   module: {
     rules: [{
         test: /\.scss$/,
+        /* 提取 css */
         use: ExtractTextWebpackPlugin.extract({
           /* 提取出文件用什么处理 */
           fallback: {
+            /* 在引入css时，在最后生成的js文件中进行处理，动态创建style标签，塞到head标签里 */
             loader: 'style-loader',
             options: {
+              /* singleton(是否只使用一个 style 标签) */
               singleton: true,
+              /* transform(转化, 浏览下, 插入页面前, 根据不同浏览器配置不同样式) */
               transform: './css.transform.js'
             }
           },
           use: [{
+              /* 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
               loader: 'css-loader',
               options: {
+                /* 在 css-loader 前应用的 loader 的数量 */
                 importLoaders: 2,
+                /* 是否压缩 */
                 minimize: true,
+                /* 启用 css-modules */
                 modules: true,
+                /* 定义编译出来的名称 */
                 localIdentName: '[path][name]_[local]_[hash:base64:5]'
               }
             },
             {
+              /* 将css3属性添加上厂商前缀 */
               loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
@@ -62,6 +74,7 @@ module.exports = {
               }
             },
             {
+              /* 放置 css-loader 下面 */
               loader: 'sass-loader'
             }
           ]
@@ -108,6 +121,7 @@ module.exports = {
             }
           },
           {
+            /* 压缩图片 */
             loader: 'img-loader',
             options: {
               pngquant: {
@@ -119,6 +133,7 @@ module.exports = {
         ]
       },
       {
+        /* 字体文件 */
         test: /\.(eot|woff2?|ttf|svg)$/,
         use: [{
           loader: 'url-loader',

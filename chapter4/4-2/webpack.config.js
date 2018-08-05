@@ -36,6 +36,7 @@ module.exports = {
               /* 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
               loader: 'css-loader',
               options: {
+                /* 在 css-loader 前应用的 loader 的数量 */
                 importLoaders: 2,
                 /* 是否压缩 */
                 minimize: true,
