@@ -307,21 +307,12 @@ npm i file-loader url-loader img-loader postcss-sprites -D
 - 1@2x.png retina 屏幕上用的图片
 
 ```js
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-var PurifyCss = require('purifycss-webpack')
-var glob = require('glob-all')
 {
   /* 将css3属性添加上厂商前缀 */
   loader: 'postcss-loader',
   options: {
     ident: 'postcss',
     plugins: [
-      /* 加 css 各浏览器前缀 */
-      require('autoprefixer')(),
-      /* 使用未来的 css 语法 */
-      require('postcss-cssnext')(),
-      /* 压缩 css */
-      require('cssnano')(),
       /* 雪碧图 图片合并成一张图 */
       require('postcss-sprites')({
         spritePath: 'dist/assets/imgs/sprites',
