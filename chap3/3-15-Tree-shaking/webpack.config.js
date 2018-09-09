@@ -1,8 +1,12 @@
-var path = require('path')
-var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 var webpack = require('webpack')
+var path = require('path')
+/* 检查打包后的 css 文件 */
+var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+/* 对 js 文件进行压缩 */
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+/* 去除多余的 css, 进行 CSS Tree Shaking 操作 */
 var PurifyCss = require('purifycss-webpack')
+/* glob-all 的作用就是帮助 PurifyCSS 进行路径处理，定位要做 Tree Shaking 的路径文件。 */ 
 var glob = require('glob-all')
 
 module.exports = {
@@ -80,15 +84,16 @@ module.exports = {
     ]
   },
   plugins: [
-    /* 提取 css */
+    /* 提取 css, 检查打包后的 css 文件 */
     new ExtractTextWebpackPlugin({
       filename: '[name].min.css',
       /* 指定提取 css 范围, 提取初始化 */
       allChunks: false
     }),
     /* 放 ExtractTextWebpackPlugin 后面 */
-    /* 去除多余的 css */
+    /* 去除多余的 css, 进行 CSS Tree Shaking 操作 */
     new PurifyCss({
+      /* glob-all 的作用就是帮助 PurifyCSS 进行路径处理，定位要做 Tree Shaking 的路径文件。 */ 
       paths: glob.sync([
         path.join(__dirname, './*.html'),
         path.join(__dirname, './src/*.js')

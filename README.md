@@ -38,12 +38,12 @@ webpack --config webpack-config.js
 
 ## 3-3 由浅入深 webpack - 编译 ES6
 
-- babel-core: babel编译库的核心包
-- babel-loader: 帮你来使用babel
+- babel-core: babel 编译库的核心包
+- babel-loader: 帮你来使用 babel
 - babel-preset: 规范的总结, 指定浏览器环境(应用开发需要), env 包含所有规范, es2015, es2016, es2017
 - babel-preset-env: 代码编译成什么样子, 可以根据配置的目标浏览器或者运行环境来自动将 ES2015+ 的代码转换为 es5, .babelrc 文件配置特定的目标浏览器
-- babel-polyfill: 全局垫片污染全局, 能写 es7/8 新方法, 对编译的代码中新的API进行处理, 适合在业务项目(开发应用)使用, 在 main.js 中引用 `import babel-polyfill`
-- babel-runtime-transform: 局部垫片不会污染全局, 能写 es7/8 新方法, 对编译的代码中新的API进行处理, 适合在组件类库项目中使用, 在 .babelrc 文件中配置
+- babel-polyfill: 全局垫片污染全局, 能写 es7/8 新方法, 对编译的代码中新的 API 进行处理, 适合在业务项目(开发应用)使用, 在 main.js 中引用 `import babel-polyfill`
+- babel-runtime-transform: 局部垫片不会污染全局, 能写 es7/8 新方法, 对编译的代码中新的 API 进行处理, 适合在组件类库项目中使用, 在 .babelrc 文件中配置
 
 ```console
 npm install babel-loader@8.0.0-beta.0 @babel/core
@@ -112,10 +112,14 @@ callback(执行代码)
 errorCallback(可省略)
 chunkName
 */
-require.ensure(['./subPageA.js'], function () {
+require.ensure(
+['./subPageA.js'],
+function() {
   /* callback(执行代码) */
   let subPageA = require('./subPageA')
-}, 'subPageA')
+},
+'subPageA'
+)
 ```
 
 ## 3-9, 3-10, 3-11, 3-12 由浅入深 webpack - 处理 CSS - style-loader
@@ -132,22 +136,33 @@ npm i sass-loader node-sass -D
 ```css
 /* 引入不同文件下的样式 */
 .box {
-  composes: bigBox from './common.css';
+	composes: bigBox from './common.css';
 }
 ```
 
 ## 3-13 由浅入深 webpack - 处理 CSS - 提取 CSS
 
-- bug fix: [https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/701](extract-text-webpack-plugin版本没有跟上webpack4导致问题)
-- extract-loader
+- [extract-text-webpack-plugin 版本没有跟上 webpack4 导致问题](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/701)
 
 ```console
 npm install extract-text-webpack-plugin webpack -D
-npm i -D extract-text-webpack-plugin@next
+npm i extract-text-webpack-plugin@next -D
 ```
 
 ```js
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+module: {
+  rules: [
+    {
+      test: /\.scss$/,
+      use: ExtractTextWebpackPlugin.extract({
+        /* 提取出来的文件用什么处理 */
+        fallback: {},
+        use: [{}]
+      })
+    }
+  ]
+},
 plugins: [
   /* 提取 css */
   new ExtractTextWebpackPlugin({
@@ -159,20 +174,23 @@ plugins: [
 ]
 ```
 
-```js
-use: ExtractTextWebpackPlugin.extract({
-  /* 提取出来的文件用什么处理 */
-  fallback: {},
-  use: [{}]
-})
-```
-
 ## 3-14 由浅入深 webpack - PostCSS-in-webpack
 
 - postcss(js 转换 css, 打包时期)
+- autoprefixer(css 前缀)
+- cssnano(压缩优化 css, css-loader 借助了 cssnano 的功能)
+- postcss-cssnext(使用未来的 css 语法)
 
 ```console
 npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
+
+npm install babel-loader@8.0.0-beta.0 @babel/core
+<!-- 选上 -->
+npm i babel-loader babel-core -D
+
+npm i @babel/preset-env -D
+<!-- 选上 -->
+npm i babel-preset-env -D
 ```
 
 ```js
@@ -193,6 +211,7 @@ npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
 },
 ```
 
+- .babelrc 配置 env, 替换下面方法
 - browserslist(浏览器限制) **package.json**
 
 ```json
@@ -204,29 +223,44 @@ npm i postcss postcss-loader autoprefixer cssnano postcss-cssnext -D
 
 ## 3-15, 3-16 由浅入深 webpack - Tree-shaking - JS CSS Tree-shaking
 
-- Tree-shaking 没使用到的代码删除掉
-- bug fix: [https://github.com/webpack-contrib/uglifyjs-webpack-plugin](webpack.optimize.UglifyJsPlugin版本没有跟上webpack4导致问题) babel-env 出现问题参考 3-3
+- Tree-shaking(没使用到的代码删除掉)
+- [webpack.optimize.UglifyJsPlugin版本没有跟上webpack4导致问题](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
+- glob-all 的作用就是帮助 PurifyCSS 进行路径处理，定位要做 Tree Shaking 的路径文件
 
 ```console
-npm i uglifyjs-webpack-plugin -D
+<!-- 第三方引用 -->
 npm i lodash-es -S
-npm i babel-loader babel-core babel-preset-env  babel-plugin-lodash -D
-<!-- CSS -->
+<!-- babel -->
+npm i babel-loader babel-core babel-preset-env babel-plugin-lodash -D
+<!-- 对 js 文件进行压缩 -->
+npm i uglifyjs-webpack-plugin -D
+<!-- glob-all 的作用就是帮助 PurifyCSS 进行路径处理，定位要做 Tree Shaking 的路径文件。 -->
 npm i glob-all -D
 npm i purifycss-webpack -D
+
+<!-- .babelrc 参考 3-3 -->
+npm install babel-loader@8.0.0-beta.0 @babel/core
+<!-- 选上 -->
+npm i babel-loader babel-core -D
+
+npm i @babel/preset-env -D
+<!-- 选上 -->
+npm i babel-preset-env -D
 ```
 
 ```js
 /* 放 ExtractTextWebpackPlugin 后面 */
 /* 去除多余的 css */
-new PurifyCss({
-  paths: glob.sync([
-    path.join(__dirname, './*.html'),
-    path.join(__dirname, './src/*.js')
-  ])
-}),
+new PurifyCss(
+  {
+    paths: glob.sync([
+      path.join(__dirname, './*.html'),
+      path.join(__dirname, './src/*.js')
+    ])
+  }
+),
 /* 对 js 文件进行压缩 */
-new UglifyJsPlugin
+new UglifyJsPlugin()
 ```
 
 ## 4-1, 4-2, 4-3 文件处理（2）- 图片处理 - 压缩图片、自动合成雪碧图 Base64 编码 sprite、retina 处理 处理字体文件
@@ -361,18 +395,18 @@ npm i html-webpack-plugin -S
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 /* 生成 HTML */
 new HtmlWebpackPlugin({
-  /* 输出位置文件 */
-  filename: 'index.html',
-  /* 模板文件 */
-  template: './index.html',
-  /* css, js 通过标签形式插入页面中 */
-  // inject: false,
-  /* 指定有哪些要加入到页面来 */
-  chunks: ['app'],
-  /* 压缩 */
-  minify: {
-    collapseWhitespace: true
-  }
+	/* 输出位置文件 */
+	filename: 'index.html',
+	/* 模板文件 */
+	template: './index.html',
+	/* css, js 通过标签形式插入页面中 */
+	// inject: false,
+	/* 指定有哪些要加入到页面来 */
+	chunks: ['app'],
+	/* 压缩 */
+	minify: {
+		collapseWhitespace: true
+	}
 })
 ```
 
@@ -414,6 +448,6 @@ var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 它不仅限于清单块，而是可以内联任何其他块。
 */
 new HtmlInlineChunkPlugin({
-  inlineChunks: ['manifest']
+	inlineChunks: ['manifest']
 })
 ```
