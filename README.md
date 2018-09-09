@@ -270,6 +270,7 @@ npm i file-loader url-loader img-loader postcss-sprites -D
 ```
 
 - 1@2x.png retina 屏幕上用的图片
+- 样式表 1px = retina 2px
 
 ```js
 {

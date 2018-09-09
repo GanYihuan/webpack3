@@ -60,7 +60,9 @@ module.exports = {
                   require('cssnano')(),
                   /* 雪碧图 图片合并成一张图 */
                   require('postcss-sprites')({
+                    /* 指定输出路径 */
                     spritePath: 'dist/assets/imgs/sprites',
+                    /* 处理 retina 屏 */
                     retina: true
                   })
                 ]
