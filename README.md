@@ -2,12 +2,12 @@
 
 ## 2-5 学习准备 - webpack 核心概念
 
-- entry: 打包入口
-- output: 打包生成的文件
-- loaders: 转化为模块
-- plugins: 参与打包过程, 打包优化, 编译变量
+- entry: 某段代码入口, 打包入口
+- output: 输出
+- loaders: 文件转化为模块
+- plugins: 参与打包过程
 - chunk: 代码块
-- bundle: 被打包后的
+- bundle: 打包生成的文件
 - module: 模块
 
 ## 3-1 由浅入深 webpack - 使用 webpack
@@ -18,7 +18,7 @@ webpack -v
 webpack <entry> <output>
 ```
 
-- webpack-cli: 交互式初始化项目, 迁移 v1->v2, 目前不完善
+- webpack-cli: 交互式初始化项目, 迁移 v1->v2
 
 ```console
 npm install webpack-cli -g
@@ -32,7 +32,8 @@ webpack-cli init webpack-addons-demo
 
 ```console
 webpack
-webpack --config webpack-selfdefind.js
+<!-- 自定义 webpack 打包 -->
+webpack --config webpack-config.js
 ```
 
 ## 3-3 由浅入深 webpack - 编译 ES6
