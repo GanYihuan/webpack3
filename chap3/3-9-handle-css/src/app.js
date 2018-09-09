@@ -1,6 +1,6 @@
 ﻿/* style-loader/useable */
-import base from './css/base.css'
-import common from './css/common.css'
+import base from './css/base.less'
+import common from './css/common.less'
 
 // var flag = false
 // setInterval(function () {

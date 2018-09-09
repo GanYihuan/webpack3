@@ -118,33 +118,21 @@ require.ensure(['./subPageA.js'], function () {
 }, 'subPageA')
 ```
 
-## 3-9, 3-10, 3-11 由浅入深 webpack - 处理 CSS - style-loader
+## 3-9, 3-10, 3-11, 3-12 由浅入深 webpack - 处理 CSS - style-loader
 
 - style-loader: 在最后生成的 js 文件中进行处理，动态创建 style 标签，塞到 head 标签里
 - css-loader: 打包时把 css 文件拆出来，css 相关模块最终打包到一个指定的 css 文件中，手动用 link 标签去引入这个 css 文件
 
 ```console
 npm i style-loader css-loader file-loader -D
+npm i less-loader less -D
+npm i sass-loader node-sass -D
 ```
 
 ```css
 /* 引入不同文件下的样式 */
 .box {
   composes: bigBox from './common.css';
-}
-```
-
-## 3-12 由浅入深 webpack - 处理 CSS - 配置 Less - Sass
-
-```console
-npm i less-loader less -D
-npm i sass-loader console-sass -D
-```
-
-```js
-{
-  /* 放置 css-loader 下面 */
-  loader: 'sass-loader'
 }
 ```
 
