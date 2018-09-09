@@ -113,12 +113,12 @@ errorCallback(可省略)
 chunkName
 */
 require.ensure(
-['./subPageA.js'],
-function() {
-  /* callback(执行代码) */
-  let subPageA = require('./subPageA')
-},
-'subPageA'
+	['./subPageA.js'],
+	function() {
+		/* callback(执行代码) */
+		let subPageA = require('./subPageA')
+	},
+	'subPageA'
 )
 ```
 
@@ -224,7 +224,7 @@ npm i babel-preset-env -D
 ## 3-15, 3-16 由浅入深 webpack - Tree-shaking - JS CSS Tree-shaking
 
 - Tree-shaking(没使用到的代码删除掉)
-- [webpack.optimize.UglifyJsPlugin版本没有跟上webpack4导致问题](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
+- [webpack.optimize.UglifyJsPlugin 版本没有跟上 webpack4 导致问题](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
 - glob-all 的作用就是帮助 PurifyCSS 进行路径处理，定位要做 Tree Shaking 的路径文件
 
 ```console
@@ -251,16 +251,14 @@ npm i babel-preset-env -D
 ```js
 /* 放 ExtractTextWebpackPlugin 后面 */
 /* 去除多余的 css */
-new PurifyCss(
-  {
-    paths: glob.sync([
-      path.join(__dirname, './*.html'),
-      path.join(__dirname, './src/*.js')
-    ])
-  }
-),
-/* 对 js 文件进行压缩 */
-new UglifyJsPlugin()
+new PurifyCss({
+	paths: glob.sync([
+		path.join(__dirname, './*.html'),
+		path.join(__dirname, './src/*.js')
+	])
+}),
+	/* 对 js 文件进行压缩 */
+	new UglifyJsPlugin()
 ```
 
 ## 4-1, 4-2, 4-3 文件处理（2）- 图片处理 - 压缩图片、自动合成雪碧图 Base64 编码 sprite、retina 处理 处理字体文件
@@ -356,20 +354,28 @@ npm i jquery -S
 npm i imports-loader -D
 ```
 
-- resolve: 可以找到本地 jquery
-- imports-loader
-- webpack.ProvidePlugin
+```js
+<!-- install jquery 后, 可以不用引入 jquery -->
+plugins: [
+  /* 第三方 js 库 */
+  new webpack.ProvidePlugin({
+    $: 'jquery'
+  })
+]
+```
 
 ```js
-/* resolve: 可以找到本地 jquery */
+<!-- 找到本地 jquery, src/libs/jquery.js -->
 resolve: {
   alias: {
-    /* 找到本地的 jquery */
     jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
   }
 },
+```
+
+```js
+<!-- 第三方 js 库 -->
 {
-  /* 第三方 js 库 */
   test: path.resolve(__dirname, 'src/app.js'),
   use: [{
     loader: 'imports-loader',
@@ -378,15 +384,9 @@ resolve: {
     }
   }]
 }
-/* 第三方 js 库 */
-new webpack.ProvidePlugin({
-  $: 'jquery'
-})
 ```
 
-## 4-5 html in webpack（1） - 生成 HTML
-
-- HtmlWebpackPlugin
+## 4-5 html in webpack（1） - 处理 HTML
 
 ```console
 npm i html-webpack-plugin -S
@@ -413,8 +413,6 @@ new HtmlWebpackPlugin({
 
 ## 4-6 html in webpack（2） - HTML 中引入图片
 
-- html-loader
-
 ```console
 npm i html-loader -S
 ```
@@ -434,10 +432,12 @@ npm i html-loader -S
 
 ## 4-7 html in webpack（3） - 配合优化
 
-- bug!
-- 提取载入 webpack 加载代码
+- 提前载入 webpack 加载代码
 
 ```console
+<!-- webpack 生成的文件插入到 html 中, 潜在 bug -->
+npm i inline-mainifest-webpack-plugin -D
+<!-- 选择各种 chunk 插入 html 中 -->
 npm i html-webpack-inline-chunk-plugin -D
 ```
 
@@ -445,7 +445,7 @@ npm i html-webpack-inline-chunk-plugin -D
 var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 /*
 它内联您使用HtmlWebpackPlugin编写为链接或脚本的块。
-它可用于在脚本标记内嵌入清单以保存http请求，如本示例中所述。 
+它可用于在脚本标记内嵌入清单以保存http请求，如本示例中所述
 它不仅限于清单块，而是可以内联任何其他块。
 */
 new HtmlInlineChunkPlugin({

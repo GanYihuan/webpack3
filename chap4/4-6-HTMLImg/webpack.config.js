@@ -5,7 +5,6 @@ var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var PurifyCss = require('purifycss-webpack')
 var glob = require('glob-all')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 
 var extractLess = new ExtractTextWebpackPlugin({
   filename: 'css/[name]-bundle-[hash:5].css'
@@ -21,15 +20,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     /* 输出文件都带有 dist 前缀 */
     // publicPath: 'dist/',
+    /* 增加绝对路径 */
     publicPath: '/',
     filename: '[name]-bundle-[hash:5].js',
     chunkFilename: '[name].bundle.js'
-  },
-  // webpack4替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码
-  optimization: {
-    splitChunks: {
-      name: 'manifest'
-    }
   },
   resolve: {
     alias: {
@@ -167,6 +161,7 @@ module.exports = {
       {
         test: path.resolve(__dirname, 'src/app.js'),
         use: [{
+          /* 第三方 js 库 */
           loader: 'imports-loader',
           options: {
             $: 'jquery'
@@ -176,6 +171,7 @@ module.exports = {
       {
         test: /\.html$/,
         use: [{
+          /* 将 HMTL 模板文件当做一个 string 输出 */
           loader: 'html-loader',
           options: {
             attrs: ['img:src', 'img:data-src']
@@ -218,14 +214,6 @@ module.exports = {
       minify: {
         collapseWhitespace: true
       }
-    }),
-    /*
-    它内联您使用HtmlWebpackPlugin编写为链接或脚本的块。
-    它可用于在脚本标记内嵌入清单以保存http请求，如本示例中所述。 
-    它不仅限于清单块，而是可以内联任何其他块。
-    */
-    new HtmlInlineChunkPlugin({
-      inlineChunks: ['manifest']
     })
   ]
 }

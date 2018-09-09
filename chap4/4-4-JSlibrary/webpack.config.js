@@ -16,10 +16,9 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js'
   },
-  /* resolve: 可以找到本地 jquery */
   resolve: {
     alias: {
-      /* 找到本地的 jquery */
+      /* resolve: 可以找到本地 jquery, src/libs/jquery.js */
       jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
     }
   },
