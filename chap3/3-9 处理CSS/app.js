@@ -16,4 +16,5 @@ setInterval(function () {
   } else {
     base.use()
   }
-})
+  flag = !flag
+}, 1000)

@@ -38,12 +38,12 @@ webpack --config webpack-config.js
 
 ## 3-3 由浅入深 webpack - 编译 ES6
 
-- babel-preset: 规范的总结, 指定浏览器环境(为应用)
-- env: 包含所有规范, es2015, es2016, es2017
-- babel-preset-env: 可以根据配置的目标浏览器或者运行环境来自动将ES2015+的代码转换为es5
-- 可以通过 .babelrc 文件来指定特定的目标浏览器
-- babel-polyfill: 全局垫片污染全局, 能写 es7/8 新方法, 对编译的代码中新的API进行处理, 适合在业务项目中使用, 在 main.js 中引用 `import babel-polyfill`
-- babel-runtime-transform: 局部垫片不会污染全局, 能写 es7/8 新方法, 对编译的代码中新的API进行处理, 适合在组件类库项目中使用, 在 .babelrc 文件中使用
+- babel-core: babel编译库的核心包
+- babel-loader: 帮你来使用babel
+- babel-preset: 规范的总结, 指定浏览器环境(应用开发需要), env 包含所有规范, es2015, es2016, es2017
+- babel-preset-env: 代码编译成什么样子, 可以根据配置的目标浏览器或者运行环境来自动将 ES2015+ 的代码转换为 es5, .babelrc 文件配置特定的目标浏览器
+- babel-polyfill: 全局垫片污染全局, 能写 es7/8 新方法, 对编译的代码中新的API进行处理, 适合在业务项目(开发应用)使用, 在 main.js 中引用 `import babel-polyfill`
+- babel-runtime-transform: 局部垫片不会污染全局, 能写 es7/8 新方法, 对编译的代码中新的API进行处理, 适合在组件类库项目中使用, 在 .babelrc 文件中配置
 
 ```console
 npm install babel-loader@8.0.0-beta.0 @babel/core
@@ -64,29 +64,6 @@ npm i babel-plugin-transform-runtime -D
 npm i @babel/runtime -S
 <!-- 选上 -->
 npm i babel-runtime -S
-```
-
-```js
-{
-  test: /\.js$/,
-  use: {
-    loader: 'babel-loader',
-    options: {
-      /* 规范的总结 */
-      presets: [
-        ['@babel/preset-env', {
-          targets: {
-            /* 指定 Node.js 的版本 */
-            "node": "current",
-            browsers: ['> 1%', 'last 2 versions']
-          }
-        }]
-      ]
-    }
-  },
-  /* 排除规则之外 */
-  exclude: '/node_modules/'
-}
 ```
 
 ## 3-4 由浅入深 webpack - 编译 typescript
@@ -118,22 +95,6 @@ npm i webpack -D
 npm i lodash -S
 ```
 
-```js
-/* optimization 配置自己的自定义模式 */
-/* webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码 */
-optimization: {
-    splitChunks: {
-    name: 'vendor',
-      chunks: "initial", // 必须三选一： "initial" | "all"(默认就是all) | "async",
-      minSize: 0, // 最小尺寸，默认0
-      minChunks: 1, // 最小 chunk ，默认1
-      maxAsyncRequests: 1, // 最大异步请求数， 默认1
-      maxInitialRequests : 1, // 最大初始化请求书，默认1
-  },
-  runtimeChunk: true
-}
-```
-
 ## 3-7, 3-8: 由浅入深 webpack - 代码分割和懒加载
 
 - **src/pageA**
@@ -143,52 +104,33 @@ optimization: {
 ```js
 /* 引入模块, 但不执行, 提前加载第三方模块, 减少加载次数 */
 require.include('./moduleA.js')
-/* ensure 会把没有使用过的 require 资源进行独立分成成一个js文件 */
+/*
+动态加载模块, 懒加载
+把没有使用过的 require 资源进行独立分成一个js文件
+['./subPageA.js']: dependencies(不执行代码)
+callback(执行代码)
+errorCallback(可省略)
+chunkName
+*/
 require.ensure(['./subPageA.js'], function () {
-  /* 真正执行代码 */
+  /* callback(执行代码) */
   let subPageA = require('./subPageA')
 }, 'subPageA')
 ```
 
 ## 3-9, 3-10, 3-11 由浅入深 webpack - 处理 CSS - style-loader
 
-- style-loader: 在引入css时，在最后生成的js文件中进行处理，动态创建style标签，塞到head标签里
-- css-loader: 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了
+- style-loader: 在最后生成的 js 文件中进行处理，动态创建 style 标签，塞到 head 标签里
+- css-loader: 打包时把 css 文件拆出来，css 相关模块最终打包到一个指定的 css 文件中，手动用 link 标签去引入这个 css 文件
 
 ```console
 npm i style-loader css-loader file-loader -D
 ```
 
-```js
-{
-  /* 在引入css时，在最后生成的js文件中进行处理，动态创建style标签，塞到head标签里 */
-  loader: 'style-loader',
-  /* 小众功能, 使用 link 标签, 不能处理多个样式 */
-  // loader: 'style-loader/url',
-  // loader: 'style-loader/useable'
-  options: {
-    /* insertAt(插入位置) */
-    /* insertInto(插入到 dom) */
-    /* insertInto: '#app', */
-    /* singleton (是否只使用一个 style 标签) */
-    singleton: true,
-    /* transform 在样式加载器加载到页面之前修改 CSS */
-    transform: './css.transform.js'
-  }
-},
-{
-  /* 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
-  loader: 'css-loader',
-  /* 小众功能, 使用 link 标签, 不能处理多个样式 */
-  // loader: 'file-loader'
-  options: {
-    /* 是否压缩 */
-    minimize: true,
-    /* 启用 css-modules */
-    modules: true,
-    /* 定义编译出来的名称 */
-    localIdentName: '[path][name]_[local]_[hash:base64:5]'
-  }
+```css
+/* 引入不同文件下的样式 */
+.box {
+  composes: bigBox from './common.css';
 }
 ```
 

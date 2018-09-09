@@ -7,24 +7,31 @@ module.exports = {
   entry: {
     'pageA': './src/pageA',
     'pageB': './src/pageB',
+    /* 第三方依赖, jquery 之类 */
     'vendor': ['lodash']
   },
   output: {
     /* 输出到指定目录下 */
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.js',
+    /* 有新的 chunk 生成 */
     chunkFilename: '[name].chunk.js'
   },
   /* optimization 配置自己的自定义模式 */
-  /* webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码 */
+  /* webpack4 replace webpack.optimize.CommonsChunkPlugin, 提取公共代码 */
   optimization: {
     splitChunks: {
       name: 'vendor',
-      chunks: "initial", // 必须三选一： "initial" | "all"(默认就是all) | "async",
-      minSize: 0, // 最小尺寸，默认0
-      minChunks: 1, // 最小 chunk ，默认1
-      maxAsyncRequests: 1, // 最大异步请求数， 默认1
-      maxInitialRequests : 1, // 最大初始化请求书，默认1
+      // 必须三选一： "initial" | "all"(默认就是all) | "async",
+      chunks: "initial",
+      // 最小尺寸，默认0
+      minSize: 0,
+      // 最小 chunk ，默认1
+      minChunks: 1,
+      // 最大异步请求数， 默认1
+      maxAsyncRequests: 1,
+      // 最大初始化请求书，默认1
+      maxInitialRequests: 1,
       // name: function(){}, // 名称，此选项可接收 function
       // cacheGroups:{ // 这里开始设置缓存的 chunks
       //     priority: 0, // 缓存组优先级
@@ -42,4 +49,11 @@ module.exports = {
       // }
     }
   }
+  /* webpack3 abandon */
+  // plugins: [
+  //   new webpack.optimize.CommonsChunkPlugin({
+  //     name: 'common',
+  //     minChunks: 2
+  //   })
+  // ]
 }
