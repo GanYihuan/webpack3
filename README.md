@@ -113,12 +113,12 @@ errorCallback(可省略)
 chunkName
 */
 require.ensure(
-	['./subPageA.js'],
-	function() {
-		/* callback(执行代码) */
-		let subPageA = require('./subPageA')
-	},
-	'subPageA'
+['./subPageA.js'],
+function() {
+  /* callback(执行代码) */
+  let subPageA = require('./subPageA')
+},
+'subPageA'
 )
 ```
 
@@ -133,10 +133,37 @@ npm i less-loader less -D
 npm i sass-loader node-sass -D
 ```
 
+- style-loader: 在最后生成的 js 文件中进行处理，动态创建 style 标签，塞到 head 标签里
+- css-loader: 打包时把 css 文件拆出来，css 相关模块最终打包到一个指定的 css 文件中，手动用 link 标签去引入这个 css 文件
+
+```console
+npm i style-loader css-loader file-loader -D
+npm i less-loader less -D
+npm i sass-loader console-sass -D
+```
+
+```js
+/* webpack.config.js */
+/* loader: 'style-loader/useable' */
+/* 是否使用 style-loader */
+base.use()
+base.unuse()
+var flag = false
+setInterval(function() {
+  if (flag) {
+    base.unuse()
+    flag = false
+  } else {
+    base.use()
+  }
+  flag = !flag
+}, 1000)
+```
+
 ```css
 /* 引入不同文件下的样式 */
 .box {
-	composes: bigBox from './common.css';
+  composes: bigBox from './common.css';
 }
 ```
 
@@ -147,31 +174,6 @@ npm i sass-loader node-sass -D
 ```console
 npm install extract-text-webpack-plugin webpack -D
 npm i extract-text-webpack-plugin@next -D
-```
-
-```js
-var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-module: {
-  rules: [
-    {
-      test: /\.scss$/,
-      use: ExtractTextWebpackPlugin.extract({
-        /* 提取出来的文件用什么处理 */
-        fallback: {},
-        use: [{}]
-      })
-    }
-  ]
-},
-plugins: [
-  /* 提取 css */
-  new ExtractTextWebpackPlugin({
-    /* 提取出来的 css 文件名字 */
-    filename: '[name].min.css',
-    /* 指定提取 css 范围, 提取初始化 */
-    allChunks: false
-  })
-]
 ```
 
 ## 3-14 由浅入深 webpack - PostCSS-in-webpack
@@ -251,14 +253,18 @@ npm i babel-preset-env -D
 ```js
 /* 放 ExtractTextWebpackPlugin 后面 */
 /* 去除多余的 css */
-new PurifyCss({
-	paths: glob.sync([
-		path.join(__dirname, './*.html'),
-		path.join(__dirname, './src/*.js')
-	])
-}),
-	/* 对 js 文件进行压缩 */
-	new UglifyJsPlugin()
+new PurifyCss(
+  {
+    paths: glob.sync(
+      [
+        path.join(__dirname, './*.html'),
+        path.join(__dirname, './src/*.js')
+      ]
+    )
+  }
+),
+/* 对 js 文件进行压缩 */
+new UglifyJsPlugin()
 ```
 
 ## 4-1, 4-2, 4-3 文件处理（2）- 图片处理 - 压缩图片、自动合成雪碧图 Base64 编码 sprite、retina 处理 处理字体文件
@@ -395,20 +401,22 @@ npm i html-webpack-plugin -S
 ```js
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 /* 生成 HTML */
-new HtmlWebpackPlugin({
-	/* 输出位置文件 */
-	filename: 'index.html',
-	/* 模板文件 */
-	template: './index.html',
-	/* css, js 通过标签形式插入页面中 */
-	// inject: false,
-	/* 指定有哪些要加入到页面来 */
-	chunks: ['app'],
-	/* 压缩 */
-	minify: {
-		collapseWhitespace: true
-	}
-})
+new HtmlWebpackPlugin(
+  {
+    /* 输出位置文件 */
+    filename: 'index.html',
+    /* 模板文件 */
+    template: './index.html',
+    /* css, js 通过标签形式插入页面中 */
+    // inject: false,
+    /* 指定有哪些要加入到页面来 */
+    chunks: ['app'],
+    /* 压缩 */
+    minify: {
+      collapseWhitespace: true
+    }
+  }
+)
 ```
 
 ## 4-6 html in webpack（2） - HTML 中引入图片
@@ -449,6 +457,6 @@ var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 它不仅限于清单块，而是可以内联任何其他块。
 */
 new HtmlInlineChunkPlugin({
-	inlineChunks: ['manifest']
+inlineChunks: ['manifest']
 })
 ```

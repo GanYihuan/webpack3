@@ -10,6 +10,4 @@ arr.includes(8)
 
 console.log('Set(arrB)', new Set(arrB))
 
-function* func() {
-
-}
+function* func() {}
