@@ -21,6 +21,7 @@
 									targets: {
 										/* 指定 Node.js 的版本 */
 										node: 'current',
+										/* 规定浏览器版本 */
 										browsers: ['> 1%', 'last 2 versions']
 									}
 								}

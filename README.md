@@ -28,8 +28,6 @@ webpack-cli init webpack-addons-demo
 
 ## 3-2 由浅入深 webpack - 打包 JS
 
-- 调用 webpack; 使用自定义 webpack 名称调用 webpack
-
 ```console
 webpack
 <!-- 自定义 webpack 打包 -->
