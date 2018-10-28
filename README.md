@@ -124,37 +124,12 @@ function() {
 ## 3-9, 3-10, 3-11, 3-12 由浅入深 webpack - 处理 CSS - style-loader
 
 - style-loader: Adds CSS to the DOM by injecting a `<style> tag`
-- css-loader: 打包时把 css 文件拆出来，css 相关模块最终打包到一个指定的 css 文件中，手动用 link 标签去引入这个 css 文件
+- css-loader: interprets @import and url() like import/require() and will resolve them.
 
 ```console
 npm i style-loader css-loader file-loader -D
 npm i less-loader less -D
 npm i sass-loader node-sass -D
-```
-
-```js
-/* webpack.config.js */
-/* loader: 'style-loader/useable' */
-/* 是否使用 style-loader */
-base.use()
-base.unuse()
-var flag = false
-setInterval(function() {
-  if (flag) {
-    base.unuse()
-    flag = false
-  } else {
-    base.use()
-  }
-  flag = !flag
-}, 1000)
-```
-
-```css
-/* 引入不同文件下的样式 */
-.box {
-  composes: bigBox from './common.css';
-}
 ```
 
 ## 3-13 由浅入深 webpack - 处理 CSS - 提取 CSS
@@ -168,7 +143,7 @@ npm i extract-text-webpack-plugin@next -D
 
 ## 3-14 由浅入深 webpack - PostCSS-in-webpack
 
-- postcss(js 转换 css, 打包时期)
+- postcss(用 js 处理css, 打包时期)
 - autoprefixer(css 前缀)
 - cssnano(压缩优化 css, css-loader 借助了 cssnano 的功能)
 - postcss-cssnext(使用未来的 css 语法)
@@ -183,24 +158,6 @@ npm i babel-loader babel-core -D
 npm i @babel/preset-env -D
 <!-- 选上 -->
 npm i babel-preset-env -D
-```
-
-```js
-{
-  /* 将css3属性添加上厂商前缀 */
-  loader: 'postcss-loader',
-  options: {
-    ident: 'postcss',
-    plugins: [
-      /* 加 css 各浏览器前缀 */
-      require('autoprefixer')(),
-      /* 使用未来的 css 语法 */
-      require('postcss-cssnext')(),
-      /* 压缩优化 css */
-      require('cssnano')()
-    ]
-  }
-},
 ```
 
 - .babelrc 配置 env, 替换下面方法
@@ -224,8 +181,9 @@ npm i lodash-es -S
 <!-- js 压缩 -->
 npm i uglifyjs-webpack-plugin -D
 
-<!-- glob-all: 帮助 PurifyCSS 路径处理，定位 Tree-Shaking 的路径文件 -->
+<!-- glob-all: 加载多路径 -->
 npm i glob-all -D
+<!-- css 压缩 -->
 npm i purifycss-webpack -D
 
 <!-- babel .babelrc 参考 3-3 -->

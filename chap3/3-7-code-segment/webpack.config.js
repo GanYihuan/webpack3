@@ -7,7 +7,7 @@ module.exports = {
 		pageA: './src/pageA'
 	},
 	output: {
-		/* 输出到指定目录下 */
+		/* path.resolve() will return the absolute path of the current working directory. */
 		path: path.resolve(__dirname, './dist'),
 		/* 发布路径 */
 		publicPath: './dist/',

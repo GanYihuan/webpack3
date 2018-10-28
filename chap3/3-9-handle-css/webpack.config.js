@@ -6,9 +6,9 @@ module.exports = {
 		app: './src/app.js'
 	},
 	output: {
-		/* 输出到指定目录下 */
+		/* path.resolve() will return the absolute path of the current working directory. */
 		path: path.resolve(__dirname, 'dist'),
-		/* 引入资源路径 */
+		/* Introducing resource paths */
 		// publicPath: './dist/',
 		filename: '[name].bundle.js'
 	},
@@ -16,7 +16,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.less$/,
-				/* Processing from the back to the front */
+				/* Processe from the back to the front */
 				use: [
 					{
 						/* Adds CSS to the DOM by injecting a <style> tag */
@@ -34,7 +34,7 @@ module.exports = {
 						options: {
 							/* Number of loaders applied before CSS loader */
 							// importLoader
-							/* 是否压缩 */
+							/* Whether to compress */
 							minimize: true,
 							/* Enable/Disable CSS Modules */
 							modules: true,
