@@ -16,49 +16,38 @@ module.exports = {
 		rules: [
 			{
 				test: /\.less$/,
-				/* 从后往前处理 */
+				/* Processing from the back to the front */
 				use: [
 					{
-						/* 在最后生成的 js 文件中进行处理，动态创建 style 标签，塞到 head 标签里 */
+						/* Adds CSS to the DOM by injecting a <style> tag */
 						loader: 'style-loader',
-						/* 小众功能: style-loader 使其插入 link 标签, 不能处理多个样式 */
-						// loader: 'style-loader/url',
-						/* app.js 额外增加 use(), unuse() 方法, 控制样式是否插入页面中 */
-						// loader: 'style-loader/useable'
 						options: {
-							/* insertAt(插入位置) */
-							/* insertInto(插入到 dom) */
-							/* insertInto: '#app', */
-							/* singleton (是否只使用一个 style 标签) */
+							/* Reuses a single <style></style> element, instead of adding/removing individual elements for each required module */
 							singleton: true,
-							/* transform 在 style-loader 塞 style 标签时执行, css 加载前提前判断浏览器 */
+							/* Transform/Conditionally load CSS by passing a transform/condition function */
 							transform: './css.transform.js'
 						}
 					},
 					{
-						/* 打包时把css文件拆出来，css 相关模块最终打包到一个指定的 css 文件中，我们手动用link标签去引入这个 css 文件就可以了 */
+						/* The css-loader interprets @import and url() like import/require() and will resolve them. */
 						loader: 'css-loader',
-						/* 小众功能: style-loader 使其插入 link 标签, 不能处理多个样式 */
-						// loader: 'file-loader'
 						options: {
-							/* 解析的别名 */
-							// alias
-							/* @import */
+							/* Number of loaders applied before CSS loader */
 							// importLoader
 							/* 是否压缩 */
 							minimize: true,
-							/* 启用 css-modules */
+							/* Enable/Disable CSS Modules */
 							modules: true,
-							/* 定义编译出来的名称 */
+							/* Configure the generated ident */
 							localIdentName: '[path][name]_[local]_[hash:base64:5]'
 						}
 					},
 					{
-						/* 放置 css-loader 下面 */
+						/* put css-loader below */
 						loader: 'sass-loader'
 					},
 					{
-						/* 放置 css-loader 下面 */
+						/* put css-loader below */
 						loader: 'less-loader'
 					}
 				]

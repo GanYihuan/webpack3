@@ -84,6 +84,7 @@ typings i lodash -S
 
 ## 3-5, 3-6 由浅入深 webpack - 打包公共代码
 
+- 适用于多 entry 情况
 - 分割 Chunk, 减少代码冗余, 加快速度
 - lodash: 封装了诸多对字符串、数组、对象等常见数据类型的处理函数
 - webpack4 删除了 webpack.optimize.CommonsChunkPlugin
@@ -97,7 +98,7 @@ npm i lodash -S
 
 - **src/pageA**
 - require.ensure: 动态加载模块, callback 才执行
-- require.include: 引入模块(提取引入公共模块))
+- require.include: 引入模块(提取引入公共模块)
 
 ```js
 /* 引入模块, 但不执行, 提前加载第三方模块, 减少加载次数 */
@@ -122,22 +123,13 @@ function() {
 
 ## 3-9, 3-10, 3-11, 3-12 由浅入深 webpack - 处理 CSS - style-loader
 
-- style-loader: 在最后生成的 js 文件中进行处理，动态创建 style 标签，塞到 head 标签里
+- style-loader: Adds CSS to the DOM by injecting a `<style> tag`
 - css-loader: 打包时把 css 文件拆出来，css 相关模块最终打包到一个指定的 css 文件中，手动用 link 标签去引入这个 css 文件
 
 ```console
 npm i style-loader css-loader file-loader -D
 npm i less-loader less -D
 npm i sass-loader node-sass -D
-```
-
-- style-loader: 在最后生成的 js 文件中进行处理，动态创建 style 标签，塞到 head 标签里
-- css-loader: 打包时把 css 文件拆出来，css 相关模块最终打包到一个指定的 css 文件中，手动用 link 标签去引入这个 css 文件
-
-```console
-npm i style-loader css-loader file-loader -D
-npm i less-loader less -D
-npm i sass-loader console-sass -D
 ```
 
 ```js
@@ -225,44 +217,21 @@ npm i babel-preset-env -D
 
 - Tree-shaking(没使用到的代码删除掉)
 - [webpack.optimize.UglifyJsPlugin 版本没有跟上 webpack4 导致问题](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
-- glob-all 的作用就是帮助 PurifyCSS 进行路径处理，定位要做 Tree Shaking 的路径文件
 
 ```console
-<!-- 第三方引用 -->
 npm i lodash-es -S
-<!-- babel -->
-npm i babel-loader babel-core babel-preset-env babel-plugin-lodash -D
-<!-- 对 js 文件进行压缩 -->
+
+<!-- js 压缩 -->
 npm i uglifyjs-webpack-plugin -D
-<!-- glob-all 的作用就是帮助 PurifyCSS 进行路径处理，定位要做 Tree Shaking 的路径文件。 -->
+
+<!-- glob-all: 帮助 PurifyCSS 路径处理，定位 Tree-Shaking 的路径文件 -->
 npm i glob-all -D
 npm i purifycss-webpack -D
 
-<!-- .babelrc 参考 3-3 -->
-npm install babel-loader@8.0.0-beta.0 @babel/core
+<!-- babel .babelrc 参考 3-3 -->
+npm install babel-loader@8.0.0-beta.0 @babel/core @babel/preset-env babel-plugin-lodash -D
 <!-- 选上 -->
-npm i babel-loader babel-core -D
-
-npm i @babel/preset-env -D
-<!-- 选上 -->
-npm i babel-preset-env -D
-```
-
-```js
-/* 放 ExtractTextWebpackPlugin 后面 */
-/* 去除多余的 css */
-new PurifyCss(
-  {
-    paths: glob.sync(
-      [
-        path.join(__dirname, './*.html'),
-        path.join(__dirname, './src/*.js')
-      ]
-    )
-  }
-),
-/* 对 js 文件进行压缩 */
-new UglifyJsPlugin()
+npm i babel-loader babel-core babel-preset-env babel-plugin-lodash -D
 ```
 
 ## 4-1, 4-2, 4-3 文件处理（2）- 图片处理 - 压缩图片、自动合成雪碧图 Base64 编码 sprite、retina 处理 处理字体文件

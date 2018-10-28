@@ -43,12 +43,13 @@ module.exports = {
 							}
 						},
 						{
-							/* 将 css3 属性添加上厂商前缀 */
+              /* 放置 css-loader 下面 */
 							loader: 'postcss-loader',
 							options: {
+                /* ident: require 进来的插件给指定的...使用 */
 								ident: 'postcss',
 								plugins: [
-									/* 加 css 各浏览器前缀 */
+									/* 将 css3 属性添加上厂商前缀 */
 									require('autoprefixer')(),
 									/* 使用未来的 css 语法 */
 									require('postcss-cssnext')(),

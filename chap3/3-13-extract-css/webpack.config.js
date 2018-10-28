@@ -18,32 +18,32 @@ module.exports = {
 				test: /\.scss$/,
 				/* 提取 css */
 				use: ExtractTextWebpackPlugin.extract({
-					/* 提取出来的文件用什么处理 */
+					/* ... should be used when the CSS is not extracted */
 					fallback: {
-						/* 在引入css时，在最后生成的js文件中进行处理，动态创建style标签，塞到head标签里 */
+						/* Adds CSS to the DOM by injecting a <style> tag */
 						loader: 'style-loader',
 						options: {
-							/* singleton(是否只使用一个 style 标签) */
+							/* Reuses a single <style></style> element, instead of adding/removing individual elements for each required module */
 							singleton: true,
-							/* transform(转化, 浏览下, 插入页面前, 根据不同浏览器配置不同样式) */
+							/* Transform/Conditionally load CSS by passing a transform/condition function */
 							transform: './css.transform.js'
 						}
 					},
 					use: [
 						{
-							/* 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
+							/* The css-loader interprets @import and url() like import/require() and will resolve them. */
 							loader: 'css-loader',
 							options: {
 								/* 是否压缩 */
 								minimize: true,
-								/* 启用 css-modules */
+								/* Enable/Disable CSS Modules */
 								modules: true,
-								/* 定义编译出来的名称 */
+								/* Configure the generated ident */
 								localIdentName: '[path][name]_[local]_[hash:base64:5]'
 							}
 						},
 						{
-							/* 放置 css-loader 下面 */
+							/* put css-loader below */
 							loader: 'sass-loader'
 						}
 					]
@@ -52,11 +52,11 @@ module.exports = {
 		]
 	},
 	plugins: [
-		/* 提取 css */
+		/* Extract text from a bundle, or bundles, into a separate file. */
 		new ExtractTextWebpackPlugin({
-			/* 提取出来的 css 文件名字 */
+			/* Name of the result file */
 			filename: '[name].min.css',
-			/* 指定提取 css 范围, 提取初始化 */
+			/* Extract from all additional chunks(by default it extracts only from the initial chunk) */
 			allChunks: false
 		})
 	]
