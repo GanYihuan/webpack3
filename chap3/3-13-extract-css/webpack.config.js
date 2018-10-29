@@ -10,8 +10,10 @@ module.exports = {
 		/* path.resolve() will return the absolute path of the current working directory. */
 		path: path.resolve(__dirname, 'dist'),
 		/* Introducing resource paths */
-		// publicPath: './dist/',
-		filename: '[name].bundle.js',
+    // publicPath: './dist/',
+    /* Initialize packaged file name */
+    filename: '[name].bundle.js',
+    /* dynamic packaged file name */
 		chunkFilename: '[name].bundle.js'
 	},
 	module: {
