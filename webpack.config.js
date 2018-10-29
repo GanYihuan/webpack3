@@ -5,6 +5,7 @@ var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var PurifyCss = require('purifycss-webpack')
 var glob = require('glob-all')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 // var extractLess = new ExtractTextWebpackPlugin({
 // 	filename: 'css/[name]-bundle-[hash:5].css'
 // })
@@ -166,18 +167,20 @@ module.exports = {
 						}
 					}
 				]
-      },
-      {
-        test: /\.html$/,
-        use: [{
-          /* Exports HTML as string */
-          loader: 'html-loader',
-          options: {
-            /* HTML handle import img */
-            attrs: ['img:src', 'img:data-src']
-          }
-        }]
-      }
+			},
+			{
+				test: /\.html$/,
+				use: [
+					{
+						/* Exports HTML as string */
+						loader: 'html-loader',
+						options: {
+							/* HTML handle import img */
+							attrs: ['img:src', 'img:data-src']
+						}
+					}
+				]
+			}
 		]
 	},
 	plugins: [
@@ -210,11 +213,15 @@ module.exports = {
 			/* css, js Insert into the page by label */
 			// inject: false,
 			/* Specify which ones to add to the html page */
-			chunks: ['app'],
+			// chunks: ['app'],
 			/* compress */
 			minify: {
 				collapseWhitespace: true
 			}
+    }),
+    /* inline your chunks that is written as links or script using HtmlWebpackPlugin */
+		new HtmlInlineChunkPlugin({
+			inlineChunks: ['manifest']
 		})
 	]
 }
