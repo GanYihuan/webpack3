@@ -7,10 +7,6 @@ var glob = require('glob-all')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 
-var extractLess = new ExtractTextWebpackPlugin({
-  filename: 'css/[name]-bundle-[hash:5].css'
-})
-
 module.exports = {
   mode: 'production',
   entry: {
