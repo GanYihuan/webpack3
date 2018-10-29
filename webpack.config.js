@@ -4,6 +4,10 @@ var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var PurifyCss = require('purifycss-webpack')
 var glob = require('glob-all')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var extractLess = new ExtractTextWebpackPlugin({
+	filename: 'css/[name]-bundle-[hash:5].css'
+})
 
 module.exports = {
 	mode: 'production',
@@ -22,9 +26,9 @@ module.exports = {
 	},
 	/* Configure how modules are resolved */
 	resolve: {
-    /* Create alias to import or require certain modules more easily */
+		/* Create alias to import or require certain modules more easily */
 		alias: {
-      /* local js import */
+			/* local js import */
 			jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
 		}
 	},
@@ -155,7 +159,7 @@ module.exports = {
 				test: path.resolve(__dirname, 'src/app.js'),
 				use: [
 					{
-            /* The imports loader allows you to use modules that depend on specific global variables. */
+						/* The imports loader allows you to use modules that depend on specific global variables. */
 						loader: 'imports-loader',
 						options: {
 							$: 'jquery'
@@ -181,11 +185,25 @@ module.exports = {
 			])
 		}),
 		/* js compress */
-    new UglifyJsPlugin(),
-    /* Automatically load modules instead of having to import or require them everywhere. */
+		new UglifyJsPlugin(),
+		/* Automatically load modules instead of having to import or require them everywhere. */
 		/* third-party modules js import (use npm) */
 		new webpack.ProvidePlugin({
 			$: 'jquery'
+		}),
+		/* The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles */
+		new HtmlWebpackPlugin({
+			/* output file name */
+			filename: 'index.html',
+			template: './index.html',
+			/* css, js Insert into the page by label */
+			// inject: false,
+			/* Specify which ones to add to the html page */
+			chunks: ['app'],
+			/* compress */
+			minify: {
+				collapseWhitespace: true
+			}
 		})
 	]
 }
