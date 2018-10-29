@@ -20,7 +20,7 @@ module.exports = {
 						loader: 'style-loader',
 						options: {
 							singleton: true,
-							transform: ''
+							transform: './css-transform.js'
 						}
 					},
 					use: [
@@ -29,7 +29,18 @@ module.exports = {
 							options: {
 								minimize: true,
 								modules: true,
-								localIdentName: ''
+								localIdentName: '[path][name]_[local]_[hash:base64:5]'
+							}
+						},
+						{
+							loader: 'postcss-loader',
+							options: {
+								ident: 'postcss',
+								plugins: [
+									require('autoprefixer')(),
+									require('postcss-cssnext')(),
+									require('cssnano')()
+								]
 							}
 						},
 						{
@@ -42,7 +53,7 @@ module.exports = {
 	},
 	plugins: [
 		new ExtractTextWebpackPlugin({
-			filename: '[name].bundle.js',
+			filename: '[name].min.css',
 			allChunks: false
 		})
 	]

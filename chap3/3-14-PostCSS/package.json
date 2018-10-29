@@ -25,5 +25,9 @@
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.15.0"
-  }
+  },
+  "browserlist": [
+    ">= 1%",
+    "last 2 versions"
+  ]
 }
