@@ -34,9 +34,9 @@ module.exports = {
 						options: {
 							/* Number of loaders applied before CSS loader */
 							// importLoader
-							/* Whether to compress */
+							/* compress ? */
 							minimize: true,
-							/* Enable/Disable CSS Modules */
+							/* Enable/Disable css-modules */
 							modules: true,
 							/* Configure the generated ident */
 							localIdentName: '[path][name]_[local]_[hash:base64:5]'
