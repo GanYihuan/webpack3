@@ -10,26 +10,26 @@
 		rules: [
 			{
 				test: /\.js$/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						/* 规范的总结 */
-						presets: [
-							[
-								'@babel/preset-env',
-								{
-									targets: {
-										/* 指定 Node.js 的版本 */
-										node: 'current',
-										/* 规定浏览器版本 */
-										browsers: ['> 1%', 'last 2 versions']
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							/* Specification summary */
+							presets: [
+								[
+									'@babel/preset-env',
+									{
+										targets: {
+											/* Designation Node.js version */
+											node: 'current',
+											browsers: ['> 1%', 'last 2 versions']
+										}
 									}
-								}
+								]
 							]
-						]
+						}
 					}
-				},
-				/* 排除规则之外 */
+				],
 				exclude: '/node_modules/'
 			}
 		]
