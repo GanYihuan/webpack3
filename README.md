@@ -187,80 +187,16 @@ npm i jquery -S
 npm i imports-loader -D
 ```
 
-```js
-<!-- install jquery 后, 可以不用引入 jquery -->
-plugins: [
-  /* 第三方 js 库 */
-  new webpack.ProvidePlugin({
-    $: 'jquery'
-  })
-]
-```
-
-```js
-<!-- 找到本地 jquery, src/libs/jquery.js -->
-resolve: {
-  alias: {
-    jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
-  }
-},
-```
-
-```js
-<!-- 第三方 js 库 -->
-{
-  test: path.resolve(__dirname, 'src/app.js'),
-  use: [{
-    loader: 'imports-loader',
-    options: {
-      $: 'jquery'
-    }
-  }]
-}
-```
-
 ## 4-5 html in webpack（1） - 处理 HTML
 
 ```console
 npm i html-webpack-plugin -S
 ```
 
-```js
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-/* 生成 HTML */
-new HtmlWebpackPlugin({
-  /* 输出位置文件 */
-  filename: 'index.html',
-  /* 模板文件 */
-  template: './index.html',
-  /* css, js 通过标签形式插入页面中 */
-  // inject: false,
-  /* 指定有哪些要加入到页面来 */
-  chunks: ['app'],
-  /* 压缩 */
-  minify: {
-    collapseWhitespace: true
-  }
-})
-```
-
 ## 4-6 html in webpack（2） - HTML 中引入图片
 
 ```console
 npm i html-loader -S
-```
-
-```js
-{
-  test: /\.html$/,
-  use: [{
-    /* 将 HMTL 模板文件当做一个 string 输出 */
-    loader: 'html-loader',
-    options: {
-      attrs: ['img:src', 'img:data-src']
-    }
-  }]
-}
 ```
 
 ## 4-7 html in webpack（3） - 配合优化
@@ -272,16 +208,4 @@ npm i html-loader -S
 npm i inline-mainifest-webpack-plugin -D
 <!-- 选择各种 chunk 插入 html 中 -->
 npm i html-webpack-inline-chunk-plugin -D
-```
-
-```js
-var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-/*
-它内联您使用HtmlWebpackPlugin编写为链接或脚本的块。
-它可用于在脚本标记内嵌入清单以保存http请求，如本示例中所述
-它不仅限于清单块，而是可以内联任何其他块。
-*/
-new HtmlInlineChunkPlugin({
-  inlineChunks: ['manifest']
-})
 ```
