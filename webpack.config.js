@@ -5,9 +5,9 @@ var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var PurifyCss = require('purifycss-webpack')
 var glob = require('glob-all')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var extractLess = new ExtractTextWebpackPlugin({
-	filename: 'css/[name]-bundle-[hash:5].css'
-})
+// var extractLess = new ExtractTextWebpackPlugin({
+// 	filename: 'css/[name]-bundle-[hash:5].css'
+// })
 
 module.exports = {
 	mode: 'production',
@@ -18,7 +18,7 @@ module.exports = {
 		/* path.resolve() will return the absolute path of the current working directory. */
 		path: path.resolve(__dirname, 'dist'),
 		/* Introducing resource paths */
-		// publicPath: './dist/',
+		publicPath: '/',
 		/* Initialize packaged file name */
 		filename: '[name].bundle.js',
 		/* dynamic packaged file name */
@@ -166,7 +166,18 @@ module.exports = {
 						}
 					}
 				]
-			}
+      },
+      {
+        test: /\.html$/,
+        use: [{
+          /* Exports HTML as string */
+          loader: 'html-loader',
+          options: {
+            /* HTML handle import img */
+            attrs: ['img:src', 'img:data-src']
+          }
+        }]
+      }
 		]
 	},
 	plugins: [
