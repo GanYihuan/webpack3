@@ -209,3 +209,16 @@ npm i inline-mainifest-webpack-plugin -D
 <!-- 选择各种 chunk 插入 html 中 -->
 npm i html-webpack-inline-chunk-plugin -D
 ```
+
+## 5-1 开发环境 - Webpack Watch Mode
+
+```console
+npm install clean-webpack-plugin -D
+```
+
+```console
+webpack -w
+webpack -w --progress --color --display-reasons
+```
+
+## 5-2 开发环境 - Webpack Dev Server - 本地 rewrite 规则-

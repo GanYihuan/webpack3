@@ -6,6 +6,7 @@ var PurifyCss = require('purifycss-webpack')
 var glob = require('glob-all')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
+var CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
 	mode: 'production',
@@ -219,6 +220,7 @@ module.exports = {
     /* inline your chunks that is written as links or script using HtmlWebpackPlugin */
 		new HtmlInlineChunkPlugin({
 			inlineChunks: ['manifest']
-		})
+    }),
+    new CleanWebpackPlugin(['dist'])
 	]
 }
