@@ -7,8 +7,10 @@ module.exports = {
 		app: './src/app.js'
 	},
 	output: {
-		/* 输出到指定目录下 */
+		/* path.resolve() will return the absolute path of the current working directory. */
 		path: path.resolve(__dirname, 'dist'),
+		/* Introducing resource paths */
+		// publicPath: './dist/',
 		filename: '[name].bundle.js',
 		chunkFilename: '[name].bundle.js'
 	},
@@ -16,9 +18,9 @@ module.exports = {
 		rules: [
 			{
 				test: /\.scss$/,
-				/* 提取 css */
+				/* Processe from the back to the front */
 				use: ExtractTextWebpackPlugin.extract({
-					/* ... should be used when the CSS is not extracted */
+					/* `loader` should be used when the CSS is not extracted */
 					fallback: {
 						/* Adds CSS to the DOM by injecting a <style> tag */
 						loader: 'style-loader',
@@ -34,9 +36,9 @@ module.exports = {
 							/* The css-loader interprets @import and url() like import/require() and will resolve them. */
 							loader: 'css-loader',
 							options: {
-								/* 是否压缩 */
+								/* compress? */
 								minimize: true,
-								/* Enable/Disable CSS Modules */
+								/* Enable/Disable css-modules */
 								modules: true,
 								/* Configure the generated ident */
 								localIdentName: '[path][name]_[local]_[hash:base64:5]'
@@ -45,6 +47,10 @@ module.exports = {
 						{
 							/* put css-loader below */
 							loader: 'sass-loader'
+						},
+						{
+							/* put css-loader below */
+							loader: 'less-loader'
 						}
 					]
 				})

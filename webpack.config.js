@@ -1,14 +1,39 @@
+var path = require('path')
+
 module.exports = {
-  entry: {
-    vendor: "./src/index.js"
-  },
-  mode: "development",
-  module: {
-    rules: []
-  },
-  plugins: [],
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname,"dist")
-  },
+	mode: 'production',
+	entry: {
+		app: './src/app.js'
+	},
+	output: {
+		path: path.resolve(__dirname, 'dist'),
+		filename: '[name].bundle.js'
+	},
+	module: {
+		rules: [
+			{
+				test: /\.less$/,
+				use: [
+					{
+						loader: 'style-loader',
+						options: {
+							singleton: true,
+							transform: './css/css-transform.js'
+						}
+					},
+					{
+						loader: 'css-loader',
+						options: {
+							minimize: true,
+							modules: true,
+							localIdentName: ''
+						}
+					},
+					{
+						loader: 'sass-loader'
+					}
+				]
+			}
+		]
+	}
 }

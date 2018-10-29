@@ -30,7 +30,7 @@ module.exports = {
 					},
 					{
 						/* The css-loader interprets @import and url() like import/require() and will resolve them. */
-						loader: 'css-loader',
+						loader: 'css-loader', 
 						options: {
 							/* Number of loaders applied before CSS loader */
 							// importLoader
