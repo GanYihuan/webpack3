@@ -100,27 +100,6 @@ npm i lodash -S
 - require.ensure: 动态加载模块, callback 才执行
 - require.include: 引入模块(提取引入公共模块)
 
-```js
-/* 引入模块, 但不执行, 提前加载第三方模块, 减少加载次数 */
-require.include('./moduleA.js')
-/*
-动态加载模块, 懒加载
-把没有使用过的 require 资源进行独立分成一个js文件
-['./subPageA.js']: dependencies(不执行代码)
-callback(执行代码)
-errorCallback(可省略)
-chunkName
-*/
-require.ensure(
-['./subPageA.js'],
-function() {
-  /* callback(执行代码) */
-  let subPageA = require('./subPageA')
-},
-'subPageA'
-)
-```
-
 ## 3-9, 3-10, 3-11, 3-12 由浅入深 webpack - 处理 CSS - style-loader
 
 - style-loader: Adds CSS to the DOM by injecting a `<style> tag`
@@ -143,7 +122,7 @@ npm i extract-text-webpack-plugin@next -D
 
 ## 3-14 由浅入深 webpack - PostCSS-in-webpack
 
-- postcss(用 js 处理css, 打包时期)
+- postcss(用 js 处理 css, 打包时期)
 - autoprefixer(css 前缀)
 - cssnano(压缩优化 css, css-loader 借助了 cssnano 的功能)
 - postcss-cssnext(使用未来的 css 语法)
@@ -201,83 +180,6 @@ npm i file-loader url-loader img-loader postcss-sprites -D
 - 1@2x.png retina 屏幕上用的图片
 - 样式表 1px = retina 2px
 
-```js
-{
-  /* 将css3属性添加上厂商前缀 */
-  loader: 'postcss-loader',
-  options: {
-    ident: 'postcss',
-    plugins: [
-      /* 雪碧图 图片合并成一张图 */
-      require('postcss-sprites')({
-        spritePath: 'dist/assets/imgs/sprites',
-        retina: true
-      })
-    ]
-  }
-},
-{
-  test: /\.(png|jpg|jpeg|gif)$/,
-  use: [
-    // {
-    //   loader: 'file-loader',
-    //   options: {
-    //     limit: 1000,
-    //     /* 图片地址不对, 设置绝对路径 */
-    //     publicPath: '',
-    //     /* 放到 dist 目录 */
-    //     outputPath: 'dist/',
-    //     /* 设置相对路径 */
-    //     useRelativePath: true
-    //   }
-    // },
-    {
-      /* base64 */
-      loader: 'url-loader',
-      options: {
-        name: '[name]-[hash:5].[ext]',
-        /* 超出 1000 处理成 base64 */
-        limit: 1000,
-        /* 图片地址不对, 设置绝对路径 */
-        publicPath: '',
-        /* 放到 dist 目录 */
-        outputPath: 'dist/',
-        /* 设置相对路径 */
-        useRelativePath: true
-      }
-    },
-    {
-      /* 压缩图片 */
-      loader: 'img-loader',
-      options: {
-        pngquant: {
-          /* 压缩 png */
-          quality: 80
-        }
-      }
-    }
-  ]
-},
-{
-  /* 字体文件 */
-  test: /\.(eot|woff2?|ttf|svg)$/,
-  use: [{
-    loader: 'url-loader',
-    options: {
-      name: '[name]-[hash:5].[ext]',
-      /* 超出 5000 处理成 base64 */
-      limit: 5000,
-      /* 图片地址不对, 设置绝对路径 */
-      publicPath: '',
-      /* 放到 dist 目录 */
-      outputPath: 'dist/',
-      /* 设置相对路径 */
-      useRelativePath: true
-    }
-  }]
-}
-```
-
 ## 4-4 文件处理（4）- 处理第三方 JS 库（providePlugin、imports-loader）
 
 ```console
@@ -326,22 +228,20 @@ npm i html-webpack-plugin -S
 ```js
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 /* 生成 HTML */
-new HtmlWebpackPlugin(
-  {
-    /* 输出位置文件 */
-    filename: 'index.html',
-    /* 模板文件 */
-    template: './index.html',
-    /* css, js 通过标签形式插入页面中 */
-    // inject: false,
-    /* 指定有哪些要加入到页面来 */
-    chunks: ['app'],
-    /* 压缩 */
-    minify: {
-      collapseWhitespace: true
-    }
+new HtmlWebpackPlugin({
+  /* 输出位置文件 */
+  filename: 'index.html',
+  /* 模板文件 */
+  template: './index.html',
+  /* css, js 通过标签形式插入页面中 */
+  // inject: false,
+  /* 指定有哪些要加入到页面来 */
+  chunks: ['app'],
+  /* 压缩 */
+  minify: {
+    collapseWhitespace: true
   }
-)
+})
 ```
 
 ## 4-6 html in webpack（2） - HTML 中引入图片
@@ -382,6 +282,6 @@ var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 它不仅限于清单块，而是可以内联任何其他块。
 */
 new HtmlInlineChunkPlugin({
-inlineChunks: ['manifest']
+  inlineChunks: ['manifest']
 })
 ```

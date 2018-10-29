@@ -8,10 +8,12 @@ module.exports = {
 	},
 	output: {
 		/* path.resolve() will return the absolute path of the current working directory. */
-		path: path.resolve(__dirname, './dist'),
-		/* 发布路径 */
-		publicPath: './dist/',
+		path: path.resolve(__dirname, 'dist'),
+		/* Introducing resource paths */
+		// publicPath: './dist/',
+		/* Initialize packaged file name */
 		filename: '[name].bundle.js',
-		chunkFilename: '[name].chunk.js'
+		/* dynamic packaged file name */
+		chunkFilename: '[name].bundle.js'
 	}
 }

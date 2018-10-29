@@ -1,34 +1,21 @@
+let path = require('path')
+
 module.exports = {
   mode: 'production',
   entry: {
-    app: './src/app.js'
-  },
-  output: {
     filename: '[name].bundle.js'
   },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                [
-                  '@babel/babel-env',
-                  {
-                    targets: {
-                      node: 'current',
-                      browserlist: ['> 1%', 'last 2 versions']
-                    }
-                  }
-                ]
-              ]
-            }
-          }
-        ]
-      }
-    ]
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js'
+  },
+  optimization: {
+    splitChunks: {
+      name: 'vendor',
+      chunks: 'initial',
+      minSize: 3000,
+      minChunks: 2
+    }
   }
 }
