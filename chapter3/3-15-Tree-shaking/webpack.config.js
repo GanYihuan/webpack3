@@ -10,14 +10,32 @@ module.exports = {
 		app: './src/app.js'
 	},
 	output: {
-		/* path.resolve() will return the absolute path of the current working directory. */
+		/* return the absolute path of the current working directory */
 		path: path.resolve(__dirname, 'dist'),
 		/* Introducing resource paths */
 		// publicPath: './dist/',
-		/* Initialize packaged file name */
+		/* init packaged file name */
 		filename: '[name].bundle.js',
 		/* dynamic packaged file name */
 		chunkFilename: '[name].bundle.js'
+  },
+	optimization: {
+    /* package, Multiple files can only work */
+		// [splitChunks](https://webpack.docschina.org/plugins/split-chunks-plugin/)
+		splitChunks: {
+			// name of the split chunk
+			name: 'vendor',
+			// which chunks will be selected for optimization, "initial" | "all"(default) | "async",
+			chunks: 'initial',
+			// mini size for a chunk to be generated.
+			minSize: 30000,
+			// mini number of chunks that must share a module before splitting.
+			minChunks: 2,
+			// max number of parallel requests when on-demand loading.
+			maxAsyncRequests: 1,
+			// max number of parallel requests at an entry point.
+			maxInitialRequests: 1
+		}
 	},
   module: {
     rules: [
@@ -30,15 +48,15 @@ module.exports = {
 						/* Adds CSS to the DOM by injecting a <style> tag */
 						loader: 'style-loader',
 						options: {
-							/* Reuses a single <style></style> element, instead of adding/removing individual elements for each required module */
+							/* Reuses a single <style></style> element */
 							singleton: true,
-							/* Transform/Conditionally load CSS by passing a transform/condition function */
+							/* load CSS by passing a XX function */
 							transform: './css.transform.js'
 						}
 					},
           use: [
 						{
-							/* The css-loader interprets @import and url() like import/require() and will resolve them. */
+							/* interprets @import and url() like import/require() and will resolve them. */
 							loader: 'css-loader',
 							options: {
 								/* compress? */

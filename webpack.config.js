@@ -1,8 +1,7 @@
 var path = require('path')
-var ExtractTextWepackPlugin = require('extract-text-webpack-plugin')
+var Extract = require('extract-text-webpack-plugin')
 var PurifyCss = require('purifycss-webpack')
-var UgrifyJsPlugin = require('ugrifyjs-webpack')
-var glob = require('glob-all')
+var UglifyJs = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   mode: 'production',
@@ -13,14 +12,24 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: './dist',
     filename: '[name].bundle.js',
-    chunkFilename: '[name].chunk.js'
+    chunkFilename: '[name].bundle.js'
+  },
+  optimization: {
+    splitChunks: {
+      name: 'vendor',
+      chunks: 'initial',
+      minSize: 30000,
+      minChunks: true,
+      maxInitialRequest: 1,
+      maxSyncRequest: 1
+    }
   },
   module: {
     rules: [
       {
         test: /\.scss$/,
-        use: ExtractTextWepackPlugin.extract({
-          fallbacl: {
+        use: Extract.extract({
+          fallback: {
             loader: 'style-loader',
             options: {
               singleton: true,
@@ -33,7 +42,7 @@ module.exports = {
               options: {
                 minimize: true,
                 modules: true,
-                localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                localIdentname: '[path][name]_[local]_[hash:base64:5]'
               }
             },
             {
@@ -61,7 +70,7 @@ module.exports = {
             options: {
               presets: [
                 [
-                  '@babel/preset-env',
+                  '@babel/babel-loader',
                   {
                     targets: {
                       node: 'current',
@@ -77,16 +86,16 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextWepackPlugin({
+    new Extract({
       filename: '[name].min.css',
-      allChunks: false
+      fallback: true
     }),
     new PurifyCss({
-      paths: glob.sync([
+      paths: global.sync([
         path.join(__dirname, './*.html'),
         path.join(__dirname, './src/*.js')
       ])
     }),
-    new UgrifyJsPlugin()
+    new UglifyJs()
   ]
 };
