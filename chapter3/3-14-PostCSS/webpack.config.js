@@ -50,7 +50,7 @@ module.exports = {
 							/* put css-loader below */
 							loader: 'postcss-loader',
 							options: {
-								/*  webpack requires an identifier (ident) in options when {Function}/require is used (Complex Options). The ident can be freely named as long as it is unique. It's recommended to name it (ident: 'postcss') */
+								/*  webpack requires an identifier in options when {Function}/require is used (Complex Options). The ident can be freely named as long as it is unique. It's recommended to name it (ident: 'postcss') */
 								ident: 'postcss',
 								plugins: [
 									/* css3 Attribute added vendor prefix */

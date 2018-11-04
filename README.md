@@ -217,8 +217,12 @@ npm install clean-webpack-plugin -D
 ```
 
 ```console
-webpack -w
+webpack --watch
 webpack -w --progress --color --display-reasons
 ```
 
 ## 5-2 开发环境 - Webpack Dev Server - 本地 rewrite 规则-
+
+```console
+npm install webpack-dev-server -D
+```

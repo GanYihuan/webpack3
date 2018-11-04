@@ -1,4 +1,3 @@
-var webpack = require('webpack')
 var path = require('path')
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -95,6 +94,7 @@ module.exports = {
 		}),
     /* put ExtractTextWebpackPlugin below */
     new PurifyCss({
+      // glob: 加载多路径
       paths: glob.sync([
         path.join(__dirname, './*.html'),
         path.join(__dirname, './src/*.js')

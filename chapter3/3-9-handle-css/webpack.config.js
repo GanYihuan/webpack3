@@ -22,15 +22,15 @@ module.exports = {
 						/* Adds CSS to the DOM by injecting a <style> tag */
 						loader: 'style-loader',
 						options: {
-							/* Reuses a single <style></style> element, instead of adding/removing individual elements for each required module */
+							/* Reuses a single <style></style> element */
 							singleton: true,
-							/* Transform/Conditionally load CSS by passing a transform/condition function */
+							/* load CSS by passing define function */
 							transform: './css.transform.js'
 						}
 					},
 					{
 						/* The css-loader interprets @import and url() like import/require() and will resolve them. */
-						loader: 'css-loader', 
+						loader: 'css-loader',
 						options: {
 							/* Number of loaders applied before CSS loader */
 							// importLoader

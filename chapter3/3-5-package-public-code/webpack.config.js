@@ -8,13 +8,13 @@ module.exports = {
 		vendor: ['lodash']
 	},
 	output: {
-		/* path.resolve() will return the absolute path of the current working directory. */
+		/* path.resolve(): return the absolute path of the current working directory */
     path: path.resolve(__dirname, './dist'),
-    /* Introducing resource paths */
+    /* introduce resource paths */
 		// publicPath: './dist/',
-		/* Initialize packaged file name */
+		/* initialize packaged fileName */
 		filename: '[name].bundle.js',
-    /* dynamic packaged file name */
+    /* dynamic packaged fileName */
 		chunkFilename: '[name].chunk.js'
 	},
 	/* Extract common code */
@@ -22,7 +22,7 @@ module.exports = {
     /* package, Multiple files can only work */
 		// [splitChunks](https://webpack.docschina.org/plugins/split-chunks-plugin/)
 		splitChunks: {
-			// The name of the split chunk
+			// name of the split chunk
 			name: 'vendor',
 			// This indicates which chunks will be selected for optimization, "initial" | "all"(default) | "async",
 			chunks: 'initial',
