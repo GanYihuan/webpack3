@@ -4,7 +4,8 @@ module.exports = {
 	mode: 'production',
 	entry: {
 		pageA: './src/pageA',
-		pageB: './src/pageB',
+    pageB: './src/pageB',
+    // third-part package
 		vendor: ['lodash']
 	},
 	output: {
@@ -12,7 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     /* introduce resource paths */
 		// publicPath: './dist/',
-		/* initialize packaged fileName */
+		/* init packaged fileName */
 		filename: '[name].bundle.js',
     /* dynamic packaged fileName */
 		chunkFilename: '[name].chunk.js'
@@ -24,11 +25,11 @@ module.exports = {
 		splitChunks: {
 			// name of the split chunk
 			name: 'vendor',
-			// This indicates which chunks will be selected for optimization, "initial" | "all"(default) | "async",
+			// which chunks will be selected for optimization, "initial" | "all"(default) | "async",
 			chunks: 'initial',
 			// Minimum size for a chunk to be generated.
 			minSize: 30000,
-			// Minimum number of chunks that must share a module before splitting.
+			// mini number of chunks that must share a module before splitting
 			minChunks: 2,
 			// Maximum number of parallel requests when on-demand loading.
 			maxAsyncRequests: 1,

@@ -1,11 +1,11 @@
+var webpack = require('webpack')
 var path = require('path')
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-var webpack = require('webpack')
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-var PurifyCss = require('purifycss-webpack')
-var glob = require('glob-all')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
+var PurifyCss = require('purifycss-webpack')
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+var glob = require('glob-all')
 
 module.exports = {
   mode: 'production',

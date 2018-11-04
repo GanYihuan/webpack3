@@ -19,27 +19,31 @@ module.exports = {
 				/* Processe from the back to the front */
 				use: [
 					{
-						/* Adds CSS to the DOM by injecting a <style> tag */
+            /* Adds CSS to the DOM by injecting a <style> tag */
 						loader: 'style-loader',
 						options: {
 							/* Reuses a single <style></style> element */
 							singleton: true,
-							/* load CSS by passing define function */
-							transform: './css.transform.js'
+							/* load CSS by pase custom function */
+              transform: './css.transform.js'
+              /* <style></style> insert into given position */
+              // insertInto: '#app',
+              /* <style></style> insert at given position */
+              // insertAt: '#app'
 						}
 					},
 					{
 						/* The css-loader interprets @import and url() like import/require() and will resolve them. */
 						loader: 'css-loader',
 						options: {
-							/* Number of loaders applied before CSS loader */
+							/* number of loaders applied before CSS loader */
 							// importLoader
 							/* compress ? */
 							minimize: true,
-							/* Enable/Disable css-modules */
+							/* enable css-modules ? */
 							modules: true,
-							/* Configure the generated ident */
-							localIdentName: '[path][name]_[local]_[hash:base64:5]'
+							/* configure the generate ident */
+							localIdentName: '[path][name]_[local]--[hash:base64:5]'
 						}
 					},
 					{
