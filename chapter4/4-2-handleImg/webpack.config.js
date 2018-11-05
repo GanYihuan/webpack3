@@ -99,11 +99,13 @@ module.exports = {
 						options: {
 							name: '[name]-[hash:5].[ext]',
 							/* over 1000 handle to base64 */
-							limit: 1000,
+              limit: 1000,
+              /* 使其位于绝对路径地址 */
 							/* Set absolute path */
 							publicPath: '',
 							/* put dist file dialog */
 							outputPath: 'dist/',
+              /* 不设置的话, 放在 dist 里, 设置后放在 assets 下 */
 							/* Set relative path */
 							useRelativePath: true
 						}

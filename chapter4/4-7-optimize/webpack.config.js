@@ -215,11 +215,7 @@ module.exports = {
         collapseWhitespace: true
       }
     }),
-    /*
-    它内联您使用 HtmlWebpackPlugin 编写为链接或脚本的块。
-    它可用于在脚本标记内嵌入清单以保存 http 请求，如本示例中所述。 
-    它不仅限于清单块，而是可以内联任何其他块。
-    */
+    /* chunk 加到 html 中 */
     new HtmlInlineChunkPlugin({
       inlineChunks: ['manifest']
     })
