@@ -70,7 +70,7 @@ module.exports = {
                 ident: 'postcss',
                 plugins: [
                   /* 加 css 各浏览器前缀 */
-                  // require('autoprefixer')(),
+                  require('autoprefixer')(),
                   /* 使用未来的 css 语法 */
                   require('postcss-cssnext')(),
                   /* 压缩 css */
@@ -97,6 +97,17 @@ module.exports = {
           options: {
             // presets: ['env'],
             presets: ['@babel/preset-env'],
+            // presets: [
+            //   [
+            //     '@babel/preset-env',
+            //     {
+            //       targets: {
+            //         node: current,
+            //         browsers: ['> 1%', 'last 2 versions']
+            //       }
+            //     }
+            //   ]
+            // ],
             plugins: ['lodash']
           }
         }]
