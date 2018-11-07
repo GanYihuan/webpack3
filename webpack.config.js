@@ -1,5 +1,4 @@
 var webpack = require('webpack')
-var path = require('path')
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 var PurifyCssWebpack = require('purifycss-webpack')
 var UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin')
@@ -14,22 +13,22 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'dist',
+    publicPath: 'dist/',
     filename: '[name]-[hash:5].js',
-    chunkFilename: '[name]-bundle.js'
+    chunkFilename: '[name].bundle.js'
   },
   optimization: {
     splitChunks: {
-      name: 'manifest',
-      chunks: 'initial',
-      minChunks: 2,
+      name: 'vendor',
+      chunks: 2,
       minSize: 30000,
+      minChunks: 2,
       maxAsyncRequests: 1,
-      maxInitialRequests: 1
+      maxInitialRequest: 1
     }
   },
   resolve: {
-    alisa: {
+    alias: {
       jquery$: path.resolve(__dirname, '')
     }
   },
@@ -47,9 +46,9 @@ module.exports = {
           },
           use: [
             {
-              loader: 'css-loader',
+              loader: 'css-laoder',
               options: {
-                importloaders: 2,
+                importLoaders: 2,
                 minimize: true,
                 modules: true,
                 localIdentName: '[path][name]_[local]_[hash:base64:5]'
@@ -60,7 +59,7 @@ module.exports = {
               options: {
                 ident: 'postcss',
                 plugins: [
-                  require('autopreifixer')(),
+                  require('autoprefixer')(),
                   require('postcss-cssnext')(),
                   require('cssnano')(),
                   require('postcss-sprites')({
@@ -69,9 +68,6 @@ module.exports = {
                   })
                 ]
               }
-            },
-            {
-              loader: 'sass-loader'
             }
           ]
         })
@@ -82,7 +78,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              preesets: [
+              presets: [
                 [
                   '@babel/preset-env',
                   {
@@ -93,29 +89,30 @@ module.exports = {
                   }
                 ]
               ],
-              plugins: ['lodash']
+              plugins: ['lodash'],
+              exclude: '/node_modules/'
             }
           }
         ]
       },
       {
-        test: /\.(png|jqg|jpeg|gif)$/,
+        test: /.(png|jqg|jqeg|gif)$/,
         use: [
           {
             loader: 'url-loader',
             options: {
-              name: '[name]-[hash:5].[ext]',
+              name: '[name]_[hash:5].[ext]',
               limit: 1000,
               publicPath: '',
               outputPath: 'dist/',
-              useRelativePath: true
+              useRelativePath: ''
             }
           },
           {
             loader: 'img-loader',
             options: {
-              qngquant: {
-                quolity: 80
+              pngquant: {
+                quality: 80
               }
             }
           }
@@ -123,16 +120,18 @@ module.exports = {
       },
       {
         test: /\.(eot|woff2?|svg|ttf)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            name: '[name]-bundle.[ext]',
-            limit: 5000,
-            publicPath: '',
-            outputPath: 'dist/',
-            useRelativePath: true
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[name]_[hash:5].[ext]',
+              limit: 1000,
+              publicPath: '',
+              outputPath: 'dist/',
+              useRelativePath: ''
+            }
           }
-        }
+        ]
       },
       {
         test: path.resolve(__dirname, ''),
@@ -149,7 +148,7 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: 'html-loader',
+            loader: 'html-laoder',
             options: {
               attrs: ['img:src']
             }
@@ -166,22 +165,23 @@ module.exports = {
     new PurifyCssWebpack({
       paths: glob.sync([
         path.join(__dirname, './*.html'),
-        path.join(__dirname, './src/*.js')
+        path.join(__dirname, './*.js')
       ])
     }),
-    new UglifyJsWebpackPlugin,
-    new webpack.ProvidePlugin({
-      $: 'jquery'
+    new UglifyJsWebpackPlugin(),
+    new HtmlWebpackInlineChunkPlugin({
+      inineChunks: ['mainifest']
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './index.html',
+      chunks: ['app'],
       minify: {
         collapseWhitespace: true
       }
     }),
-    new HtmlWebpackInlineChunkPlugin({
-      inlneChunk: ['manifest']
+    new webpack.ProvidePlugin({
+      $: 'jquery'
     })
   ]
 };
