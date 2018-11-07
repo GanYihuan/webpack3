@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node build/server.js",
     "watch": "webpack --watch",
     "server": "webpack-dev-server --open -env development --config build/webpack.common.conf.js",
     "build": "webpack -env production --config build/webpack.common.conf.js",
@@ -42,6 +43,7 @@
     "babel-plugin-lodash": "^3.3.4",
     "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^0.1.19",
+    "connect-history-api-fallback": "^1.5.0",
     "css-loader": "^0.28.11",
     "eslint": "^5.8.0",
     "eslint-config-standard": "^12.0.0",
@@ -52,17 +54,22 @@
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "express": "^4.16.4",
     "file-loader": "^1.1.11",
     "glob-all": "^3.1.0",
     "html-webpack-inline-chunk-plugin": "^1.1.1",
+    "http-proxy-middleware": "^0.19.0",
     "img-loader": "^3.0.0",
     "imports-loader": "^0.8.0",
+    "opn": "^5.4.0",
     "postcss-sprites": "^4.2.1",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "url-loader": "^1.0.1",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-hot-middleware": "^2.24.3"
   }
 }

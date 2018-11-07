@@ -10,6 +10,8 @@ const webpack = require('webpack')
 // const productionConfig = require('./webpack.prod.conf')
 // const developmentConfig = require('./webpack.dev.conf')
 // const merge = require('webpack-merge')
+const proxy = require('./proxy')
+const historyFallback = require('./historyFallback')
 
 module.exports = {
 	devtool: 'cheap-module-source-map',
@@ -22,22 +24,10 @@ module.exports = {
 		// 热更新
 		hot: true,
 		// 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html
-		historyApiFallback: true,
+		// historyApiFallback: true,
+		historyApiFallback: historyFallback,
 		// 在同域名下发送 API 请求
-		proxy: {
-			'/api': {
-				// 请求远端服务器
-				target: 'https://m.weibo.cn',
-				// 找到真实请求的地址
-				changeOrigin: true,
-				// 控制台信息
-				logLevel: 'debug',
-				// 重定向
-				pathRewrite: {
-					'^/comments': '/api/comments'
-				}
-			}
-		}
+		proxy: proxy
 	},
 	plugins: [
 		// 热更新
