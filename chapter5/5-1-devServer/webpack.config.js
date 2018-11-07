@@ -1,12 +1,12 @@
-﻿var path = require('path')
-var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-var webpack = require('webpack')
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-var PurifyCss = require('purifycss-webpack')
-var glob = require('glob-all')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-var CleanWebpackPlugin = require('clean-webpack-plugin')
+﻿const path = require('path')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const webpack = require('webpack')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const PurifyCss = require('purifycss-webpack')
+const glob = require('glob-all')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
 	mode: 'production',
@@ -33,16 +33,24 @@ module.exports = {
 			/* 找到本地的 jquery */
 			jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
 		}
-	},
+  },
+  // 解释说明我们的目的 （仅解释说明，不要用于生产环境）
+  // devtool: 'inline-source-map',
+  devtool: 'cheap-module-source-map',
 	devServer: {
 		contentBase: path.join(__dirname, 'dist'),
 		compress: true,
-		port: 9001,
+    port: 9001,
+    // 当出现编译器错误或警告时，在浏览器中显示全屏覆盖层
+    overlay: true,
+    // 热更新
+    hot: true,
 		// 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html
     historyApiFallback: true,
     // 在同域名下发送 API 请求
 		proxy: {
 			'/api': {
+        // 请求远端服务器
         target: 'https://m.weibo.cn',
         // 找到真实请求的地址
         changeOrigin: true,
@@ -56,6 +64,7 @@ module.exports = {
 		}
 	},
 	module: {
+    // 执行顺序是后向前
 		rules: [
 			{
 				test: /\.scss$/,
@@ -66,8 +75,10 @@ module.exports = {
 						/* 在引入css时，在最后生成的js文件中进行处理，动态创建style标签，塞到head标签里 */
 						loader: 'style-loader',
 						options: {
+              // singleton 会阻止 sourceMap, 可以关闭 singleton
+              sourceMap: true,
 							/* singleton(是否只使用一个 style 标签) */
-							singleton: true,
+              // singleton: true,
 							/* transform(转化, 浏览下, 插入页面前, 根据不同浏览器配置不同样式) */
 							transform: './css.transform.js'
 						}
@@ -77,6 +88,7 @@ module.exports = {
 							/* 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
 							loader: 'css-loader',
 							options: {
+                sourceMap: true,
 								/* 在 css-loader 前应用的 loader 的数量 */
 								importLoaders: 2,
 								/* 是否压缩 */
@@ -84,13 +96,14 @@ module.exports = {
 								/* 启用 css-modules */
 								modules: true,
 								/* 定义编译出来的名称 */
-								localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                localIdentName: '[path][name]_[local]_[hash:base64:5]'
 							}
 						},
 						{
 							/* 将css3属性添加上厂商前缀 */
 							loader: 'postcss-loader',
 							options: {
+                sourceMap: true,
 								ident: 'postcss',
 								plugins: [
 									/* 加 css 各浏览器前缀 */
@@ -109,7 +122,10 @@ module.exports = {
 						},
 						{
 							/* 放置 css-loader 下面 */
-							loader: 'sass-loader'
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true
+              }
 						}
 					]
 				})
@@ -124,24 +140,19 @@ module.exports = {
 							presets: ['@babel/preset-env'],
 							plugins: ['lodash']
 						}
-					}
+          },
+          {
+            // 放置 babel-loader 之后
+            loader: 'eslint-loader',
+            options: {
+              formatter: require('eslint-friendly-formatter')
+            }
+          }
 				]
 			},
 			{
 				test: /\.(png|jpg|jpeg|gif)$/,
 				use: [
-					// {
-					//   loader: 'file-loader',
-					//   options: {
-					//     limit: 1000,
-					//     /* 图片地址不对, 设置绝对路径 */
-					//     publicPath: '',
-					//     /* 放到 dist 目录 */
-					//     outputPath: 'dist/',
-					//     /* 设置相对路径 */
-					//     useRelativePath: true
-					//   }
-					// },
 					{
 						loader: 'url-loader',
 						options: {
@@ -246,16 +257,16 @@ module.exports = {
 			minify: {
 				collapseWhitespace: true
 			}
-		}),
-		/*
-    它内联您使用 HtmlWebpackPlugin 编写为链接或脚本的块。
-    它可用于在脚本标记内嵌入清单以保存 http 请求，如本示例中所述。 
-    它不仅限于清单块，而是可以内联任何其他块。
-    */
-		new HtmlInlineChunkPlugin({
-			inlineChunks: ['manifest']
-		}),
+    }),
+    /* chunk 加到 html 中 */
+		// new HtmlInlineChunkPlugin({
+		// 	inlineChunks: ['manifest']
+		// }),
 		// 打包清除
-		new CleanWebpackPlugin(['dist'])
+    new CleanWebpackPlugin(['dist']),
+    // 热更新
+    new webpack.HotModuleReplacementPlugin(),
+    // 路径输出
+    new webpack.NamedModulesPlugin()
 	]
 }
