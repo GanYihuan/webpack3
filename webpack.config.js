@@ -1,30 +1,32 @@
-var webpack = require('webpack')
-var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-var PurifyCssWebpack = require('purifycss-webpack')
-var UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var HtmlWebpackInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-var glob = require('glob-all')
+const webpack = require('webpaack')
+const path = require('path')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const PurifyCssWebpack = require('purifycss-webpack')
+const glob = require('glob-all')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   mode: 'production',
   entry: {
-    app: './app.js'
+    app: './src/app.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'dist/',
-    filename: '[name]-[hash:5].js',
+    publicPath: '/',
+    filename: 'js/[name]-bundle-[hash:5].js',
     chunkFilename: '[name].bundle.js'
   },
   optimization: {
     splitChunks: {
       name: 'vendor',
-      chunks: 2,
+      chunks: 'initial',
       minSize: 30000,
       minChunks: 2,
       maxAsyncRequests: 1,
-      maxInitialRequest: 1
+      maxInitialRequests: 1
     }
   },
   resolve: {
@@ -32,24 +34,44 @@ module.exports = {
       jquery$: path.resolve(__dirname, '')
     }
   },
+  devtool: 'cheap-module-source-map',
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 90001,
+    overlay: true,
+    hot: true,
+    historyApiFallback: true,
+    proxy: {
+      '/api': {
+        target: '',
+        changeOrigin: true,
+        logLevel: 'debug',
+        pathRewrite: {
+          '^/comments': '/api/comments'
+        }
+      }
+    }
+  },
   module: {
     rules: [
       {
         test: /\.scss$/,
         use: ExtractTextWebpackPlugin.extract({
-          fallback: {
+          fallback {
             loader: 'style-loader',
             options: {
-              singleton: true,
+              sourceMap: true,
               transform: './css-transform.js'
             }
           },
           use: [
             {
-              loader: 'css-laoder',
+              loader: 'css-loader',
               options: {
+                sourceMap: true,
                 importLoaders: 2,
-                minimize: true,
+                minmize: true,
                 modules: true,
                 localIdentName: '[path][name]_[local]_[hash:base64:5]'
               }
@@ -57,16 +79,23 @@ module.exports = {
             {
               loader: 'postcss-loader',
               options: {
+                sourceMap: true,
                 ident: 'postcss',
                 plugins: [
                   require('autoprefixer')(),
                   require('postcss-cssnext')(),
                   require('cssnano')(),
                   require('postcss-sprites')({
-                    spritePath: '',
+                    sprtePath: '',
                     retina: true
                   })
                 ]
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true
               }
             }
           ]
@@ -74,38 +103,35 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                [
-                  '@babel/preset-env',
-                  {
-                    targets: {
-                      node: 'current',
-                      browsers: ['> 1%', 'last 2 versions']
-                    }
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  targets: {
+                    node: current,
+                    browsers: ['> 1%', 'last 2 versions']
                   }
-                ]
-              ],
-              plugins: ['lodash'],
-              exclude: '/node_modules/'
-            }
+                }
+              ]
+            ],
+            plugins: ['@babel/transform-runtime']
           }
-        ]
+        }
       },
       {
-        test: /.(png|jqg|jqeg|gif)$/,
+        test: /\.(png|jpg|jpeg|gif)$/,
         use: [
           {
             loader: 'url-loader',
             options: {
-              name: '[name]_[hash:5].[ext]',
+              name: '[name]-[hash:5].[ext]',
               limit: 1000,
               publicPath: '',
               outputPath: 'dist/',
-              useRelativePath: ''
+              useRelativePath: true
             }
           },
           {
@@ -119,16 +145,14 @@ module.exports = {
         ]
       },
       {
-        test: /\.(eot|woff2?|svg|ttf)$/,
+        test: /\.(eot|woff2?|ttf|svg)$/,
         use: [
           {
             loader: 'url-loader',
             options: {
-              name: '[name]_[hash:5].[ext]',
-              limit: 1000,
-              publicPath: '',
-              outputPath: 'dist/',
-              useRelativePath: ''
+              name: '[name]-[hash:5].[ext]',
+              limit: 50000,
+              outputPath: ''
             }
           }
         ]
@@ -165,23 +189,25 @@ module.exports = {
     new PurifyCssWebpack({
       paths: glob.sync([
         path.join(__dirname, './*.html'),
-        path.join(__dirname, './*.js')
+        path.join(__dirname, './src/*.js')
       ])
     }),
-    new UglifyJsWebpackPlugin(),
-    new HtmlWebpackInlineChunkPlugin({
-      inineChunks: ['mainifest']
+    new UglifyJsPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery'
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './index.html',
-      chunks: ['app'],
       minify: {
         collapseWhitespace: true
       }
     }),
-    new webpack.ProvidePlugin({
-      $: 'jquery'
-    })
+    new HtmlWebpackInlineChunkPlugin({
+      inlineChunks: ['mainfest']
+    }),
+    new CleanWebpackPlugin(['dist']),
+    new webpack.HotModuleReplacementPlguin(),
+    new webpack.NameModulesPlugin()
   ]
 };
