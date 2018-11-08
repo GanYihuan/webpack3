@@ -1,11 +1,11 @@
 const webpack = require('webpack')
-const path = require('path')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const PurifyCss = require('purifycss-webpack')
-const glob = require('glob-all')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const PurifyCss = require('purifycss-webpack')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const path = require('path')
+const glob = require('glob-all')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {

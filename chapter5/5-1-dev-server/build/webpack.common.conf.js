@@ -26,6 +26,7 @@ const generateConfig = env => {
 					{
 						// 放置 babel-loader 之后
 						loader: 'eslint-loader',
+						// loader: 'happypack/loader?id=eslint',
 						options: {
 							formatter: require('eslint-friendly-formatter')
 						}
