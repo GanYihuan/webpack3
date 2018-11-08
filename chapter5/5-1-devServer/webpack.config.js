@@ -201,10 +201,10 @@ module.exports = {
 							/* 超出 5000 处理成 base64 */
 							limit: 5000,
 							/* 图片地址不对, 设置绝对路径 */
-							// publicPath: '',
+							// publicPaths: '',
 							/* 放到 dist 目录 */
 							outputPath: 'assets/imgs/'
-							/* 设置相对路径 */
+							/* 设置相对路 */
 							// useRelativePath: true
 						}
 					}

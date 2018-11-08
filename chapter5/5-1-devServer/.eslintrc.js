@@ -13,6 +13,11 @@ module.exports = {
 	],
 	plugins: [],
 	rules: {
+    'quotes': 0,
+    'spaced-comment': 0,
+    'no-unused-vars': 0,
+    'semi': 0,
+    'no-multiple-empty-lines': 0,
 		// allow paren-less arrow functions
 		'arrow-parens': 0,
 		// allow async-await
