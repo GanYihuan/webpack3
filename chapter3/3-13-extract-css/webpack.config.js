@@ -49,10 +49,6 @@ module.exports = {
 						{
 							/* put css-loader below */
 							loader: 'sass-loader'
-						},
-						{
-							/* put css-loader below */
-							loader: 'less-loader'
 						}
 					]
 				})

@@ -53,7 +53,8 @@ module.exports = {
 								/*  webpack requires an identifier in options when {Function}/require is used (Complex Options). The ident can be freely named as long as it is unique. It's recommended to name it (ident: 'postcss') */
 								ident: 'postcss',
 								plugins: [
-									/* css3 Attribute added vendor prefix */
+                  /* css3 Attribute added vendor prefix */
+                  // 'autoprefixer' <-- already included in postcss-cssnext
 									require('autoprefixer')(),
 									/* Use future css syntax */
 									require('postcss-cssnext')(),

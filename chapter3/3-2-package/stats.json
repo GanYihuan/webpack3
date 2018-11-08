@@ -1,0 +1,775 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.12.1",
+  "hash": "9b12bcf3c1d8c6b3b608",
+  "time": 543,
+  "builtAt": 1541641243825,
+  "publicPath": "",
+  "outputPath": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/dist",
+  "assetsByChunkName": {
+    "app": "app.9b12b.js"
+  },
+  "assets": [
+    {
+      "name": "0.9b12b.js",
+      "size": 188,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [],
+      "emitted": true
+    },
+    {
+      "name": "app.9b12b.js",
+      "size": 2702,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "app"
+      ],
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "app": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "app.9b12b.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "app": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "app.9b12b.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": false,
+      "entry": false,
+      "size": 104,
+      "names": [],
+      "files": [
+        "0.9b12b.js"
+      ],
+      "hash": "4c55c7e5337d93247d40",
+      "siblings": [],
+      "parents": [
+        1
+      ],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": 3,
+          "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/muti.js",
+          "name": "./muti.js",
+          "index": 4,
+          "index2": 3,
+          "size": 104,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+          "issuerId": null,
+          "issuerName": "./app.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+              "name": "./app.js",
+              "profile": {
+                "factory": 56,
+                "building": 20
+              }
+            }
+          ],
+          "profile": {
+            "factory": 6,
+            "building": 7
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+              "module": "./app.js",
+              "moduleName": "./app.js",
+              "type": "amd require",
+              "userRequest": "./muti",
+              "loc": "8:0-10:2"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1,
+          "source": "﻿// amd\ndefine(function(require, factory) {\n\t'use strict'\n\treturn function(a, b) {\n\t\treturn a * b\n\t}\n})\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": null,
+          "module": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+          "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+          "moduleName": "./app.js",
+          "loc": "8:0-10:2",
+          "request": "./muti",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 925,
+      "names": [
+        "app"
+      ],
+      "files": [
+        "app.9b12b.js"
+      ],
+      "hash": "8ba805d39d6f79f1f9f1",
+      "siblings": [],
+      "parents": [],
+      "children": [
+        0
+      ],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js 87d79aec2c33e70403d1258d332fcfdb",
+          "name": "./app.js + 1 modules",
+          "index": 0,
+          "index2": 4,
+          "size": 364,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./app.js",
+              "loc": "app"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": 0,
+          "modules": [
+            {
+              "id": null,
+              "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+              "name": "./app.js",
+              "index": 0,
+              "index2": 4,
+              "size": 302,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": null,
+              "issuerId": null,
+              "issuerName": null,
+              "issuerPath": null,
+              "profile": {
+                "factory": 56,
+                "building": 20
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": null,
+                  "module": null,
+                  "moduleName": null,
+                  "type": "single entry",
+                  "userRequest": "./app.js",
+                  "loc": "app"
+                }
+              ],
+              "usedExports": true,
+              "providedExports": [],
+              "optimizationBailout": [
+                "ModuleConcatenation bailout: Module is an entry point"
+              ],
+              "depth": 0,
+              "source": "﻿// es module\nimport sum from './sum'\n\n// commonjs\nvar minus = require('./minus')\n\n// amd: 异步\nrequire(['./muti'], function(muti) {\n\tconsole.log('muti(2, 3) =', muti(2, 3))\n})\n\nconsole.log('sum(23, 24) =', sum(23, 24))\nconsole.log('minus(25, 5) =', minus(25, 5))\nconsole.log('muti(2, 3) =', muti(2, 3))\n"
+            },
+            {
+              "id": null,
+              "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/sum.js",
+              "name": "./sum.js",
+              "index": 1,
+              "index2": 0,
+              "size": 62,
+              "cacheable": true,
+              "built": true,
+              "optional": false,
+              "prefetched": false,
+              "chunks": [],
+              "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+              "issuerId": null,
+              "issuerName": "./app.js",
+              "issuerPath": [
+                {
+                  "id": null,
+                  "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+                  "name": "./app.js",
+                  "profile": {
+                    "factory": 56,
+                    "building": 20
+                  }
+                }
+              ],
+              "profile": {
+                "factory": 6,
+                "building": 7
+              },
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+                  "module": "./app.js",
+                  "moduleName": "./app.js",
+                  "type": "harmony side effect evaluation",
+                  "userRequest": "./sum",
+                  "loc": "2:0-23"
+                },
+                {
+                  "moduleId": null,
+                  "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+                  "module": "./app.js",
+                  "moduleName": "./app.js",
+                  "type": "harmony import specifier",
+                  "userRequest": "./sum",
+                  "loc": "12:29-32"
+                }
+              ],
+              "usedExports": [
+                "default"
+              ],
+              "providedExports": [
+                "default"
+              ],
+              "optimizationBailout": [],
+              "depth": 1,
+              "source": "﻿// es module\nexport default function(a, b) {\n\treturn a + b\n}\n"
+            }
+          ],
+          "filteredModules": 0
+        },
+        {
+          "id": 1,
+          "identifier": "/usr/local/lib/node_modules/webpack/buildin/module.js",
+          "name": "(webpack)/buildin/module.js",
+          "index": 3,
+          "index2": 1,
+          "size": 497,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/minus.js",
+          "issuerId": 2,
+          "issuerName": "./minus.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+              "name": "./app.js",
+              "profile": {
+                "factory": 56,
+                "building": 20
+              }
+            },
+            {
+              "id": 2,
+              "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/minus.js",
+              "name": "./minus.js",
+              "profile": {
+                "factory": 6,
+                "building": 7
+              }
+            }
+          ],
+          "profile": {
+            "factory": 3,
+            "building": 4
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 2,
+              "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/minus.js",
+              "module": "./minus.js",
+              "moduleName": "./minus.js",
+              "type": "cjs require",
+              "userRequest": "module",
+              "loc": "1:0-83"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 2,
+          "source": "module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\tmodule.deprecate = function() {};\n\t\tmodule.paths = [];\n\t\t// module.parent = undefined by default\n\t\tif (!module.children) module.children = [];\n\t\tObject.defineProperty(module, \"loaded\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.l;\n\t\t\t}\n\t\t});\n\t\tObject.defineProperty(module, \"id\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.i;\n\t\t\t}\n\t\t});\n\t\tmodule.webpackPolyfill = 1;\n\t}\n\treturn module;\n};\n"
+        },
+        {
+          "id": 2,
+          "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/minus.js",
+          "name": "./minus.js",
+          "index": 2,
+          "index2": 2,
+          "size": 64,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+          "issuerId": null,
+          "issuerName": "./app.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+              "name": "./app.js",
+              "profile": {
+                "factory": 56,
+                "building": 20
+              }
+            }
+          ],
+          "profile": {
+            "factory": 6,
+            "building": 7
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js 87d79aec2c33e70403d1258d332fcfdb",
+              "module": "./app.js + 1 modules",
+              "moduleName": "./app.js + 1 modules",
+              "type": "cjs require",
+              "userRequest": "./minus",
+              "loc": "5:12-30"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1,
+          "source": "﻿// commonjs\nmodule.defaults = function(a, b) {\n\treturn a - b\n}\n"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "app",
+          "request": "./app.js",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js 87d79aec2c33e70403d1258d332fcfdb",
+      "name": "./app.js + 1 modules",
+      "index": 0,
+      "index2": 4,
+      "size": 364,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "./app.js",
+          "loc": "app"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": 0,
+      "modules": [
+        {
+          "id": null,
+          "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+          "name": "./app.js",
+          "index": 0,
+          "index2": 4,
+          "size": 302,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "profile": {
+            "factory": 56,
+            "building": 20
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./app.js",
+              "loc": "app"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": [],
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is an entry point"
+          ],
+          "depth": 0,
+          "source": "﻿// es module\nimport sum from './sum'\n\n// commonjs\nvar minus = require('./minus')\n\n// amd: 异步\nrequire(['./muti'], function(muti) {\n\tconsole.log('muti(2, 3) =', muti(2, 3))\n})\n\nconsole.log('sum(23, 24) =', sum(23, 24))\nconsole.log('minus(25, 5) =', minus(25, 5))\nconsole.log('muti(2, 3) =', muti(2, 3))\n"
+        },
+        {
+          "id": null,
+          "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/sum.js",
+          "name": "./sum.js",
+          "index": 1,
+          "index2": 0,
+          "size": 62,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [],
+          "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+          "issuerId": null,
+          "issuerName": "./app.js",
+          "issuerPath": [
+            {
+              "id": null,
+              "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+              "name": "./app.js",
+              "profile": {
+                "factory": 56,
+                "building": 20
+              }
+            }
+          ],
+          "profile": {
+            "factory": 6,
+            "building": 7
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+              "module": "./app.js",
+              "moduleName": "./app.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./sum",
+              "loc": "2:0-23"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+              "module": "./app.js",
+              "moduleName": "./app.js",
+              "type": "harmony import specifier",
+              "userRequest": "./sum",
+              "loc": "12:29-32"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "﻿// es module\nexport default function(a, b) {\n\treturn a + b\n}\n"
+        }
+      ],
+      "filteredModules": 0
+    },
+    {
+      "id": 1,
+      "identifier": "/usr/local/lib/node_modules/webpack/buildin/module.js",
+      "name": "(webpack)/buildin/module.js",
+      "index": 3,
+      "index2": 1,
+      "size": 497,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/minus.js",
+      "issuerId": 2,
+      "issuerName": "./minus.js",
+      "issuerPath": [
+        {
+          "id": null,
+          "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+          "name": "./app.js",
+          "profile": {
+            "factory": 56,
+            "building": 20
+          }
+        },
+        {
+          "id": 2,
+          "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/minus.js",
+          "name": "./minus.js",
+          "profile": {
+            "factory": 6,
+            "building": 7
+          }
+        }
+      ],
+      "profile": {
+        "factory": 3,
+        "building": 4
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": 2,
+          "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/minus.js",
+          "module": "./minus.js",
+          "moduleName": "./minus.js",
+          "type": "cjs require",
+          "userRequest": "module",
+          "loc": "1:0-83"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 2,
+      "source": "module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\tmodule.deprecate = function() {};\n\t\tmodule.paths = [];\n\t\t// module.parent = undefined by default\n\t\tif (!module.children) module.children = [];\n\t\tObject.defineProperty(module, \"loaded\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.l;\n\t\t\t}\n\t\t});\n\t\tObject.defineProperty(module, \"id\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.i;\n\t\t\t}\n\t\t});\n\t\tmodule.webpackPolyfill = 1;\n\t}\n\treturn module;\n};\n"
+    },
+    {
+      "id": 2,
+      "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/minus.js",
+      "name": "./minus.js",
+      "index": 2,
+      "index2": 2,
+      "size": 64,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+      "issuerId": null,
+      "issuerName": "./app.js",
+      "issuerPath": [
+        {
+          "id": null,
+          "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+          "name": "./app.js",
+          "profile": {
+            "factory": 56,
+            "building": 20
+          }
+        }
+      ],
+      "profile": {
+        "factory": 6,
+        "building": 7
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js 87d79aec2c33e70403d1258d332fcfdb",
+          "module": "./app.js + 1 modules",
+          "moduleName": "./app.js + 1 modules",
+          "type": "cjs require",
+          "userRequest": "./minus",
+          "loc": "5:12-30"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 1,
+      "source": "﻿// commonjs\nmodule.defaults = function(a, b) {\n\treturn a - b\n}\n"
+    },
+    {
+      "id": 3,
+      "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/muti.js",
+      "name": "./muti.js",
+      "index": 4,
+      "index2": 3,
+      "size": 104,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+      "issuerId": null,
+      "issuerName": "./app.js",
+      "issuerPath": [
+        {
+          "id": null,
+          "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+          "name": "./app.js",
+          "profile": {
+            "factory": 56,
+            "building": 20
+          }
+        }
+      ],
+      "profile": {
+        "factory": 6,
+        "building": 7
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-2-package/app.js",
+          "module": "./app.js",
+          "moduleName": "./app.js",
+          "type": "amd require",
+          "userRequest": "./muti",
+          "loc": "8:0-10:2"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 1,
+      "source": "﻿// amd\ndefine(function(require, factory) {\n\t'use strict'\n\treturn function(a, b) {\n\t\treturn a * b\n\t}\n})\n"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}

@@ -1,15 +1,15 @@
 ﻿$homecolor: #ff0;
 
 html {
-  background: $homecolor;
+	background: $homecolor;
 }
 
 .box {
-  composes: bigBox from './common.scss';
-  /* 放第一行 */
-  height: 200px;
-  width: 200px;
-  border-radius: 4px;
-  background: #333;
-  transition: transform 1s;
+	// composes: bigBox from './common.scss';
+	/* 放第一行 */
+	height: 200px;
+	width: 200px;
+	border-radius: 4px;
+	background: #333;
+	transition: transform 1s;
 }
