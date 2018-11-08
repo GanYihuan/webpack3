@@ -18,7 +18,7 @@ module.exports = {
 		splitChunks: {
 			name: 'manifest'
 		}
-	},
+  },
 	resolve: {
 		alias: {
 			/* 找到本地的 jquery */

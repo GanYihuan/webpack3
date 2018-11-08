@@ -34,7 +34,7 @@ const generateConfig = env => {
 	)
 	const cssLoaders = [
 		{
-			/* 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
+			/* 打包时把 css 文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
 			loader: 'css-loader',
 			options: {
 				sourceMap: env === 'developement',
@@ -49,10 +49,10 @@ const generateConfig = env => {
 			}
 		},
 		{
-			/* 将css3属性添加上厂商前缀 */
+			/* 用 js 处理 css, 打包时期 */
 			loader: 'postcss-loader',
 			options: {
-				sourceMap: true,
+				sourceMap: env === 'developement',
 				ident: 'postcss',
 				plugins: [
 					/* 加 css 各浏览器前缀 */
@@ -132,8 +132,7 @@ const generateConfig = env => {
 		output: {
 			/* 输出到指定目录下 */
 			path: path.resolve(__dirname, '../dist'),
-			/* 输出文件都带有 dist 前缀 */
-			// publicPath: 'dist/',
+			/* 输出文件都带有 / 前缀 */
 			publicPath: '/',
 			filename: 'js/[name]-bundle-[hash:5].js',
 			chunkFilename: '[name].bundle.js'
