@@ -1,4 +1,5 @@
 ﻿const path = require('path')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
 	mode: 'production',
@@ -35,23 +36,14 @@ module.exports = {
 			maxAsyncRequests: 1,
 			// Maximum number of parallel requests at an entry point.
 			maxInitialRequests: 1
-			// cacheGroups:{
-			//     priority: 0,
-			//     vendor: {
-			//         // Controls which modules are selected by this cache group
-			//         test: /react|lodash/,
-			//         enforce: true,
-			//         // 可设置是否重用该chunk（查看源码没有发现默认值）
-			//         reuseExistingChunk: true
-			//     }
-			// }
 		}
-	}
-	/* webpack3 abandon */
-	// plugins: [
-	//   new webpack.optimize.CommonsChunkPlugin({
-	//     name: 'common',
-	//     minChunks: 2
-	//   })
-	// ]
+  },
+  plugins: [
+    /* webpack3 abandon */
+    new BundleAnalyzerPlugin()
+    // new webpack.optimize.CommonsChunkPlugin({
+	  //   name: 'common',
+	  //   minChunks: 2
+	  // })
+  ]
 }

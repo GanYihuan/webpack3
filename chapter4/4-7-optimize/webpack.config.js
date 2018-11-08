@@ -1,11 +1,12 @@
-var webpack = require('webpack')
-var path = require('path')
-var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-var PurifyCss = require('purifycss-webpack')
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-var glob = require('glob-all')
+const webpack = require('webpack')
+const path = require('path')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const PurifyCss = require('purifycss-webpack')
+const glob = require('glob-all')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
 	mode: 'production',
@@ -13,16 +14,16 @@ module.exports = {
 		app: './src/app.js'
 	},
 	output: {
-		/* 输出到指定目录下 */
+		/* path.resolve() will return the absolute path of the current working directory. */
 		path: path.resolve(__dirname, 'dist'),
-		/* 输出文件都带有 / 前缀 */
+		/* Introducing resource paths */
 		publicPath: '/',
-		/* 初始化打包名称 */
-		filename: '[name]-bundle-[hash:5].js',
-		/* 动态打包名称 */
+		/* Initialize packaged file name */
+		filename: '[name].bundle.js',
+		/* dynamic packaged file name */
 		chunkFilename: '[name].bundle.js'
-	},
-	// webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码
+  },
+  // webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码
 	optimization: {
 		// 多文件才能工作
 		splitChunks: {
@@ -32,16 +33,17 @@ module.exports = {
 			// 最小生成 chunk 大小
 			minSize: 30000,
 			// 最少出现 ？ 次就将其提取到公共代码里
-			minChunks: 2,
+			minChunks: 2
 			// max number of parallel requests when on-demand loading.
-			maxAsyncRequests: 1,
+			// maxAsyncRequests: 1,
 			// max number of parallel requests at an entry point.
-			maxInitialRequests: 1
+			// maxInitialRequests: 1
 		}
 	},
 	resolve: {
+		/* Create alias to import or require certain modules more easily */
 		alias: {
-			/* 找到本地的 jquery */
+			/* local js import */
 			jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
 		}
 	},
@@ -49,60 +51,59 @@ module.exports = {
 		rules: [
 			{
 				test: /\.scss$/,
-				/* 提取 css */
+				/* Processe from the back to the front */
 				use: ExtractTextWebpackPlugin.extract({
-					/* 提取出文件用什么处理 */
+					/* `loader` should be used when the CSS is not extracted */
 					fallback: {
-						/* 在引入css时，在最后生成的js文件中进行处理，动态创建style标签，塞到head标签里 */
+						/* Adds CSS to the DOM by injecting a <style> tag */
 						loader: 'style-loader',
 						options: {
-							/* singleton (是否只使用一个 style 标签) */
+							/* Reuses a single <style></style> element, instead of adding/removing individual elements for each required module */
 							singleton: true,
-							/* transform (转化, 浏览下, 插入页面前, 根据不同浏览器配置不同样式) */
+							/* Transform/Conditionally load CSS by passing a transform/condition function */
 							transform: './css.transform.js'
 						}
 					},
 					use: [
 						{
-							/* 打包时把 css 文件拆出来，css 相关模块最终打包到一个指定的 css文件中，
-              我们手动用 link 标签去引入这个 css 文件就可以了 */
+							/* The css-loader interprets @import and url() like import/require() and will resolve them. */
 							loader: 'css-loader',
 							options: {
-								/* 在 css-loader 前应用的 loader 的数量 */
-								importLoaders: 2,
-								/* 是否压缩 */
+                /* 在 css-loader 前应用的 loader 的数量 */
+								// importLoaders: 2,
+								/* compress? */
 								minimize: true,
-								/* 启用 css-modules */
+								/* Enable/Disable css-modules */
 								modules: true,
-								/* 定义编译出来的名称 */
+								/* Configure the generated ident */
 								localIdentName: '[path][name]_[local]_[hash:base64:5]'
 							}
 						},
 						{
-							/* 将 css3 属性添加上厂商前缀 */
+							/* put css-loader below */
 							loader: 'postcss-loader',
 							options: {
-								/*  webpack requires an identifier (ident) in options when {Function}/require is used (Complex Options). 
-                The ident can be freely named as long as it is unique. 
-                It's recommended to name it (ident: 'postcss') */
+								/*  webpack requires an identifier (ident) in options when {Function}/require is used (Complex Options). The ident can be freely named as long as it is unique. It's recommended to name it (ident: 'postcss') */
 								ident: 'postcss',
 								plugins: [
-									/* 加 css 各浏览器前缀 */
+									/* css3 Attribute added vendor prefix */
 									require('autoprefixer')(),
-									/* 使用未来的 css 语法 */
+									/* Use future css syntax */
 									require('postcss-cssnext')(),
-									/* 压缩 css */
+									/* Compression optimization css */
 									require('cssnano')(),
-									/* 图片合并成一张图 */
+									/* Sprite: Merge into a single picture */
 									require('postcss-sprites')({
+										/* Specify output path */
 										spritePath: 'dist/assets/imgs/sprites',
+										/* handle retina screen */
 										retina: true
 									})
 								]
 							}
 						},
 						{
-							/* 放置 css-loader 下面 */
+							/* put css-loader below */
 							loader: 'sass-loader'
 						}
 					]
@@ -114,19 +115,8 @@ module.exports = {
 					{
 						loader: 'babel-loader',
 						options: {
-							presets: [
-								[
-									'@babel/preset-env',
-									{
-										targets: {
-											node: current,
-											browsers: ['> 1%', 'last 2 versions']
-										}
-									}
-								]
-							],
-							plugins: ['lodash'],
-							exclude: '/node_modules/'
+							presets: ['@babel/preset-env'],
+							plugins: ['lodash']
 						}
 					}
 				]
@@ -138,22 +128,23 @@ module.exports = {
 						loader: 'url-loader',
 						options: {
 							name: '[name]-[hash:5].[ext]',
-							/* 超出 1000 处理成 base64 */
+							/* over 1000 handle to base64 */
 							limit: 1000,
-							/* 图片地址不对, 设置绝对路径 */
+							/* Set absolute path */
 							publicPath: '',
-							/* 放到 dist 目录 */
+							/* put dist file dialog */
 							outputPath: 'dist/',
-							/* 设置相对路径 */
+							/* Set relative path */
 							useRelativePath: true
 						}
 					},
 					{
-						/* 压缩图片 */
+						/* compress img */
 						loader: 'img-loader',
 						options: {
+							/* .png */
 							pngquant: {
-								/* 压缩 png */
+								/* compress png */
 								quality: 80
 							}
 						}
@@ -161,86 +152,89 @@ module.exports = {
 				]
 			},
 			{
-				/* 字体文件 */
 				test: /\.(eot|woff2?|ttf|svg)$/,
 				use: [
 					{
+						/* A loader for webpack which transforms files into base64 URIs */
 						loader: 'url-loader',
 						options: {
 							name: '[name]-[hash:5].[ext]',
-							/* 超出 5000 处理成 base64 */
+							/* over 5000 handle to base64 */
 							limit: 5000,
-							/* 图片地址不对, 设置绝对路径 */
+							/* Set absolute path */
 							publicPath: '',
-							/* 放到 dist 目录 */
-							outputPath: 'assets/imgs/',
-							/* 设置相对路径 */
+							/* put dist file dialog */
+							outputPath: 'dist/',
+							/* Set relative path */
 							useRelativePath: true
 						}
 					}
 				]
 			},
 			{
+				/* third-party modules js import */
 				test: path.resolve(__dirname, 'src/app.js'),
 				use: [
 					{
+						/* The imports loader allows you to use modules that depend on specific global constiables. */
 						loader: 'imports-loader',
 						options: {
 							$: 'jquery'
 						}
 					}
 				]
-			},
-			{
-				test: /\.html$/,
-				use: [
-					{
-						loader: 'html-loader',
-						options: {
-              // html 处理引入的图片
-							attrs: ['img:src', 'img:data-src']
-						}
-					}
-				]
-			}
+      },
+      {
+        test: /\.html$/,
+        use: [{
+          /* Exports HTML as string */
+          loader: 'html-loader',
+          options: {
+            /* HTML handle import img */
+            attrs: ['img:src', 'img:data-src']
+          }
+        }]
+      }
 		]
 	},
 	plugins: [
-		/* 提取 css */
+    new BundleAnalyzerPlugin(),
+		/* Extract text from a bundle, or bundles, into a separate file. */
 		new ExtractTextWebpackPlugin({
 			filename: '[name].min.css',
-			/* 指定提取 css 范围, 提取初始化 */
+			/* Extract from all additional chunks(by default it extracts only from the initial chunk) */
 			allChunks: false
 		}),
-		/* 去除多余的 css */
+		/* put ExtractTextWebpackPlugin below */
+		/* css compress */
 		new PurifyCss({
 			paths: glob.sync([
 				path.join(__dirname, './*.html'),
 				path.join(__dirname, './src/*.js')
 			])
 		}),
-		/* 去除多余的 js */
+		/* js compress */
 		new UglifyJsPlugin(),
+		/* Automatically load modules instead of having to import or require them everywhere. */
+		/* third-party modules js import (use npm) */
 		new webpack.ProvidePlugin({
-			/* 使用 install jquery */
 			$: 'jquery'
 		}),
-		/* 生成创建 html 入口文件 */
+		/* The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles */
 		new HtmlWebpackPlugin({
-			/* filename: 输出文件的名字 */
+			/* output file name */
 			filename: 'index.html',
-			/* template: 本地模版的位置 */
 			template: './index.html',
-			/* 向 template 或者 templateContent 中注入所有静态资源 */
+			/* css, js Insert into the page by label */
 			// inject: false,
-			/* 允许插入到模板中的一些 chunk */
+			/* Specify which ones to add to the html page */
 			chunks: ['app'],
-			/* 压缩 */
+			/* compress */
 			minify: {
 				collapseWhitespace: true
 			}
-		}),
-		/* chunk 加到 html 中 */
+    }),
+    /* chunk 加到 html 中 */
 		new HtmlInlineChunkPlugin({
 			inlineChunks: ['manifest']
 		})

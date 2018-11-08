@@ -36,6 +36,7 @@
     "glob-all": "^3.1.0",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
-    "uglifyjs-webpack-plugin": "^1.2.7"
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack-bundle-analyzer": "^3.0.3"
   }
 }

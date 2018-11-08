@@ -1,27 +1,27 @@
 ﻿body {
-  font-size: 30px;
+	font-size: 30px;
 }
 
 .bigBox {
-  border: 2px solid #000;
-  
-  .img1 {
-    background: url("../../assets/imgs/1@2x.png")
-  }
-  
-  .img2 {
-    background: url("../../assets/imgs/2.png")
-  }
-  
-  .img3 {
-    background: url("../../assets/imgs/3.png")
-  }
+	border: 2px solid #000;
+
+	.img1 {
+		background: url('../../assets/imgs/1@2x.png');
+	}
+
+	.img2 {
+		background: url('../../assets/imgs/2.png');
+	}
+
+	.img3 {
+		background: url('../../assets/imgs/3.png');
+	}
 }
 
 :root {
-  --mainColor: #f00;
+	--mainColor: #f00;
 }
 
 a {
-  color: var(--mainColor);
+	color: var(--mainColor);
 }

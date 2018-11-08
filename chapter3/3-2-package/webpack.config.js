@@ -1,4 +1,6 @@
-﻿/* commonjs */
+﻿const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
+/* commonjs */
 module.exports = {
 	mode: 'production',
 	/* 入口 */
@@ -8,5 +10,8 @@ module.exports = {
 	/* 出口 */
 	output: {
 		filename: '[name].[hash:5].js'
-	}
+  },
+  plugins: [
+    new BundleAnalyzerPlugin()
+  ]
 } 

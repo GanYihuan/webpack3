@@ -1,4 +1,5 @@
 const path = require('path')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
 	mode: 'production',
@@ -46,10 +47,10 @@ module.exports = {
 							localIdentName: '[path][name]_[local]--[hash:base64:5]'
 						}
 					},
-					{
-						/* put css-loader below */
-						loader: 'sass-loader'
-					},
+					// {
+					// 	/* put css-loader below */
+					// 	loader: 'sass-loader'
+					// },
 					{
 						/* put css-loader below */
 						loader: 'less-loader'
@@ -57,5 +58,8 @@ module.exports = {
 				]
 			}
 		]
-	}
+  },
+  plugins: [
+    new BundleAnalyzerPlugin()
+  ]
 }

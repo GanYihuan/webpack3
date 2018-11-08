@@ -1,9 +1,10 @@
-var webpack = require('webpack')
-var path = require('path')
-var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-var PurifyCss = require('purifycss-webpack')
-var glob = require('glob-all')
+const webpack = require('webpack')
+const path = require('path')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const PurifyCss = require('purifycss-webpack')
+const glob = require('glob-all')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
 	mode: 'production',
@@ -155,7 +156,7 @@ module.exports = {
 				test: path.resolve(__dirname, 'src/app.js'),
 				use: [
 					{
-            /* The imports loader allows you to use modules that depend on specific global variables. */
+            /* The imports loader allows you to use modules that depend on specific global constiables. */
 						loader: 'imports-loader',
 						options: {
 							$: 'jquery'
@@ -166,6 +167,7 @@ module.exports = {
 		]
 	},
 	plugins: [
+    new BundleAnalyzerPlugin(),
 		/* Extract text from a bundle, or bundles, into a separate file. */
 		new ExtractTextWebpackPlugin({
 			filename: '[name].min.css',
