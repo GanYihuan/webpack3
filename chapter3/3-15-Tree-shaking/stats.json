@@ -1,12 +1,10 @@
-Warning: postcss-cssnext found a duplicate plugin ('autoprefixer') in your postcss plugins. This might be inefficient. You should remove 'autoprefixer' from your postcss plugin list since it's already included by postcss-cssnext.
-Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant for your use case, and you really know what you are doing, you can disable this warnings by setting  'warnForDuplicates' option of postcss-cssnext to 'false'.
 {
   "errors": [],
   "warnings": [],
   "version": "4.12.1",
-  "hash": "ecd7d28f37ec6c05d236",
-  "time": 6704,
-  "builtAt": 1541643013123,
+  "hash": "b635c974b5297ea5b23b",
+  "time": 5231,
+  "builtAt": 1541670962876,
   "publicPath": "",
   "outputPath": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/dist",
   "assetsByChunkName": {
@@ -18,7 +16,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
   "assets": [
     {
       "name": "app.bundle.js",
-      "size": 5572,
+      "size": 5543,
       "chunks": [
         0
       ],
@@ -29,7 +27,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
     },
     {
       "name": "app.min.css",
-      "size": 122,
+      "size": 28,
       "chunks": [
         0
       ],
@@ -72,7 +70,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 19785,
+      "size": 19757,
       "names": [
         "app"
       ],
@@ -80,7 +78,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
         "app.bundle.js",
         "app.min.css"
       ],
-      "hash": "b731f5622f85740823da",
+      "hash": "d79e85f7c7c31153db87",
       "siblings": [],
       "parents": [],
       "children": [],
@@ -109,8 +107,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -118,8 +116,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -127,8 +125,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             },
             {
@@ -136,8 +134,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               }
             },
             {
@@ -145,9 +143,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
               "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
               "profile": {
-                "factory": 121,
-                "building": 43,
-                "dependencies": 1
+                "factory": 80,
+                "building": 42,
+                "dependencies": 0
               }
             },
             {
@@ -155,8 +153,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_baseGetTag.js",
               "name": "./node_modules/.4.17.10@lodash-es/_baseGetTag.js",
               "profile": {
-                "factory": 2,
-                "building": 19
+                "factory": 22,
+                "building": 9
               }
             },
             {
@@ -164,8 +162,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_Symbol.js",
               "name": "./node_modules/.4.17.10@lodash-es/_Symbol.js",
               "profile": {
-                "factory": 2,
-                "building": 39,
+                "factory": 12,
+                "building": 23,
                 "dependencies": 0
               }
             },
@@ -174,14 +172,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_root.js",
               "name": "./node_modules/.4.17.10@lodash-es/_root.js",
               "profile": {
-                "factory": 16,
-                "building": 14
+                "factory": 2,
+                "building": 9
               }
             }
           ],
           "profile": {
-            "factory": 1,
-            "building": 12
+            "factory": 0,
+            "building": 11
           },
           "failed": false,
           "errors": 0,
@@ -224,7 +222,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js 0be39494bece3d2a0e8350b0500fa67c",
           "name": "./src/app.js + 20 modules",
           "index": 0,
-          "index2": 29,
+          "index2": 28,
           "size": 18198,
           "cacheable": true,
           "built": true,
@@ -281,8 +279,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -290,8 +288,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -299,14 +297,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 }
               ],
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               },
               "failed": false,
               "errors": 0,
@@ -392,7 +390,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "index": 0,
-              "index2": 29,
+              "index2": 28,
               "size": 634,
               "cacheable": true,
               "built": true,
@@ -404,8 +402,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "issuerName": null,
               "issuerPath": null,
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               },
               "failed": false,
               "errors": 0,
@@ -451,14 +449,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 }
               ],
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               },
               "failed": false,
               "errors": 0,
@@ -515,8 +513,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -524,14 +522,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 }
               ],
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               },
               "failed": false,
               "errors": 0,
@@ -588,8 +586,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -597,14 +595,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 }
               ],
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               },
               "failed": false,
               "errors": 0,
@@ -661,8 +659,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -670,14 +668,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 }
               ],
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               },
               "failed": false,
               "errors": 0,
@@ -734,8 +732,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -743,8 +741,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -752,14 +750,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 }
               ],
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               },
               "failed": false,
               "errors": 0,
@@ -816,8 +814,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -825,8 +823,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -834,14 +832,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 }
               ],
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               },
               "failed": false,
               "errors": 0,
@@ -898,8 +896,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -907,8 +905,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -916,14 +914,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 }
               ],
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               },
               "failed": false,
               "errors": 0,
@@ -980,8 +978,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -989,8 +987,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -998,14 +996,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toInteger.js",
                   "name": "./node_modules/.4.17.10@lodash-es/toInteger.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 }
               ],
               "profile": {
-                "factory": 291,
-                "building": 79
+                "factory": 34,
+                "building": 74
               },
               "failed": false,
               "errors": 0,
@@ -1045,8 +1043,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "id": null,
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/common/util.js",
               "name": "./src/common/util.js",
-              "index": 29,
-              "index2": 28,
+              "index": 28,
+              "index2": 27,
               "size": 137,
               "cacheable": true,
               "built": true,
@@ -1062,14 +1060,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 }
               ],
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               },
               "failed": false,
               "errors": 0,
@@ -1128,8 +1126,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -1137,8 +1135,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -1146,8 +1144,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 },
                 {
@@ -1155,15 +1153,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "profile": {
-                    "factory": 301,
-                    "building": 70
+                    "factory": 40,
+                    "building": 64
                   }
                 }
               ],
               "profile": {
-                "factory": 121,
-                "building": 43,
-                "dependencies": 1
+                "factory": 80,
+                "building": 42,
+                "dependencies": 0
               },
               "failed": false,
               "errors": 0,
@@ -1220,8 +1218,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -1229,8 +1227,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -1238,8 +1236,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 },
                 {
@@ -1247,15 +1245,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "profile": {
-                    "factory": 301,
-                    "building": 70
+                    "factory": 40,
+                    "building": 64
                   }
                 }
               ],
               "profile": {
-                "factory": 121,
-                "building": 43,
-                "dependencies": 1
+                "factory": 80,
+                "building": 42,
+                "dependencies": 0
               },
               "failed": false,
               "errors": 0,
@@ -1312,8 +1310,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -1321,8 +1319,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -1330,8 +1328,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toInteger.js",
                   "name": "./node_modules/.4.17.10@lodash-es/toInteger.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 },
                 {
@@ -1339,15 +1337,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toFinite.js",
                   "name": "./node_modules/.4.17.10@lodash-es/toFinite.js",
                   "profile": {
-                    "factory": 291,
-                    "building": 79
+                    "factory": 34,
+                    "building": 74
                   }
                 }
               ],
               "profile": {
-                "factory": 59,
-                "building": 34,
-                "dependencies": 0
+                "factory": 34,
+                "building": 13,
+                "dependencies": 1
               },
               "failed": false,
               "errors": 0,
@@ -1404,8 +1402,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -1413,8 +1411,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -1422,8 +1420,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toInteger.js",
                   "name": "./node_modules/.4.17.10@lodash-es/toInteger.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 },
                 {
@@ -1431,8 +1429,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toFinite.js",
                   "name": "./node_modules/.4.17.10@lodash-es/toFinite.js",
                   "profile": {
-                    "factory": 291,
-                    "building": 79
+                    "factory": 34,
+                    "building": 74
                   }
                 },
                 {
@@ -1440,16 +1438,16 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toNumber.js",
                   "name": "./node_modules/.4.17.10@lodash-es/toNumber.js",
                   "profile": {
-                    "factory": 59,
-                    "building": 34,
-                    "dependencies": 0
+                    "factory": 34,
+                    "building": 13,
+                    "dependencies": 1
                   }
                 }
               ],
               "profile": {
-                "factory": 9,
-                "building": 13,
-                "dependencies": 1
+                "factory": 29,
+                "building": 19,
+                "dependencies": 0
               },
               "failed": false,
               "errors": 0,
@@ -1506,8 +1504,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -1515,8 +1513,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -1524,8 +1522,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 },
                 {
@@ -1533,8 +1531,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "profile": {
-                    "factory": 301,
-                    "building": 70
+                    "factory": 40,
+                    "building": 64
                   }
                 },
                 {
@@ -1542,15 +1540,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
                   "profile": {
-                    "factory": 121,
-                    "building": 43,
-                    "dependencies": 1
+                    "factory": 80,
+                    "building": 42,
+                    "dependencies": 0
                   }
                 }
               ],
               "profile": {
-                "factory": 2,
-                "building": 19
+                "factory": 22,
+                "building": 9
               },
               "failed": false,
               "errors": 0,
@@ -1625,8 +1623,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -1634,8 +1632,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -1643,8 +1641,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 },
                 {
@@ -1652,8 +1650,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "profile": {
-                    "factory": 301,
-                    "building": 70
+                    "factory": 40,
+                    "building": 64
                   }
                 },
                 {
@@ -1661,9 +1659,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
                   "profile": {
-                    "factory": 121,
-                    "building": 43,
-                    "dependencies": 1
+                    "factory": 80,
+                    "building": 42,
+                    "dependencies": 0
                   }
                 },
                 {
@@ -1671,14 +1669,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_baseGetTag.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_baseGetTag.js",
                   "profile": {
-                    "factory": 2,
-                    "building": 19
+                    "factory": 22,
+                    "building": 9
                   }
                 }
               ],
               "profile": {
-                "factory": 2,
-                "building": 39,
+                "factory": 12,
+                "building": 23,
                 "dependencies": 0
               },
               "failed": false,
@@ -1736,8 +1734,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -1745,8 +1743,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -1754,8 +1752,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 },
                 {
@@ -1763,8 +1761,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "profile": {
-                    "factory": 301,
-                    "building": 70
+                    "factory": 40,
+                    "building": 64
                   }
                 },
                 {
@@ -1772,9 +1770,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
                   "profile": {
-                    "factory": 121,
-                    "building": 43,
-                    "dependencies": 1
+                    "factory": 80,
+                    "building": 42,
+                    "dependencies": 0
                   }
                 },
                 {
@@ -1782,14 +1780,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_baseGetTag.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_baseGetTag.js",
                   "profile": {
-                    "factory": 2,
-                    "building": 19
+                    "factory": 22,
+                    "building": 9
                   }
                 }
               ],
               "profile": {
-                "factory": 2,
-                "building": 39,
+                "factory": 12,
+                "building": 23,
                 "dependencies": 0
               },
               "failed": false,
@@ -1847,8 +1845,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -1856,8 +1854,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -1865,8 +1863,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 },
                 {
@@ -1874,8 +1872,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "profile": {
-                    "factory": 301,
-                    "building": 70
+                    "factory": 40,
+                    "building": 64
                   }
                 },
                 {
@@ -1883,9 +1881,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
                   "profile": {
-                    "factory": 121,
-                    "building": 43,
-                    "dependencies": 1
+                    "factory": 80,
+                    "building": 42,
+                    "dependencies": 0
                   }
                 },
                 {
@@ -1893,14 +1891,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_baseGetTag.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_baseGetTag.js",
                   "profile": {
-                    "factory": 2,
-                    "building": 19
+                    "factory": 22,
+                    "building": 9
                   }
                 }
               ],
               "profile": {
-                "factory": 2,
-                "building": 39,
+                "factory": 12,
+                "building": 23,
                 "dependencies": 0
               },
               "failed": false,
@@ -1994,8 +1992,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -2003,8 +2001,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -2012,8 +2010,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toInteger.js",
                   "name": "./node_modules/.4.17.10@lodash-es/toInteger.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 },
                 {
@@ -2021,8 +2019,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toFinite.js",
                   "name": "./node_modules/.4.17.10@lodash-es/toFinite.js",
                   "profile": {
-                    "factory": 291,
-                    "building": 79
+                    "factory": 34,
+                    "building": 74
                   }
                 },
                 {
@@ -2030,9 +2028,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toNumber.js",
                   "name": "./node_modules/.4.17.10@lodash-es/toNumber.js",
                   "profile": {
-                    "factory": 59,
-                    "building": 34,
-                    "dependencies": 0
+                    "factory": 34,
+                    "building": 13,
+                    "dependencies": 1
                   }
                 },
                 {
@@ -2040,15 +2038,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isSymbol.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isSymbol.js",
                   "profile": {
-                    "factory": 9,
-                    "building": 13,
-                    "dependencies": 1
+                    "factory": 29,
+                    "building": 19,
+                    "dependencies": 0
                   }
                 }
               ],
               "profile": {
-                "factory": 9,
-                "building": 16
+                "factory": 2,
+                "building": 9
               },
               "failed": false,
               "errors": 0,
@@ -2105,8 +2103,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
                   "name": "./src/app.js",
                   "profile": {
-                    "factory": 126,
-                    "building": 4164
+                    "factory": 155,
+                    "building": 3009
                   }
                 },
                 {
@@ -2114,8 +2112,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
                   "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
                   "profile": {
-                    "factory": 125,
-                    "building": 143
+                    "factory": 38,
+                    "building": 891
                   }
                 },
                 {
@@ -2123,8 +2121,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
                   "profile": {
-                    "factory": 844,
-                    "building": 219
+                    "factory": 3,
+                    "building": 332
                   }
                 },
                 {
@@ -2132,8 +2130,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
                   "profile": {
-                    "factory": 301,
-                    "building": 70
+                    "factory": 40,
+                    "building": 64
                   }
                 },
                 {
@@ -2141,9 +2139,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
                   "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
                   "profile": {
-                    "factory": 121,
-                    "building": 43,
-                    "dependencies": 1
+                    "factory": 80,
+                    "building": 42,
+                    "dependencies": 0
                   }
                 },
                 {
@@ -2151,8 +2149,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_baseGetTag.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_baseGetTag.js",
                   "profile": {
-                    "factory": 2,
-                    "building": 19
+                    "factory": 22,
+                    "building": 9
                   }
                 },
                 {
@@ -2160,15 +2158,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_Symbol.js",
                   "name": "./node_modules/.4.17.10@lodash-es/_Symbol.js",
                   "profile": {
-                    "factory": 2,
-                    "building": 39,
+                    "factory": 12,
+                    "building": 23,
                     "dependencies": 0
                   }
                 }
               ],
               "profile": {
-                "factory": 16,
-                "building": 14
+                "factory": 2,
+                "building": 9
               },
               "failed": false,
               "errors": 0,
@@ -2230,8 +2228,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -2239,8 +2237,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -2248,8 +2246,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             },
             {
@@ -2257,8 +2255,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               }
             },
             {
@@ -2266,9 +2264,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
               "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
               "profile": {
-                "factory": 121,
-                "building": 43,
-                "dependencies": 1
+                "factory": 80,
+                "building": 42,
+                "dependencies": 0
               }
             },
             {
@@ -2276,8 +2274,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_baseGetTag.js",
               "name": "./node_modules/.4.17.10@lodash-es/_baseGetTag.js",
               "profile": {
-                "factory": 2,
-                "building": 19
+                "factory": 22,
+                "building": 9
               }
             },
             {
@@ -2285,8 +2283,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_Symbol.js",
               "name": "./node_modules/.4.17.10@lodash-es/_Symbol.js",
               "profile": {
-                "factory": 2,
-                "building": 39,
+                "factory": 12,
+                "building": 23,
                 "dependencies": 0
               }
             },
@@ -2295,8 +2293,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_root.js",
               "name": "./node_modules/.4.17.10@lodash-es/_root.js",
               "profile": {
-                "factory": 16,
-                "building": 14
+                "factory": 2,
+                "building": 9
               }
             },
             {
@@ -2304,14 +2302,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_freeGlobal.js",
               "name": "./node_modules/.4.17.10@lodash-es/_freeGlobal.js",
               "profile": {
-                "factory": 1,
-                "building": 12
+                "factory": 0,
+                "building": 11
               }
             }
           ],
           "profile": {
-            "factory": 5,
-            "building": 13
+            "factory": 1,
+            "building": 14
           },
           "failed": false,
           "errors": 0,
@@ -2337,12 +2335,12 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "source": "function _typeof(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nvar g; // This works in non-strict mode\n\ng = function () {\n  return this;\n}();\n\ntry {\n  // This works if eval is allowed (see CSP)\n  g = g || Function(\"return this\")() || (1, eval)(\"this\");\n} catch (e) {\n  // This works if the window reference is available\n  if ((typeof window === \"undefined\" ? \"undefined\" : _typeof(window)) === \"object\") g = window;\n} // g can still be undefined, but nothing to do about it...\n// We return undefined, instead of nothing here, so it's\n// easier to handle this case. if(!global) { ...}\n\n\nmodule.exports = g;"
         },
         {
-          "id": 9,
+          "id": 8,
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.0.0-beta.0@extract-text-webpack-plugin/dist/loader.js??ref--4-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/index.js??ref--4-1!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
           "name": "./src/css/base.scss",
           "index": null,
           "index2": null,
-          "size": 120,
+          "size": 92,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -2362,7 +2360,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
             "ModuleConcatenation bailout: Module is not an ECMAScript module"
           ],
           "depth": null,
-          "source": "// removed by extract-text-webpack-plugin\nmodule.exports = {\"box\":\"src-css-base_box_2Nmgm src-css-common_bigBox_NzhEA\"};"
+          "source": "// removed by extract-text-webpack-plugin\nmodule.exports = {\"box\":\"src-css-base_box_2Nmgm\"};"
         }
       ],
       "filteredModules": 0,
@@ -2402,8 +2400,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
           "name": "./src/app.js",
           "profile": {
-            "factory": 126,
-            "building": 4164
+            "factory": 155,
+            "building": 3009
           }
         },
         {
@@ -2411,8 +2409,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
           "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
           "profile": {
-            "factory": 125,
-            "building": 143
+            "factory": 38,
+            "building": 891
           }
         },
         {
@@ -2420,8 +2418,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
           "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
           "profile": {
-            "factory": 844,
-            "building": 219
+            "factory": 3,
+            "building": 332
           }
         },
         {
@@ -2429,8 +2427,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
           "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
           "profile": {
-            "factory": 301,
-            "building": 70
+            "factory": 40,
+            "building": 64
           }
         },
         {
@@ -2438,9 +2436,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
           "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
           "profile": {
-            "factory": 121,
-            "building": 43,
-            "dependencies": 1
+            "factory": 80,
+            "building": 42,
+            "dependencies": 0
           }
         },
         {
@@ -2448,8 +2446,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_baseGetTag.js",
           "name": "./node_modules/.4.17.10@lodash-es/_baseGetTag.js",
           "profile": {
-            "factory": 2,
-            "building": 19
+            "factory": 22,
+            "building": 9
           }
         },
         {
@@ -2457,8 +2455,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_Symbol.js",
           "name": "./node_modules/.4.17.10@lodash-es/_Symbol.js",
           "profile": {
-            "factory": 2,
-            "building": 39,
+            "factory": 12,
+            "building": 23,
             "dependencies": 0
           }
         },
@@ -2467,14 +2465,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_root.js",
           "name": "./node_modules/.4.17.10@lodash-es/_root.js",
           "profile": {
-            "factory": 16,
-            "building": 14
+            "factory": 2,
+            "building": 9
           }
         }
       ],
       "profile": {
-        "factory": 1,
-        "building": 12
+        "factory": 0,
+        "building": 11
       },
       "failed": false,
       "errors": 0,
@@ -2517,7 +2515,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js 0be39494bece3d2a0e8350b0500fa67c",
       "name": "./src/app.js + 20 modules",
       "index": 0,
-      "index2": 29,
+      "index2": 28,
       "size": 18198,
       "cacheable": true,
       "built": true,
@@ -2574,8 +2572,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -2583,8 +2581,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -2592,14 +2590,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             }
           ],
           "profile": {
-            "factory": 301,
-            "building": 70
+            "factory": 40,
+            "building": 64
           },
           "failed": false,
           "errors": 0,
@@ -2685,7 +2683,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
           "name": "./src/app.js",
           "index": 0,
-          "index2": 29,
+          "index2": 28,
           "size": 634,
           "cacheable": true,
           "built": true,
@@ -2697,8 +2695,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 126,
-            "building": 4164
+            "factory": 155,
+            "building": 3009
           },
           "failed": false,
           "errors": 0,
@@ -2744,14 +2742,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             }
           ],
           "profile": {
-            "factory": 125,
-            "building": 143
+            "factory": 38,
+            "building": 891
           },
           "failed": false,
           "errors": 0,
@@ -2808,8 +2806,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -2817,14 +2815,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             }
           ],
           "profile": {
-            "factory": 844,
-            "building": 219
+            "factory": 3,
+            "building": 332
           },
           "failed": false,
           "errors": 0,
@@ -2881,8 +2879,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -2890,14 +2888,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             }
           ],
           "profile": {
-            "factory": 844,
-            "building": 219
+            "factory": 3,
+            "building": 332
           },
           "failed": false,
           "errors": 0,
@@ -2954,8 +2952,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -2963,14 +2961,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             }
           ],
           "profile": {
-            "factory": 844,
-            "building": 219
+            "factory": 3,
+            "building": 332
           },
           "failed": false,
           "errors": 0,
@@ -3027,8 +3025,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -3036,8 +3034,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -3045,14 +3043,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             }
           ],
           "profile": {
-            "factory": 301,
-            "building": 70
+            "factory": 40,
+            "building": 64
           },
           "failed": false,
           "errors": 0,
@@ -3109,8 +3107,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -3118,8 +3116,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -3127,14 +3125,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             }
           ],
           "profile": {
-            "factory": 301,
-            "building": 70
+            "factory": 40,
+            "building": 64
           },
           "failed": false,
           "errors": 0,
@@ -3191,8 +3189,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -3200,8 +3198,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -3209,14 +3207,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             }
           ],
           "profile": {
-            "factory": 301,
-            "building": 70
+            "factory": 40,
+            "building": 64
           },
           "failed": false,
           "errors": 0,
@@ -3273,8 +3271,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -3282,8 +3280,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -3291,14 +3289,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toInteger.js",
               "name": "./node_modules/.4.17.10@lodash-es/toInteger.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             }
           ],
           "profile": {
-            "factory": 291,
-            "building": 79
+            "factory": 34,
+            "building": 74
           },
           "failed": false,
           "errors": 0,
@@ -3338,8 +3336,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "id": null,
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/common/util.js",
           "name": "./src/common/util.js",
-          "index": 29,
-          "index2": 28,
+          "index": 28,
+          "index2": 27,
           "size": 137,
           "cacheable": true,
           "built": true,
@@ -3355,14 +3353,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             }
           ],
           "profile": {
-            "factory": 125,
-            "building": 143
+            "factory": 38,
+            "building": 891
           },
           "failed": false,
           "errors": 0,
@@ -3421,8 +3419,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -3430,8 +3428,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -3439,8 +3437,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             },
             {
@@ -3448,15 +3446,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               }
             }
           ],
           "profile": {
-            "factory": 121,
-            "building": 43,
-            "dependencies": 1
+            "factory": 80,
+            "building": 42,
+            "dependencies": 0
           },
           "failed": false,
           "errors": 0,
@@ -3513,8 +3511,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -3522,8 +3520,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -3531,8 +3529,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             },
             {
@@ -3540,15 +3538,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               }
             }
           ],
           "profile": {
-            "factory": 121,
-            "building": 43,
-            "dependencies": 1
+            "factory": 80,
+            "building": 42,
+            "dependencies": 0
           },
           "failed": false,
           "errors": 0,
@@ -3605,8 +3603,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -3614,8 +3612,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -3623,8 +3621,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toInteger.js",
               "name": "./node_modules/.4.17.10@lodash-es/toInteger.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             },
             {
@@ -3632,15 +3630,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toFinite.js",
               "name": "./node_modules/.4.17.10@lodash-es/toFinite.js",
               "profile": {
-                "factory": 291,
-                "building": 79
+                "factory": 34,
+                "building": 74
               }
             }
           ],
           "profile": {
-            "factory": 59,
-            "building": 34,
-            "dependencies": 0
+            "factory": 34,
+            "building": 13,
+            "dependencies": 1
           },
           "failed": false,
           "errors": 0,
@@ -3697,8 +3695,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -3706,8 +3704,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -3715,8 +3713,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toInteger.js",
               "name": "./node_modules/.4.17.10@lodash-es/toInteger.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             },
             {
@@ -3724,8 +3722,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toFinite.js",
               "name": "./node_modules/.4.17.10@lodash-es/toFinite.js",
               "profile": {
-                "factory": 291,
-                "building": 79
+                "factory": 34,
+                "building": 74
               }
             },
             {
@@ -3733,16 +3731,16 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toNumber.js",
               "name": "./node_modules/.4.17.10@lodash-es/toNumber.js",
               "profile": {
-                "factory": 59,
-                "building": 34,
-                "dependencies": 0
+                "factory": 34,
+                "building": 13,
+                "dependencies": 1
               }
             }
           ],
           "profile": {
-            "factory": 9,
-            "building": 13,
-            "dependencies": 1
+            "factory": 29,
+            "building": 19,
+            "dependencies": 0
           },
           "failed": false,
           "errors": 0,
@@ -3799,8 +3797,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -3808,8 +3806,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -3817,8 +3815,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             },
             {
@@ -3826,8 +3824,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               }
             },
             {
@@ -3835,15 +3833,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
               "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
               "profile": {
-                "factory": 121,
-                "building": 43,
-                "dependencies": 1
+                "factory": 80,
+                "building": 42,
+                "dependencies": 0
               }
             }
           ],
           "profile": {
-            "factory": 2,
-            "building": 19
+            "factory": 22,
+            "building": 9
           },
           "failed": false,
           "errors": 0,
@@ -3918,8 +3916,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -3927,8 +3925,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -3936,8 +3934,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             },
             {
@@ -3945,8 +3943,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               }
             },
             {
@@ -3954,9 +3952,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
               "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
               "profile": {
-                "factory": 121,
-                "building": 43,
-                "dependencies": 1
+                "factory": 80,
+                "building": 42,
+                "dependencies": 0
               }
             },
             {
@@ -3964,14 +3962,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_baseGetTag.js",
               "name": "./node_modules/.4.17.10@lodash-es/_baseGetTag.js",
               "profile": {
-                "factory": 2,
-                "building": 19
+                "factory": 22,
+                "building": 9
               }
             }
           ],
           "profile": {
-            "factory": 2,
-            "building": 39,
+            "factory": 12,
+            "building": 23,
             "dependencies": 0
           },
           "failed": false,
@@ -4029,8 +4027,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -4038,8 +4036,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -4047,8 +4045,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             },
             {
@@ -4056,8 +4054,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               }
             },
             {
@@ -4065,9 +4063,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
               "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
               "profile": {
-                "factory": 121,
-                "building": 43,
-                "dependencies": 1
+                "factory": 80,
+                "building": 42,
+                "dependencies": 0
               }
             },
             {
@@ -4075,14 +4073,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_baseGetTag.js",
               "name": "./node_modules/.4.17.10@lodash-es/_baseGetTag.js",
               "profile": {
-                "factory": 2,
-                "building": 19
+                "factory": 22,
+                "building": 9
               }
             }
           ],
           "profile": {
-            "factory": 2,
-            "building": 39,
+            "factory": 12,
+            "building": 23,
             "dependencies": 0
           },
           "failed": false,
@@ -4140,8 +4138,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -4149,8 +4147,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -4158,8 +4156,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             },
             {
@@ -4167,8 +4165,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               }
             },
             {
@@ -4176,9 +4174,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
               "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
               "profile": {
-                "factory": 121,
-                "building": 43,
-                "dependencies": 1
+                "factory": 80,
+                "building": 42,
+                "dependencies": 0
               }
             },
             {
@@ -4186,14 +4184,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_baseGetTag.js",
               "name": "./node_modules/.4.17.10@lodash-es/_baseGetTag.js",
               "profile": {
-                "factory": 2,
-                "building": 19
+                "factory": 22,
+                "building": 9
               }
             }
           ],
           "profile": {
-            "factory": 2,
-            "building": 39,
+            "factory": 12,
+            "building": 23,
             "dependencies": 0
           },
           "failed": false,
@@ -4287,8 +4285,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -4296,8 +4294,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -4305,8 +4303,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toInteger.js",
               "name": "./node_modules/.4.17.10@lodash-es/toInteger.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             },
             {
@@ -4314,8 +4312,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toFinite.js",
               "name": "./node_modules/.4.17.10@lodash-es/toFinite.js",
               "profile": {
-                "factory": 291,
-                "building": 79
+                "factory": 34,
+                "building": 74
               }
             },
             {
@@ -4323,9 +4321,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/toNumber.js",
               "name": "./node_modules/.4.17.10@lodash-es/toNumber.js",
               "profile": {
-                "factory": 59,
-                "building": 34,
-                "dependencies": 0
+                "factory": 34,
+                "building": 13,
+                "dependencies": 1
               }
             },
             {
@@ -4333,15 +4331,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isSymbol.js",
               "name": "./node_modules/.4.17.10@lodash-es/isSymbol.js",
               "profile": {
-                "factory": 9,
-                "building": 13,
-                "dependencies": 1
+                "factory": 29,
+                "building": 19,
+                "dependencies": 0
               }
             }
           ],
           "profile": {
-            "factory": 9,
-            "building": 16
+            "factory": 2,
+            "building": 9
           },
           "failed": false,
           "errors": 0,
@@ -4398,8 +4396,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
               "name": "./src/app.js",
               "profile": {
-                "factory": 126,
-                "building": 4164
+                "factory": 155,
+                "building": 3009
               }
             },
             {
@@ -4407,8 +4405,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
               "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
               "profile": {
-                "factory": 125,
-                "building": 143
+                "factory": 38,
+                "building": 891
               }
             },
             {
@@ -4416,8 +4414,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
               "profile": {
-                "factory": 844,
-                "building": 219
+                "factory": 3,
+                "building": 332
               }
             },
             {
@@ -4425,8 +4423,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
               "profile": {
-                "factory": 301,
-                "building": 70
+                "factory": 40,
+                "building": 64
               }
             },
             {
@@ -4434,9 +4432,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
               "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
               "profile": {
-                "factory": 121,
-                "building": 43,
-                "dependencies": 1
+                "factory": 80,
+                "building": 42,
+                "dependencies": 0
               }
             },
             {
@@ -4444,8 +4442,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_baseGetTag.js",
               "name": "./node_modules/.4.17.10@lodash-es/_baseGetTag.js",
               "profile": {
-                "factory": 2,
-                "building": 19
+                "factory": 22,
+                "building": 9
               }
             },
             {
@@ -4453,15 +4451,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_Symbol.js",
               "name": "./node_modules/.4.17.10@lodash-es/_Symbol.js",
               "profile": {
-                "factory": 2,
-                "building": 39,
+                "factory": 12,
+                "building": 23,
                 "dependencies": 0
               }
             }
           ],
           "profile": {
-            "factory": 16,
-            "building": 14
+            "factory": 2,
+            "building": 9
           },
           "failed": false,
           "errors": 0,
@@ -4523,8 +4521,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/app.js",
           "name": "./src/app.js",
           "profile": {
-            "factory": 126,
-            "building": 4164
+            "factory": 155,
+            "building": 3009
           }
         },
         {
@@ -4532,8 +4530,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/chunk.js",
           "name": "./node_modules/.4.17.10@lodash-es/chunk.js",
           "profile": {
-            "factory": 125,
-            "building": 143
+            "factory": 38,
+            "building": 891
           }
         },
         {
@@ -4541,8 +4539,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
           "name": "./node_modules/.4.17.10@lodash-es/_isIterateeCall.js",
           "profile": {
-            "factory": 844,
-            "building": 219
+            "factory": 3,
+            "building": 332
           }
         },
         {
@@ -4550,8 +4548,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isArrayLike.js",
           "name": "./node_modules/.4.17.10@lodash-es/isArrayLike.js",
           "profile": {
-            "factory": 301,
-            "building": 70
+            "factory": 40,
+            "building": 64
           }
         },
         {
@@ -4559,9 +4557,9 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/isFunction.js",
           "name": "./node_modules/.4.17.10@lodash-es/isFunction.js",
           "profile": {
-            "factory": 121,
-            "building": 43,
-            "dependencies": 1
+            "factory": 80,
+            "building": 42,
+            "dependencies": 0
           }
         },
         {
@@ -4569,8 +4567,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_baseGetTag.js",
           "name": "./node_modules/.4.17.10@lodash-es/_baseGetTag.js",
           "profile": {
-            "factory": 2,
-            "building": 19
+            "factory": 22,
+            "building": 9
           }
         },
         {
@@ -4578,8 +4576,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_Symbol.js",
           "name": "./node_modules/.4.17.10@lodash-es/_Symbol.js",
           "profile": {
-            "factory": 2,
-            "building": 39,
+            "factory": 12,
+            "building": 23,
             "dependencies": 0
           }
         },
@@ -4588,8 +4586,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_root.js",
           "name": "./node_modules/.4.17.10@lodash-es/_root.js",
           "profile": {
-            "factory": 16,
-            "building": 14
+            "factory": 2,
+            "building": 9
           }
         },
         {
@@ -4597,14 +4595,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.17.10@lodash-es/_freeGlobal.js",
           "name": "./node_modules/.4.17.10@lodash-es/_freeGlobal.js",
           "profile": {
-            "factory": 1,
-            "building": 12
+            "factory": 0,
+            "building": 11
           }
         }
       ],
       "profile": {
-        "factory": 5,
-        "building": 13
+        "factory": 1,
+        "building": 14
       },
       "failed": false,
       "errors": 0,
@@ -4633,8 +4631,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "id": 3,
       "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/lib/urls.js",
       "name": "./node_modules/.0.21.0@style-loader/lib/urls.js",
-      "index": 28,
-      "index2": 25,
+      "index": 27,
+      "index2": 24,
       "size": 3084,
       "cacheable": true,
       "built": true,
@@ -4646,7 +4644,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "issuerName": "./node_modules/.0.21.0@style-loader/lib/addStyles.js",
       "issuerPath": [
         {
-          "id": 9,
+          "id": 8,
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.0.0-beta.0@extract-text-webpack-plugin/dist/loader.js??ref--4-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/index.js??ref--4-1!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
           "name": "./src/css/base.scss"
         },
@@ -4655,14 +4653,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/lib/addStyles.js",
           "name": "./node_modules/.0.21.0@style-loader/lib/addStyles.js",
           "profile": {
-            "factory": 701,
-            "building": 508
+            "factory": 781,
+            "building": 362
           }
         }
       ],
       "profile": {
-        "factory": 140,
-        "building": 17
+        "factory": 113,
+        "building": 37
       },
       "failed": false,
       "errors": 0,
@@ -4681,8 +4679,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "id": 4,
       "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/lib/addStyles.js",
       "name": "./node_modules/.0.21.0@style-loader/lib/addStyles.js",
-      "index": 27,
-      "index2": 26,
+      "index": 26,
+      "index2": 25,
       "size": 10006,
       "cacheable": true,
       "built": true,
@@ -4690,18 +4688,18 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "prefetched": false,
       "chunks": [],
       "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.0.0-beta.0@extract-text-webpack-plugin/dist/loader.js??ref--4-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/index.js??ref--4-1!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-      "issuerId": 9,
+      "issuerId": 8,
       "issuerName": "./src/css/base.scss",
       "issuerPath": [
         {
-          "id": 9,
+          "id": 8,
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.0.0-beta.0@extract-text-webpack-plugin/dist/loader.js??ref--4-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/index.js??ref--4-1!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
           "name": "./src/css/base.scss"
         }
       ],
       "profile": {
-        "factory": 701,
-        "building": 508
+        "factory": 781,
+        "building": 362
       },
       "failed": false,
       "errors": 0,
@@ -4720,8 +4718,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "id": 5,
       "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/css.transform.js",
       "name": "./css.transform.js",
-      "index": 26,
-      "index2": 24,
+      "index": 25,
+      "index2": 23,
       "size": 215,
       "cacheable": true,
       "built": true,
@@ -4729,18 +4727,18 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "prefetched": false,
       "chunks": [],
       "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.0.0-beta.0@extract-text-webpack-plugin/dist/loader.js??ref--4-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/index.js??ref--4-1!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-      "issuerId": 9,
+      "issuerId": 8,
       "issuerName": "./src/css/base.scss",
       "issuerPath": [
         {
-          "id": 9,
+          "id": 8,
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.0.0-beta.0@extract-text-webpack-plugin/dist/loader.js??ref--4-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/index.js??ref--4-1!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
           "name": "./src/css/base.scss"
         }
       ],
       "profile": {
-        "factory": 701,
-        "building": 508
+        "factory": 781,
+        "building": 362
       },
       "failed": false,
       "errors": 0,
@@ -4757,55 +4755,6 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
     },
     {
       "id": 6,
-      "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/common.scss",
-      "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./src/css/common.scss",
-      "index": 25,
-      "index2": 22,
-      "size": 351,
-      "cacheable": true,
-      "built": true,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [],
-      "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-      "issuerId": 8,
-      "issuerName": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-      "issuerPath": [
-        {
-          "id": 9,
-          "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.0.0-beta.0@extract-text-webpack-plugin/dist/loader.js??ref--4-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/index.js??ref--4-1!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-          "name": "./src/css/base.scss"
-        },
-        {
-          "id": 8,
-          "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-          "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-          "profile": {
-            "factory": 701,
-            "building": 508
-          }
-        }
-      ],
-      "profile": {
-        "factory": 50,
-        "building": 136,
-        "dependencies": 0
-      },
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "assets": [],
-      "reasons": [],
-      "usedExports": true,
-      "providedExports": null,
-      "optimizationBailout": [
-        "ModuleConcatenation bailout: Module is not an ECMAScript module"
-      ],
-      "depth": 3,
-      "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.id, \"body{font-size:30px}.src-css-common_bigBox_NzhEA{border:2px solid #000}:root{--mainColor:red}a{color:var(--mainColor)}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"bigBox\": \"src-css-common_bigBox_NzhEA\"\n};"
-    },
-    {
-      "id": 7,
       "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/lib/css-base.js",
       "name": "./node_modules/.0.28.11@css-loader/lib/css-base.js",
       "index": 24,
@@ -4817,28 +4766,27 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "prefetched": false,
       "chunks": [],
       "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-      "issuerId": 8,
+      "issuerId": 7,
       "issuerName": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
       "issuerPath": [
         {
-          "id": 9,
+          "id": 8,
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.0.0-beta.0@extract-text-webpack-plugin/dist/loader.js??ref--4-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/index.js??ref--4-1!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
           "name": "./src/css/base.scss"
         },
         {
-          "id": 8,
+          "id": 7,
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
           "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
           "profile": {
-            "factory": 701,
-            "building": 508
+            "factory": 781,
+            "building": 362
           }
         }
       ],
       "profile": {
-        "factory": 50,
-        "building": 136,
-        "dependencies": 0
+        "factory": 108,
+        "building": 106
       },
       "failed": false,
       "errors": 0,
@@ -4854,30 +4802,30 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "source": "/*\n\tMIT License http://www.opensource.org/licenses/mit-license.php\n\tAuthor Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \" + item[2] + \"{\" + content + \"}\";\n      } else {\n        return content;\n      }\n    }).join(\"\");\n  }; // import a list of modules into the list\n\n\n  list.i = function (modules, mediaQuery) {\n    if (typeof modules === \"string\") modules = [[null, modules, \"\"]];\n    var alreadyImportedModules = {};\n\n    for (var i = 0; i < this.length; i++) {\n      var id = this[i][0];\n      if (typeof id === \"number\") alreadyImportedModules[id] = true;\n    }\n\n    for (i = 0; i < modules.length; i++) {\n      var item = modules[i]; // skip already imported module\n      // this implementation is not 100% perfect for weird media query combinations\n      //  when a module is imported multiple times with different media queries.\n      //  I hope this will never occur (Hey this way we have smaller bundles)\n\n      if (typeof item[0] !== \"number\" || !alreadyImportedModules[item[0]]) {\n        if (mediaQuery && !item[2]) {\n          item[2] = mediaQuery;\n        } else if (mediaQuery) {\n          item[2] = \"(\" + item[2] + \") and (\" + mediaQuery + \")\";\n        }\n\n        list.push(item);\n      }\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || '';\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;\n  return '/*# ' + data + ' */';\n}"
     },
     {
-      "id": 8,
+      "id": 7,
       "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
       "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
       "index": 23,
-      "index2": 23,
-      "size": 687,
+      "index2": 22,
+      "size": 353,
       "cacheable": true,
       "built": true,
       "optional": false,
       "prefetched": false,
       "chunks": [],
       "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.0.0-beta.0@extract-text-webpack-plugin/dist/loader.js??ref--4-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/index.js??ref--4-1!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-      "issuerId": 9,
+      "issuerId": 8,
       "issuerName": "./src/css/base.scss",
       "issuerPath": [
         {
-          "id": 9,
+          "id": 8,
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.0.0-beta.0@extract-text-webpack-plugin/dist/loader.js??ref--4-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/index.js??ref--4-1!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
           "name": "./src/css/base.scss"
         }
       ],
       "profile": {
-        "factory": 701,
-        "building": 508
+        "factory": 781,
+        "building": 362
       },
       "failed": false,
       "errors": 0,
@@ -4890,15 +4838,15 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
         "ModuleConcatenation bailout: Module is not an ECMAScript module"
       ],
       "depth": 2,
-      "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\nexports.i(require(\"-!../../node_modules/.0.28.11@css-loader/index.js??ref--4-2!./common.scss\"), undefined);\n\n// module\nexports.push([module.id, \"html{background:#ff0}.src-css-base_box_2Nmgm{height:200px;width:200px;border-radius:4px;background:#333;transition:-webkit-transform 1s;-webkit-transition:-webkit-transform 1s;transition:transform 1s;transition:transform 1s,-webkit-transform 1s}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_2Nmgm \" + require(\"-!../../node_modules/.0.28.11@css-loader/index.js??ref--4-2!./common.scss\").locals[\"bigBox\"] + \"\"\n};"
+      "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.id, \"html{background:#ff0}.src-css-base_box_2Nmgm{height:200px;width:200px;border-radius:4px;background:#333;transition:transform 1s}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_2Nmgm\"\n};"
     },
     {
-      "id": 9,
+      "id": 8,
       "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.4.0.0-beta.0@extract-text-webpack-plugin/dist/loader.js??ref--4-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.21.0@style-loader/index.js??ref--4-1!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
       "name": "./src/css/base.scss",
       "index": null,
       "index2": null,
-      "size": 120,
+      "size": 92,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -4918,7 +4866,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
         "ModuleConcatenation bailout: Module is not an ECMAScript module"
       ],
       "depth": null,
-      "source": "// removed by extract-text-webpack-plugin\nmodule.exports = {\"box\":\"src-css-base_box_2Nmgm src-css-common_bigBox_NzhEA\"};"
+      "source": "// removed by extract-text-webpack-plugin\nmodule.exports = {\"box\":\"src-css-base_box_2Nmgm\"};"
     }
   ],
   "filteredModules": 0,
@@ -4961,12 +4909,12 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "rendered": true,
           "initial": true,
           "entry": true,
-          "size": 3593,
+          "size": 2734,
           "names": [],
           "files": [
             "extract-text-webpack-plugin-output-filename"
           ],
-          "hash": "d30c8d7ba8aa38829fce",
+          "hash": "4e5cde5776e26cdf4d37",
           "siblings": [],
           "parents": [],
           "children": [],
@@ -4974,71 +4922,6 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "modules": [
             {
               "id": 0,
-              "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/common.scss",
-              "name": "./node_modules/.0.28.11@css-loader?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!./src/css/common.scss",
-              "index": 2,
-              "index2": 1,
-              "size": 351,
-              "cacheable": true,
-              "built": true,
-              "optional": false,
-              "prefetched": false,
-              "chunks": [
-                0
-              ],
-              "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-              "issuerId": 2,
-              "issuerName": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-              "issuerPath": [
-                {
-                  "id": 2,
-                  "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-                  "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-                  "profile": {
-                    "factory": 4,
-                    "building": 27
-                  }
-                }
-              ],
-              "profile": {
-                "factory": 1,
-                "building": 35,
-                "dependencies": 0
-              },
-              "failed": false,
-              "errors": 0,
-              "warnings": 0,
-              "assets": [],
-              "reasons": [
-                {
-                  "moduleId": 2,
-                  "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-                  "module": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-                  "moduleName": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-                  "type": "cjs require",
-                  "userRequest": "-!../../node_modules/.0.28.11@css-loader/index.js?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!./common.scss",
-                  "loc": "3:10-181"
-                },
-                {
-                  "moduleId": 2,
-                  "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-                  "module": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-                  "moduleName": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-                  "type": "cjs require",
-                  "userRequest": "-!../../node_modules/.0.28.11@css-loader/index.js?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!./common.scss",
-                  "loc": "10:36-207"
-                }
-              ],
-              "usedExports": true,
-              "providedExports": null,
-              "optimizationBailout": [
-                "ModuleConcatenation bailout: Module is not an ECMAScript module"
-              ],
-              "depth": 1,
-              "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.id, \"body{font-size:30px}.src-css-common_bigBox_NzhEA{border:2px solid #000}:root{--mainColor:red}a{color:var(--mainColor)}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"bigBox\": \"src-css-common_bigBox_NzhEA\"\n};"
-            },
-            {
-              "id": 1,
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/lib/css-base.js",
               "name": "./node_modules/.0.28.11@css-loader/lib/css-base.js",
               "index": 1,
@@ -5052,23 +4935,22 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                 0
               ],
               "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-              "issuerId": 2,
+              "issuerId": 1,
               "issuerName": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
               "issuerPath": [
                 {
-                  "id": 2,
+                  "id": 1,
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
                   "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
                   "profile": {
                     "factory": 4,
-                    "building": 27
+                    "building": 25
                   }
                 }
               ],
               "profile": {
-                "factory": 1,
-                "building": 35,
-                "dependencies": 0
+                "factory": 0,
+                "building": 14
               },
               "failed": false,
               "errors": 0,
@@ -5076,16 +4958,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "assets": [],
               "reasons": [
                 {
-                  "moduleId": 0,
-                  "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/common.scss",
-                  "module": "./node_modules/.0.28.11@css-loader?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!./src/css/common.scss",
-                  "moduleName": "./node_modules/.0.28.11@css-loader?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!./src/css/common.scss",
-                  "type": "cjs require",
-                  "userRequest": "../../node_modules/.0.28.11@css-loader/lib/css-base.js",
-                  "loc": "1:27-92"
-                },
-                {
-                  "moduleId": 2,
+                  "moduleId": 1,
                   "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
                   "module": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
                   "moduleName": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
@@ -5103,12 +4976,12 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "source": "/*\n\tMIT License http://www.opensource.org/licenses/mit-license.php\n\tAuthor Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \" + item[2] + \"{\" + content + \"}\";\n      } else {\n        return content;\n      }\n    }).join(\"\");\n  }; // import a list of modules into the list\n\n\n  list.i = function (modules, mediaQuery) {\n    if (typeof modules === \"string\") modules = [[null, modules, \"\"]];\n    var alreadyImportedModules = {};\n\n    for (var i = 0; i < this.length; i++) {\n      var id = this[i][0];\n      if (typeof id === \"number\") alreadyImportedModules[id] = true;\n    }\n\n    for (i = 0; i < modules.length; i++) {\n      var item = modules[i]; // skip already imported module\n      // this implementation is not 100% perfect for weird media query combinations\n      //  when a module is imported multiple times with different media queries.\n      //  I hope this will never occur (Hey this way we have smaller bundles)\n\n      if (typeof item[0] !== \"number\" || !alreadyImportedModules[item[0]]) {\n        if (mediaQuery && !item[2]) {\n          item[2] = mediaQuery;\n        } else if (mediaQuery) {\n          item[2] = \"(\" + item[2] + \") and (\" + mediaQuery + \")\";\n        }\n\n        list.push(item);\n      }\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || '';\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;\n  return '/*# ' + data + ' */';\n}"
             },
             {
-              "id": 2,
+              "id": 1,
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
               "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
               "index": 0,
-              "index2": 2,
-              "size": 861,
+              "index2": 1,
+              "size": 353,
               "cacheable": true,
               "built": true,
               "optional": false,
@@ -5122,7 +4995,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "issuerPath": null,
               "profile": {
                 "factory": 4,
-                "building": 27
+                "building": 25
               },
               "failed": false,
               "errors": 0,
@@ -5144,7 +5017,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                 "ModuleConcatenation bailout: Module is not an ECMAScript module"
               ],
               "depth": 0,
-              "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\nexports.i(require(\"-!../../node_modules/.0.28.11@css-loader/index.js?{\\\"minimize\\\":true,\\\"modules\\\":true,\\\"localIdentName\\\":\\\"[path][name]_[local]_[hash:base64:5]\\\"}!./common.scss\"), undefined);\n\n// module\nexports.push([module.id, \"html{background:#ff0}.src-css-base_box_2Nmgm{height:200px;width:200px;border-radius:4px;background:#333;transition:-webkit-transform 1s;-webkit-transition:-webkit-transform 1s;transition:transform 1s;transition:transform 1s,-webkit-transform 1s}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_2Nmgm \" + require(\"-!../../node_modules/.0.28.11@css-loader/index.js?{\\\"minimize\\\":true,\\\"modules\\\":true,\\\"localIdentName\\\":\\\"[path][name]_[local]_[hash:base64:5]\\\"}!./common.scss\").locals[\"bigBox\"] + \"\"\n};"
+              "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.id, \"html{background:#ff0}.src-css-base_box_2Nmgm{height:200px;width:200px;border-radius:4px;background:#333;transition:transform 1s}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_2Nmgm\"\n};"
             }
           ],
           "filteredModules": 0,
@@ -5163,71 +5036,6 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "modules": [
         {
           "id": 0,
-          "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/common.scss",
-          "name": "./node_modules/.0.28.11@css-loader?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!./src/css/common.scss",
-          "index": 2,
-          "index2": 1,
-          "size": 351,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            0
-          ],
-          "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-          "issuerId": 2,
-          "issuerName": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-          "issuerPath": [
-            {
-              "id": 2,
-              "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-              "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-              "profile": {
-                "factory": 4,
-                "building": 27
-              }
-            }
-          ],
-          "profile": {
-            "factory": 1,
-            "building": 35,
-            "dependencies": 0
-          },
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": 2,
-              "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-              "module": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-              "moduleName": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-              "type": "cjs require",
-              "userRequest": "-!../../node_modules/.0.28.11@css-loader/index.js?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!./common.scss",
-              "loc": "3:10-181"
-            },
-            {
-              "moduleId": 2,
-              "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-              "module": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-              "moduleName": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
-              "type": "cjs require",
-              "userRequest": "-!../../node_modules/.0.28.11@css-loader/index.js?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!./common.scss",
-              "loc": "10:36-207"
-            }
-          ],
-          "usedExports": true,
-          "providedExports": null,
-          "optimizationBailout": [
-            "ModuleConcatenation bailout: Module is not an ECMAScript module"
-          ],
-          "depth": 1,
-          "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.id, \"body{font-size:30px}.src-css-common_bigBox_NzhEA{border:2px solid #000}:root{--mainColor:red}a{color:var(--mainColor)}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"bigBox\": \"src-css-common_bigBox_NzhEA\"\n};"
-        },
-        {
-          "id": 1,
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.8.0.2@babel-loader/lib/index.js??ref--5-0!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/lib/css-base.js",
           "name": "./node_modules/.0.28.11@css-loader/lib/css-base.js",
           "index": 1,
@@ -5241,23 +5049,22 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
             0
           ],
           "issuer": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
-          "issuerId": 2,
+          "issuerId": 1,
           "issuerName": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
           "issuerPath": [
             {
-              "id": 2,
+              "id": 1,
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
               "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
               "profile": {
                 "factory": 4,
-                "building": 27
+                "building": 25
               }
             }
           ],
           "profile": {
-            "factory": 1,
-            "building": 35,
-            "dependencies": 0
+            "factory": 0,
+            "building": 14
           },
           "failed": false,
           "errors": 0,
@@ -5265,16 +5072,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "assets": [],
           "reasons": [
             {
-              "moduleId": 0,
-              "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/common.scss",
-              "module": "./node_modules/.0.28.11@css-loader?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!./src/css/common.scss",
-              "moduleName": "./node_modules/.0.28.11@css-loader?{\"minimize\":true,\"modules\":true,\"localIdentName\":\"[path][name]_[local]_[hash:base64:5]\"}!./src/css/common.scss",
-              "type": "cjs require",
-              "userRequest": "../../node_modules/.0.28.11@css-loader/lib/css-base.js",
-              "loc": "1:27-92"
-            },
-            {
-              "moduleId": 2,
+              "moduleId": 1,
               "moduleIdentifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
               "module": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
               "moduleName": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
@@ -5292,12 +5090,12 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "source": "/*\n\tMIT License http://www.opensource.org/licenses/mit-license.php\n\tAuthor Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \" + item[2] + \"{\" + content + \"}\";\n      } else {\n        return content;\n      }\n    }).join(\"\");\n  }; // import a list of modules into the list\n\n\n  list.i = function (modules, mediaQuery) {\n    if (typeof modules === \"string\") modules = [[null, modules, \"\"]];\n    var alreadyImportedModules = {};\n\n    for (var i = 0; i < this.length; i++) {\n      var id = this[i][0];\n      if (typeof id === \"number\") alreadyImportedModules[id] = true;\n    }\n\n    for (i = 0; i < modules.length; i++) {\n      var item = modules[i]; // skip already imported module\n      // this implementation is not 100% perfect for weird media query combinations\n      //  when a module is imported multiple times with different media queries.\n      //  I hope this will never occur (Hey this way we have smaller bundles)\n\n      if (typeof item[0] !== \"number\" || !alreadyImportedModules[item[0]]) {\n        if (mediaQuery && !item[2]) {\n          item[2] = mediaQuery;\n        } else if (mediaQuery) {\n          item[2] = \"(\" + item[2] + \") and (\" + mediaQuery + \")\";\n        }\n\n        list.push(item);\n      }\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || '';\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;\n  return '/*# ' + data + ' */';\n}"
         },
         {
-          "id": 2,
+          "id": 1,
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-15-Tree-shaking/src/css/base.scss",
           "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
           "index": 0,
-          "index2": 2,
-          "size": 861,
+          "index2": 1,
+          "size": 353,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -5311,7 +5109,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "issuerPath": null,
           "profile": {
             "factory": 4,
-            "building": 27
+            "building": 25
           },
           "failed": false,
           "errors": 0,
@@ -5333,7 +5131,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
             "ModuleConcatenation bailout: Module is not an ECMAScript module"
           ],
           "depth": 0,
-          "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\nexports.i(require(\"-!../../node_modules/.0.28.11@css-loader/index.js?{\\\"minimize\\\":true,\\\"modules\\\":true,\\\"localIdentName\\\":\\\"[path][name]_[local]_[hash:base64:5]\\\"}!./common.scss\"), undefined);\n\n// module\nexports.push([module.id, \"html{background:#ff0}.src-css-base_box_2Nmgm{height:200px;width:200px;border-radius:4px;background:#333;transition:-webkit-transform 1s;-webkit-transition:-webkit-transform 1s;transition:transform 1s;transition:transform 1s,-webkit-transform 1s}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_2Nmgm \" + require(\"-!../../node_modules/.0.28.11@css-loader/index.js?{\\\"minimize\\\":true,\\\"modules\\\":true,\\\"localIdentName\\\":\\\"[path][name]_[local]_[hash:base64:5]\\\"}!./common.scss\").locals[\"bigBox\"] + \"\"\n};"
+          "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.id, \"html{background:#ff0}.src-css-base_box_2Nmgm{height:200px;width:200px;border-radius:4px;background:#333;transition:transform 1s}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_2Nmgm\"\n};"
         }
       ],
       "filteredModules": 0,

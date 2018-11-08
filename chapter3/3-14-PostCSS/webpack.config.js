@@ -1,5 +1,5 @@
-var path = require('path')
-var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const path = require('path')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
 	mode: 'production',
@@ -50,14 +50,14 @@ module.exports = {
 							/* put css-loader below */
 							loader: 'postcss-loader',
 							options: {
-								/*  webpack requires an identifier in options when {Function}/require is used (Complex Options). The ident can be freely named as long as it is unique. It's recommended to name it (ident: 'postcss') */
+								// 下面的插件给 postcss 使用
 								ident: 'postcss',
 								plugins: [
                   /* css3 Attribute added vendor prefix */
                   // 'autoprefixer' <-- already included in postcss-cssnext
-									require('autoprefixer')(),
+									// require('autoprefixer')(),
 									/* Use future css syntax */
-									require('postcss-cssnext')(),
+									// require('postcss-cssnext')(),
 									/* Compression optimization css */
 									require('cssnano')()
 								]

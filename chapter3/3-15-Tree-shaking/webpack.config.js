@@ -1,8 +1,8 @@
-var path = require('path')
-var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-var PurifyCss = require('purifycss-webpack')
-var glob = require('glob-all')
+const path = require('path')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const PurifyCss = require('purifycss-webpack')
+const glob = require('glob-all')
 
 module.exports = {
 	mode: 'production',
@@ -30,11 +30,11 @@ module.exports = {
 			// mini size for a chunk to be generated.
 			minSize: 30000,
 			// mini number of chunks that must share a module before splitting.
-			minChunks: 2,
+			minChunks: 2
 			// max number of parallel requests when on-demand loading.
-			maxAsyncRequests: 1,
-			// max number of parallel requests at an entry point.
-			maxInitialRequests: 1
+			// maxAsyncRequests: 1,
+			// max number of parallel requests at an entry point
+			// maxInitialRequests: 1
 		}
 	},
   module: {
@@ -74,10 +74,11 @@ module.exports = {
 								/*  webpack requires an identifier (ident) in options when {Function}/require is used (Complex Options). The ident can be freely named as long as it is unique. It's recommended to name it (ident: 'postcss') */
 								ident: 'postcss',
 								plugins: [
-									/* css3 Attribute added vendor prefix */
-									require('autoprefixer')(),
+                  /* css3 Attribute added vendor prefix */
+                  // 'autoprefixer' <-- already included in postcss-cssnext
+									// require('autoprefixer')(),
 									/* Use future css syntax */
-									require('postcss-cssnext')(),
+									// require('postcss-cssnext')(),
 									/* Compression optimization css */
 									require('cssnano')()
 								]
@@ -119,6 +120,6 @@ module.exports = {
       ])
     }),
     /* js compress */
-    new UglifyJsPlugin
+    new UglifyJsPlugin()
   ]
 }

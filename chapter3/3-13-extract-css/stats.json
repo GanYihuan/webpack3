@@ -3,8 +3,8 @@
   "warnings": [],
   "version": "4.12.1",
   "hash": "a6366f51a341e2905a58",
-  "time": 1481,
-  "builtAt": 1541641507852,
+  "time": 896,
+  "builtAt": 1541671181110,
   "publicPath": "",
   "outputPath": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-13-extract-css/dist",
   "assetsByChunkName": {
@@ -103,8 +103,8 @@
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 126,
-            "building": 20
+            "factory": 49,
+            "building": 24
           },
           "failed": false,
           "errors": 0,
@@ -191,8 +191,8 @@
       "issuerName": null,
       "issuerPath": null,
       "profile": {
-        "factory": 126,
-        "building": 20
+        "factory": 49,
+        "building": 24
       },
       "failed": false,
       "errors": 0,
@@ -243,14 +243,14 @@
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-13-extract-css/node_modules/.0.21.0@style-loader/lib/addStyles.js",
           "name": "./node_modules/.0.21.0@style-loader/lib/addStyles.js",
           "profile": {
-            "factory": 334,
-            "building": 657
+            "factory": 160,
+            "building": 470
           }
         }
       ],
       "profile": {
-        "factory": 20,
-        "building": 28
+        "factory": 27,
+        "building": 9
       },
       "failed": false,
       "errors": 0,
@@ -288,8 +288,8 @@
         }
       ],
       "profile": {
-        "factory": 334,
-        "building": 657
+        "factory": 160,
+        "building": 470
       },
       "failed": false,
       "errors": 0,
@@ -327,8 +327,8 @@
         }
       ],
       "profile": {
-        "factory": 334,
-        "building": 657
+        "factory": 160,
+        "building": 470
       },
       "failed": false,
       "errors": 0,
@@ -369,14 +369,14 @@
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-13-extract-css/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-13-extract-css/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-13-extract-css/src/css/base.scss",
           "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
           "profile": {
-            "factory": 334,
-            "building": 657
+            "factory": 160,
+            "building": 470
           }
         }
       ],
       "profile": {
-        "factory": 56,
-        "building": 13
+        "factory": 64,
+        "building": 10
       },
       "failed": false,
       "errors": 0,
@@ -414,8 +414,8 @@
         }
       ],
       "profile": {
-        "factory": 334,
-        "building": 657
+        "factory": 160,
+        "building": 470
       },
       "failed": false,
       "errors": 0,
@@ -533,14 +533,14 @@
                   "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-13-extract-css/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-13-extract-css/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-13-extract-css/src/css/base.scss",
                   "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
                   "profile": {
-                    "factory": 4,
-                    "building": 26
+                    "factory": 3,
+                    "building": 18
                   }
                 }
               ],
               "profile": {
-                "factory": 1,
-                "building": 6
+                "factory": 0,
+                "building": 3
               },
               "failed": false,
               "errors": 0,
@@ -584,8 +584,8 @@
               "issuerName": null,
               "issuerPath": null,
               "profile": {
-                "factory": 4,
-                "building": 26
+                "factory": 3,
+                "building": 18
               },
               "failed": false,
               "errors": 0,
@@ -647,14 +647,14 @@
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-13-extract-css/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-13-extract-css/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-13-extract-css/src/css/base.scss",
               "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
               "profile": {
-                "factory": 4,
-                "building": 26
+                "factory": 3,
+                "building": 18
               }
             }
           ],
           "profile": {
-            "factory": 1,
-            "building": 6
+            "factory": 0,
+            "building": 3
           },
           "failed": false,
           "errors": 0,
@@ -698,8 +698,8 @@
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 4,
-            "building": 26
+            "factory": 3,
+            "building": 18
           },
           "failed": false,
           "errors": 0,

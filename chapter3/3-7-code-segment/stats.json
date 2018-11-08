@@ -3,8 +3,8 @@
   "warnings": [],
   "version": "4.12.1",
   "hash": "4cab318d0bc5213bacae",
-  "time": 3893,
-  "builtAt": 1541641401479,
+  "time": 451,
+  "builtAt": 1541671287912,
   "publicPath": "",
   "outputPath": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/dist",
   "assetsByChunkName": {
@@ -159,16 +159,16 @@
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/src/pageA.js",
               "name": "./src/pageA.js",
               "profile": {
-                "factory": 57,
-                "building": 25,
-                "dependencies": 16
+                "factory": 55,
+                "building": 24,
+                "dependencies": 12
               }
             }
           ],
           "profile": {
-            "factory": 30,
-            "building": 264,
-            "dependencies": 2
+            "factory": 18,
+            "building": 256,
+            "dependencies": 4
           },
           "failed": false,
           "errors": 0,
@@ -225,9 +225,9 @@
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/src/pageA.js",
               "name": "./src/pageA.js",
               "profile": {
-                "factory": 57,
-                "building": 25,
-                "dependencies": 16
+                "factory": 55,
+                "building": 24,
+                "dependencies": 12
               }
             },
             {
@@ -235,15 +235,15 @@
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/node_modules/.4.17.10@lodash/lodash.js",
               "name": "./node_modules/.4.17.10@lodash/lodash.js",
               "profile": {
-                "factory": 30,
-                "building": 264,
-                "dependencies": 2
+                "factory": 18,
+                "building": 256,
+                "dependencies": 4
               }
             }
           ],
           "profile": {
             "factory": 2,
-            "building": 5
+            "building": 4
           },
           "failed": false,
           "errors": 0,
@@ -291,9 +291,9 @@
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/src/pageA.js",
               "name": "./src/pageA.js",
               "profile": {
-                "factory": 57,
-                "building": 25,
-                "dependencies": 16
+                "factory": 55,
+                "building": 24,
+                "dependencies": 12
               }
             },
             {
@@ -301,15 +301,15 @@
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/node_modules/.4.17.10@lodash/lodash.js",
               "name": "./node_modules/.4.17.10@lodash/lodash.js",
               "profile": {
-                "factory": 30,
-                "building": 264,
-                "dependencies": 2
+                "factory": 18,
+                "building": 256,
+                "dependencies": 4
               }
             }
           ],
           "profile": {
             "factory": 2,
-            "building": 5
+            "building": 4
           },
           "failed": false,
           "errors": 0,
@@ -391,16 +391,16 @@
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/src/pageA.js",
               "name": "./src/pageA.js",
               "profile": {
-                "factory": 57,
-                "building": 25,
-                "dependencies": 16
+                "factory": 55,
+                "building": 24,
+                "dependencies": 12
               }
             }
           ],
           "profile": {
-            "factory": 30,
-            "building": 264,
-            "dependencies": 2
+            "factory": 18,
+            "building": 256,
+            "dependencies": 4
           },
           "failed": false,
           "errors": 0,
@@ -493,16 +493,16 @@
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/src/pageA.js",
               "name": "./src/pageA.js",
               "profile": {
-                "factory": 57,
-                "building": 25,
-                "dependencies": 16
+                "factory": 55,
+                "building": 24,
+                "dependencies": 12
               }
             }
           ],
           "profile": {
-            "factory": 30,
-            "building": 264,
-            "dependencies": 2
+            "factory": 18,
+            "building": 256,
+            "dependencies": 4
           },
           "failed": false,
           "errors": 0,
@@ -597,16 +597,16 @@
               "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/src/pageA.js",
               "name": "./src/pageA.js",
               "profile": {
-                "factory": 57,
-                "building": 25,
-                "dependencies": 16
+                "factory": 55,
+                "building": 24,
+                "dependencies": 12
               }
             }
           ],
           "profile": {
-            "factory": 30,
-            "building": 264,
-            "dependencies": 2
+            "factory": 18,
+            "building": 256,
+            "dependencies": 4
           },
           "failed": false,
           "errors": 0,
@@ -670,9 +670,9 @@
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 57,
-            "building": 25,
-            "dependencies": 16
+            "factory": 55,
+            "building": 24,
+            "dependencies": 12
           },
           "failed": false,
           "errors": 0,
@@ -737,16 +737,16 @@
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/src/pageA.js",
           "name": "./src/pageA.js",
           "profile": {
-            "factory": 57,
-            "building": 25,
-            "dependencies": 16
+            "factory": 55,
+            "building": 24,
+            "dependencies": 12
           }
         }
       ],
       "profile": {
-        "factory": 30,
-        "building": 264,
-        "dependencies": 2
+        "factory": 18,
+        "building": 256,
+        "dependencies": 4
       },
       "failed": false,
       "errors": 0,
@@ -814,16 +814,16 @@
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/src/pageA.js",
           "name": "./src/pageA.js",
           "profile": {
-            "factory": 57,
-            "building": 25,
-            "dependencies": 16
+            "factory": 55,
+            "building": 24,
+            "dependencies": 12
           }
         }
       ],
       "profile": {
-        "factory": 30,
-        "building": 264,
-        "dependencies": 2
+        "factory": 18,
+        "building": 256,
+        "dependencies": 4
       },
       "failed": false,
       "errors": 0,
@@ -880,16 +880,16 @@
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/src/pageA.js",
           "name": "./src/pageA.js",
           "profile": {
-            "factory": 57,
-            "building": 25,
-            "dependencies": 16
+            "factory": 55,
+            "building": 24,
+            "dependencies": 12
           }
         }
       ],
       "profile": {
-        "factory": 30,
-        "building": 264,
-        "dependencies": 2
+        "factory": 18,
+        "building": 256,
+        "dependencies": 4
       },
       "failed": false,
       "errors": 0,
@@ -948,16 +948,16 @@
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/src/pageA.js",
           "name": "./src/pageA.js",
           "profile": {
-            "factory": 57,
-            "building": 25,
-            "dependencies": 16
+            "factory": 55,
+            "building": 24,
+            "dependencies": 12
           }
         }
       ],
       "profile": {
-        "factory": 30,
-        "building": 264,
-        "dependencies": 2
+        "factory": 18,
+        "building": 256,
+        "dependencies": 4
       },
       "failed": false,
       "errors": 0,
@@ -1012,9 +1012,9 @@
       "issuerName": null,
       "issuerPath": null,
       "profile": {
-        "factory": 57,
-        "building": 25,
-        "dependencies": 16
+        "factory": 55,
+        "building": 24,
+        "dependencies": 12
       },
       "failed": false,
       "errors": 0,
@@ -1064,9 +1064,9 @@
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/src/pageA.js",
           "name": "./src/pageA.js",
           "profile": {
-            "factory": 57,
-            "building": 25,
-            "dependencies": 16
+            "factory": 55,
+            "building": 24,
+            "dependencies": 12
           }
         },
         {
@@ -1074,15 +1074,15 @@
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/node_modules/.4.17.10@lodash/lodash.js",
           "name": "./node_modules/.4.17.10@lodash/lodash.js",
           "profile": {
-            "factory": 30,
-            "building": 264,
-            "dependencies": 2
+            "factory": 18,
+            "building": 256,
+            "dependencies": 4
           }
         }
       ],
       "profile": {
         "factory": 2,
-        "building": 5
+        "building": 4
       },
       "failed": false,
       "errors": 0,
@@ -1130,9 +1130,9 @@
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/src/pageA.js",
           "name": "./src/pageA.js",
           "profile": {
-            "factory": 57,
-            "building": 25,
-            "dependencies": 16
+            "factory": 55,
+            "building": 24,
+            "dependencies": 12
           }
         },
         {
@@ -1140,15 +1140,15 @@
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-7-code-segment/node_modules/.4.17.10@lodash/lodash.js",
           "name": "./node_modules/.4.17.10@lodash/lodash.js",
           "profile": {
-            "factory": 30,
-            "building": 264,
-            "dependencies": 2
+            "factory": 18,
+            "building": 256,
+            "dependencies": 4
           }
         }
       ],
       "profile": {
         "factory": 2,
-        "building": 5
+        "building": 4
       },
       "failed": false,
       "errors": 0,

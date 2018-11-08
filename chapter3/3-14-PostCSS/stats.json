@@ -1,12 +1,10 @@
-Warning: postcss-cssnext found a duplicate plugin ('autoprefixer') in your postcss plugins. This might be inefficient. You should remove 'autoprefixer' from your postcss plugin list since it's already included by postcss-cssnext.
-Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant for your use case, and you really know what you are doing, you can disable this warnings by setting  'warnForDuplicates' option of postcss-cssnext to 'false'.
 {
   "errors": [],
   "warnings": [],
   "version": "4.12.1",
-  "hash": "367db643a32a2cb925a7",
-  "time": 1362,
-  "builtAt": 1541642688408,
+  "hash": "acd5d680984c4baf0185",
+  "time": 784,
+  "builtAt": 1541671072695,
   "publicPath": "",
   "outputPath": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-14-PostCSS/dist",
   "assetsByChunkName": {
@@ -29,7 +27,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
     },
     {
       "name": "app.min.css",
-      "size": 245,
+      "size": 128,
       "chunks": [
         0
       ],
@@ -106,7 +104,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "issuerPath": null,
           "profile": {
             "factory": 52,
-            "building": 29
+            "building": 31
           },
           "failed": false,
           "errors": 0,
@@ -194,7 +192,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "issuerPath": null,
       "profile": {
         "factory": 52,
-        "building": 29
+        "building": 31
       },
       "failed": false,
       "errors": 0,
@@ -245,14 +243,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-14-PostCSS/node_modules/.0.21.0@style-loader/lib/addStyles.js",
           "name": "./node_modules/.0.21.0@style-loader/lib/addStyles.js",
           "profile": {
-            "factory": 612,
-            "building": 1002
+            "factory": 197,
+            "building": 256
           }
         }
       ],
       "profile": {
-        "factory": 181,
-        "building": 12
+        "factory": 28,
+        "building": 7
       },
       "failed": false,
       "errors": 0,
@@ -290,8 +288,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
         }
       ],
       "profile": {
-        "factory": 612,
-        "building": 1002
+        "factory": 197,
+        "building": 256
       },
       "failed": false,
       "errors": 0,
@@ -329,8 +327,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
         }
       ],
       "profile": {
-        "factory": 612,
-        "building": 1002
+        "factory": 197,
+        "building": 256
       },
       "failed": false,
       "errors": 0,
@@ -371,14 +369,14 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "identifier": "/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-14-PostCSS/node_modules/.0.28.11@css-loader/index.js??ref--4-2!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-14-PostCSS/node_modules/.2.1.6@postcss-loader/lib/index.js??postcss!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-14-PostCSS/node_modules/.7.1.0@sass-loader/lib/loader.js!/Users/ganyihuan/Desktop/imooc-webpack/chapter3/3-14-PostCSS/src/css/base.scss",
           "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
           "profile": {
-            "factory": 612,
-            "building": 1002
+            "factory": 197,
+            "building": 256
           }
         }
       ],
       "profile": {
-        "factory": 2,
-        "building": 7
+        "factory": 62,
+        "building": 9
       },
       "failed": false,
       "errors": 0,
@@ -399,7 +397,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
       "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
       "index": 2,
       "index2": 1,
-      "size": 470,
+      "size": 353,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -416,8 +414,8 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
         }
       ],
       "profile": {
-        "factory": 612,
-        "building": 1002
+        "factory": 197,
+        "building": 256
       },
       "failed": false,
       "errors": 0,
@@ -430,7 +428,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
         "ModuleConcatenation bailout: Module is not an ECMAScript module"
       ],
       "depth": 2,
-      "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.id, \"html{background:#ff0}.src-css-base_box_2Nmgm{height:200px;width:200px;border-radius:4px;background:#333;transition:-webkit-transform 1s;-webkit-transition:-webkit-transform 1s;transition:transform 1s;transition:transform 1s,-webkit-transform 1s}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_2Nmgm\"\n};"
+      "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.id, \"html{background:#ff0}.src-css-base_box_2Nmgm{height:200px;width:200px;border-radius:4px;background:#333;transition:transform 1s}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_2Nmgm\"\n};"
     },
     {
       "id": 6,
@@ -501,12 +499,12 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "rendered": true,
           "initial": true,
           "entry": true,
-          "size": 2730,
+          "size": 2613,
           "names": [],
           "files": [
             "extract-text-webpack-plugin-output-filename"
           ],
-          "hash": "a584a1d907c44be1a989",
+          "hash": "765b188e67cbf0bd156f",
           "siblings": [],
           "parents": [],
           "children": [],
@@ -536,13 +534,13 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                   "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
                   "profile": {
                     "factory": 5,
-                    "building": 24
+                    "building": 35
                   }
                 }
               ],
               "profile": {
-                "factory": 0,
-                "building": 3
+                "factory": 1,
+                "building": 5
               },
               "failed": false,
               "errors": 0,
@@ -573,7 +571,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
               "index": 0,
               "index2": 1,
-              "size": 470,
+              "size": 353,
               "cacheable": true,
               "built": true,
               "optional": false,
@@ -587,7 +585,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "issuerPath": null,
               "profile": {
                 "factory": 5,
-                "building": 24
+                "building": 35
               },
               "failed": false,
               "errors": 0,
@@ -609,7 +607,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
                 "ModuleConcatenation bailout: Module is not an ECMAScript module"
               ],
               "depth": 0,
-              "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.id, \"html{background:#ff0}.src-css-base_box_2Nmgm{height:200px;width:200px;border-radius:4px;background:#333;transition:-webkit-transform 1s;-webkit-transition:-webkit-transform 1s;transition:transform 1s;transition:transform 1s,-webkit-transform 1s}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_2Nmgm\"\n};"
+              "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.id, \"html{background:#ff0}.src-css-base_box_2Nmgm{height:200px;width:200px;border-radius:4px;background:#333;transition:transform 1s}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_2Nmgm\"\n};"
             }
           ],
           "filteredModules": 0,
@@ -650,13 +648,13 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
               "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
               "profile": {
                 "factory": 5,
-                "building": 24
+                "building": 35
               }
             }
           ],
           "profile": {
-            "factory": 0,
-            "building": 3
+            "factory": 1,
+            "building": 5
           },
           "failed": false,
           "errors": 0,
@@ -687,7 +685,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "name": "./node_modules/.0.28.11@css-loader??ref--4-2!./node_modules/.2.1.6@postcss-loader/lib??postcss!./node_modules/.7.1.0@sass-loader/lib/loader.js!./src/css/base.scss",
           "index": 0,
           "index2": 1,
-          "size": 470,
+          "size": 353,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -701,7 +699,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
           "issuerPath": null,
           "profile": {
             "factory": 5,
-            "building": 24
+            "building": 35
           },
           "failed": false,
           "errors": 0,
@@ -723,7 +721,7 @@ Note: If, for a really specific reason, postcss-cssnext warnings are irrelevant 
             "ModuleConcatenation bailout: Module is not an ECMAScript module"
           ],
           "depth": 0,
-          "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.id, \"html{background:#ff0}.src-css-base_box_2Nmgm{height:200px;width:200px;border-radius:4px;background:#333;transition:-webkit-transform 1s;-webkit-transition:-webkit-transform 1s;transition:transform 1s;transition:transform 1s,-webkit-transform 1s}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_2Nmgm\"\n};"
+          "source": "exports = module.exports = require(\"../../node_modules/.0.28.11@css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.id, \"html{background:#ff0}.src-css-base_box_2Nmgm{height:200px;width:200px;border-radius:4px;background:#333;transition:transform 1s}\", \"\"]);\n\n// exports\nexports.locals = {\n\t\"box\": \"src-css-base_box_2Nmgm\"\n};"
         }
       ],
       "filteredModules": 0,
