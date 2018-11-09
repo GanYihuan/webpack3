@@ -1,12 +1,13 @@
 const webpack = require('webpack')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 const PurifyCss = require('purifycss-webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
 const glob = require('glob-all')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+	.BundleAnalyzerPlugin
 
 module.exports = {
 	mode: 'production',
@@ -22,8 +23,8 @@ module.exports = {
 		filename: '[name].bundle.js',
 		/* dynamic packaged file name */
 		chunkFilename: '[name].bundle.js'
-  },
-  // webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码
+	},
+	// webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码
 	optimization: {
 		// 多文件才能工作
 		splitChunks: {
@@ -69,7 +70,7 @@ module.exports = {
 							/* The css-loader interprets @import and url() like import/require() and will resolve them. */
 							loader: 'css-loader',
 							options: {
-                /* 在 css-loader 前应用的 loader 的数量 */
+								/* 在 css-loader 前应用的 loader 的数量 */
 								// importLoaders: 2,
 								/* compress? */
 								minimize: true,
@@ -183,22 +184,24 @@ module.exports = {
 						}
 					}
 				]
-      },
-      {
-        test: /\.html$/,
-        use: [{
-          /* Exports HTML as string */
-          loader: 'html-loader',
-          options: {
-            /* HTML handle import img */
-            attrs: ['img:src', 'img:data-src']
-          }
-        }]
-      }
+			},
+			{
+				test: /\.html$/,
+				use: [
+					{
+						/* Exports HTML as string */
+						loader: 'html-loader',
+						options: {
+							/* HTML handle import img */
+							attrs: ['img:src', 'img:data-src']
+						}
+					}
+				]
+			}
 		]
 	},
 	plugins: [
-    new BundleAnalyzerPlugin(),
+		new BundleAnalyzerPlugin(),
 		/* Extract text from a bundle, or bundles, into a separate file. */
 		new ExtractTextWebpackPlugin({
 			filename: '[name].min.css',
@@ -233,8 +236,8 @@ module.exports = {
 			minify: {
 				collapseWhitespace: true
 			}
-    }),
-    /* chunk 加到 html 中 */
+		}),
+		/* chunk 加到 html 中 */
 		new HtmlInlineChunkPlugin({
 			inlineChunks: ['manifest']
 		})

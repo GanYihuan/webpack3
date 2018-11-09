@@ -4,10 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 const PurifyCss = require('purifycss-webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const path = require('path')
 const glob = require('glob-all')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+	.BundleAnalyzerPlugin
 
 module.exports = {
 	mode: 'production',
@@ -17,8 +18,7 @@ module.exports = {
 	output: {
 		/* 输出到指定目录下 */
 		path: path.resolve(__dirname, 'dist'),
-		/* 输出文件都带有 dist 前缀 */
-		// publicPath: 'dist/',
+		/* 输出文件都带有 / 前缀 */
 		publicPath: '/',
 		filename: 'js/[name]-bundle-[hash:5].js',
 		chunkFilename: '[name].bundle.js'
@@ -46,29 +46,51 @@ module.exports = {
 			jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
 		}
 	},
-	// 解释说明我们的目的 （仅解释说明，不要用于生产环境）
-	// devtool: 'inline-source-map',
+	// 此选项控制是否生成，以及如何生成 source map
 	devtool: 'cheap-module-source-map',
 	devServer: {
+		// Tell dev-server to watch the files served
 		contentBase: path.join(__dirname, 'dist'),
 		compress: true,
+		// Specify a port number to listen for requests on
 		port: 9001,
-		// 当出现编译器错误或警告时，在浏览器中显示全屏覆盖层
+		// Shows a full-screen overlay in the browser when there are compiler errors or warnings
 		overlay: true,
-		// 热更新
-		hot: true,
-		// 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html
-		historyApiFallback: true,
-		// 在同域名下发送 API 请求
+		// Enable webpack's Hot Module Replacement feature
+    hot: true,
+    // Enables Hot Module Replacement (see devServer.hot) without page refresh as fallback in case of build failures.
+    hotOnly: true,
+		// When using the HTML5 History API, the index.html page will likely have to be served in place of any 404 responses
+		historyApiFallback: {
+			rewrites: [
+				{
+					from: /^\/([a-zA-Z0-9]+\/?)([a-zA-Z0-9]+)/,
+					to: function(context) {
+						return '/' + context.match[1] + context.match[2] + '.html'
+					}
+				}
+			]
+		},
+		// Specify a page to navigate to when opening the browser
+		// openPage: '',
+		// the dev-server will only compile the bundle when it gets requested
+		// lazy: true,
+		// By default dev-server will be served over HTTP. It can optionally be served over HTTP/2 with HTTPS
+		// https: true,
+		// send API requests on the same domain
 		proxy: {
-			'/api': {
+			'/': {
 				// 请求远端服务器
 				target: 'https://m.weibo.cn',
 				// 找到真实请求的地址
 				changeOrigin: true,
+				// http 请求头
+				// headers: {
+				//   Cookie: ''
+				// },
 				// 控制台信息
 				logLevel: 'debug',
-				// 重定向
+				// 重定向接口请求
 				pathRewrite: {
 					'^/comments': '/api/comments'
 				}
@@ -80,10 +102,8 @@ module.exports = {
 		rules: [
 			{
 				test: /\.scss$/,
-				/* 提取 css */
-				use: ExtractTextWebpackPlugin.extract({
-					/* 提取出文件用什么处理 */
-					fallback: {
+				use: [
+					{
 						/* 在引入css时，在最后生成的js文件中进行处理，动态创建style标签，塞到head标签里 */
 						loader: 'style-loader',
 						options: {
@@ -95,52 +115,50 @@ module.exports = {
 							transform: './css.transform.js'
 						}
 					},
-					use: [
-						{
-							/* 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
-							loader: 'css-loader',
-							options: {
-								sourceMap: true,
-								/* 在 css-loader 前应用的 loader 的数量 */
-								importLoaders: 2,
-								/* 是否压缩 */
-								minimize: true,
-								/* 启用 css-modules */
-								modules: true,
-								/* 定义编译出来的名称 */
-								localIdentName: '[path][name]_[local]_[hash:base64:5]'
-							}
-						},
-						{
-							/* 将css3属性添加上厂商前缀 */
-							loader: 'postcss-loader',
-							options: {
-								sourceMap: true,
-								ident: 'postcss',
-								plugins: [
-									/* 加 css 各浏览器前缀 */
-									require('autoprefixer')(),
-									/* 使用未来的 css 语法 */
-									require('postcss-cssnext')(),
-									/* 压缩 css */
-									require('cssnano')(),
-									/* 图片合并成一张图 */
-									require('postcss-sprites')({
-										spritePath: 'dist/assets/imgs/sprites',
-										retina: true
-									})
-								]
-							}
-						},
-						{
-							/* 放置 css-loader 下面 */
-							loader: 'sass-loader',
-							options: {
-								sourceMap: true
-							}
+					{
+						/* 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
+						loader: 'css-loader',
+						options: {
+							sourceMap: true,
+							/* 在 css-loader 前应用的 loader 的数量 */
+							importLoaders: 2,
+							/* 是否压缩 */
+							minimize: true,
+							/* 启用 css-modules */
+							modules: true,
+							/* 定义编译出来的名称 */
+							localIdentName: '[path][name]_[local]_[hash:base64:5]'
 						}
-					]
-				})
+					},
+					{
+						/* 将css3属性添加上厂商前缀 */
+						loader: 'postcss-loader',
+						options: {
+							sourceMap: true,
+							ident: 'postcss',
+							plugins: [
+								/* 加 css 各浏览器前缀 */
+								require('autoprefixer')(),
+								/* 使用未来的 css 语法 */
+								require('postcss-cssnext')(),
+								/* 压缩 css */
+								require('cssnano')(),
+								/* 图片合并成一张图 */
+								require('postcss-sprites')({
+									spritePath: 'dist/assets/imgs/sprites',
+									retina: true
+								})
+							]
+						}
+					},
+					{
+						/* 放置 css-loader 下面 */
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true
+						}
+					}
+				]
 			},
 			{
 				test: /\.js$/,
@@ -236,7 +254,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-    new BundleAnalyzerPlugin(),
+		new BundleAnalyzerPlugin(),
 		/* 提取 css */
 		new ExtractTextWebpackPlugin({
 			filename: '[name].min.css',
@@ -275,7 +293,7 @@ module.exports = {
 		new HtmlInlineChunkPlugin({
 			inlineChunks: ['manifest']
 		}),
-		// 打包清除
+		// 打包清除目录
 		new CleanWebpackPlugin(['dist']),
 		// 热更新
 		new webpack.HotModuleReplacementPlugin(),
