@@ -5,7 +5,8 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const PurifyCss = require('purifycss-webpack')
 const glob = require('glob-all')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+	.BundleAnalyzerPlugin
 
 module.exports = {
 	mode: 'production',
@@ -21,8 +22,8 @@ module.exports = {
 		filename: '[name].bundle.js',
 		/* dynamic packaged file name */
 		chunkFilename: '[name].bundle.js'
-  },
-  // webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码
+	},
+	// webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码
 	optimization: {
 		// 多文件才能工作
 		splitChunks: {
@@ -181,22 +182,33 @@ module.exports = {
 						}
 					}
 				]
-      },
-      {
-        test: /\.html$/,
-        use: [{
-          /* Exports HTML as string */
-          loader: 'html-loader',
-          options: {
-            /* HTML handle import img */
-            attrs: ['img:src', 'img:data-src']
-          }
-        }]
-      }
+			},
+			{
+				test: /\.html$/,
+				use: [
+					{
+						/* Exports HTML as string */
+						loader: 'html-loader',
+						options: {
+							/* HTML handle import img */
+							attrs: ['img:src', 'img:data-src']
+						}
+					}
+				]
+			}
 		]
 	},
 	plugins: [
-    new BundleAnalyzerPlugin(),
+		// 这个插件是在一个额外的独立的 webpack 设置中创建一个只有 dll 的 bundle(dll-only-bundle)。 这个插件会生成一个名为 manifest.json 的文件，这个文件是用来让 DLLReferencePlugin 映射到相关的依赖上去的。
+		// new webpack.DllPlugin({
+		// 	// manifest json 文件的绝对路径 (输出文件)
+		// 	path: path.join(__dirname, '../src/dll/', '[name]-mainifest.js'),
+		// 	// 暴露出的 DLL 的函数名
+		// 	name: '[name]'
+		// }),
+		/* js compress */
+		new UglifyJsPlugin(),
+		new BundleAnalyzerPlugin(),
 		/* Extract text from a bundle, or bundles, into a separate file. */
 		new ExtractTextWebpackPlugin({
 			filename: '[name].min.css',
@@ -211,8 +223,6 @@ module.exports = {
 				path.join(__dirname, './src/*.js')
 			])
 		}),
-		/* js compress */
-		new UglifyJsPlugin(),
 		/* Automatically load modules instead of having to import or require them everywhere. */
 		/* third-party modules js import (use npm) */
 		new webpack.ProvidePlugin({
