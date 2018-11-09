@@ -1,5 +1,5 @@
 ﻿module.exports = {
-  // 需要什么类型的文件头
+	// 需要什么类型的文件头
 	htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
 	rewrites: [
 		{

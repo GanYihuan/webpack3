@@ -8,6 +8,5 @@
 				}
 			}
 		]
-	],
-	"plugins": ["@babel/transform-runtime", "lodash"]
+	]
 }

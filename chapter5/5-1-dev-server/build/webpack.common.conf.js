@@ -1,12 +1,7 @@
 ﻿const path = require('path')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 const webpack = require('webpack')
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-// const PurifyCss = require('purifycss-webpack')
-// const glob = require('glob-all')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-// const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-// const CleanWebpackPlugin = require('clean-webpack-plugin')
 const productionConfig = require('./webpack.prod.conf')
 const developmentConfig = require('./webpack.dev.conf')
 const merge = require('webpack-merge')
@@ -88,6 +83,7 @@ const generateConfig = env => {
 			  })
 			: [
 					{
+						// hot: true -> style-loader 要去除 ExtractTextWebpack 包裹
 						loader: 'style-loader'
 					}
 			  ].concat(cssLoaders)
@@ -98,14 +94,7 @@ const generateConfig = env => {
 						loader: 'file-loader',
 						options: {
 							name: '[name]-[hash:5].[ext]',
-							/* 超出 5000 处理成 base64 */
-							limit: 5000,
-							/* 图片地址不对, 设置绝对路径 */
-							// publicPath: '',
-							/* 放到 dist 目录 */
 							outputPath: 'assets/imgs/'
-							/* 设置相对路径 */
-							// useRelativePath: true
 						}
 					}
 			  ]
@@ -114,14 +103,8 @@ const generateConfig = env => {
 						loader: 'url-loader',
 						options: {
 							name: '[name]-[hash:5].[ext]',
-							/* 超出 5000 处理成 base64 */
-							limit: 5000,
-							/* 图片地址不对, 设置绝对路径 */
-							// publicPath: '',
-							/* 放到 dist 目录 */
+							limit: 1000,
 							outputPath: 'assets/imgs/'
-							/* 设置相对路径 */
-							// useRelativePath: true
 						}
 					}
 			  ]
@@ -148,6 +131,8 @@ const generateConfig = env => {
 			rules: [
 				{
 					test: /\.js$/,
+					include: [path.resolve(__dirname, '../src')],
+					exclude: [path.resolve(__dirname, '../src/libs')],
 					use: [scriptLoader]
 				},
 				{
@@ -187,10 +172,6 @@ const generateConfig = env => {
 				filename: 'index.html',
 				/* template: 本地模版的位置 */
 				template: './index.html',
-				/* 向 template 或者 templateContent 中注入所有静态资源 */
-				// inject: false,
-				/* 允许插入到模板中的一些 chunk */
-				// chunks: ['app'],
 				/* 压缩 */
 				minify: {
 					collapseWhitespace: true

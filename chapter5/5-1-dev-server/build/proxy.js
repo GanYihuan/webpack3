@@ -9,6 +9,9 @@
 		// 重定向
 		pathRewrite: {
 			'^/comments': '/api/comments'
-		}
+    },
+    headers: {
+      'Cookie': ''
+    }
 	}
 }

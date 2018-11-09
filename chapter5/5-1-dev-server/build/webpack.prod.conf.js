@@ -1,22 +1,15 @@
-﻿const path = require('path')
-// const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-const webpack = require('webpack')
+﻿const webpack = require('webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const PurifyCss = require('purifycss-webpack')
-const glob = require('glob-all')
-// const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-// const productionConfig = require('./webpack.prod.conf')
-// const developmentConfig = require('./webpack.dev.conf')
-// const merge = require('webpack-merge')
-// const Happypack = require('happypack')
-
-const env = require('../config.prod.env')
+const glob = require('glob-all')
+const path = require('path')
+// const env = require('../config.prod.env')
 
 module.exports = {
 	devtool: 'cheap-module-source-map',
-	// webpack4替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码
+	// webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码
 	optimization: {
 		splitChunks: {
 			name: 'manifest'
@@ -63,18 +56,18 @@ module.exports = {
 		// 			option: require('./eslint-loader.conf')
 		// 		}
 		// 	]
-    // }),
-    new webpack.NamedChunksPlugin(),
-    new webpack.NamedModulesPlugin(),
-		new webpack.DellReferencePlugin({
-			// manifest: require('../src/dll/ui-mannifest.json')
-		}),
-		new webpack.DellReferencePlugin({
-			// manifest: require('../src/dll/vue-manifest.json')
-		}),
-		new webpack.DefinePlugin({
-			'process.env': env
-		}),
+		// }),
+		new webpack.NamedChunksPlugin(),
+		new webpack.NamedModulesPlugin(),
+		// new webpack.DellReferencePlugin({
+		// 	// manifest: require('../src/dll/ui-mannifest.json')
+		// }),
+		// new webpack.DellReferencePlugin({
+		// 	// manifest: require('../src/dll/vue-manifest.json')
+		// }),
+		// new webpack.DefinePlugin({
+		// 	'process.env': env
+		// }),
 		/* 去除多余的 css */
 		new PurifyCss({
 			paths: glob.sync([
@@ -82,17 +75,18 @@ module.exports = {
 				path.join(__dirname, './src/*.js')
 			])
 		}),
-		/* 去除多余的 js */
-		new UglifyJsPlugin({
-			uglifyOptions: {
-				compress: {
-					warnings: false
-				}
-			},
-			sourceMap: confirm.build.productionSourceMap,
-			parallel: true,
-			cache: true
-		}),
+    /* 去除多余的 js */
+    new UglifyJsPlugin(),
+		// new UglifyJsPlugin({
+		// 	uglifyOptions: {
+		// 		compress: {
+		// 			warnings: false
+		// 		}
+		// 	},
+		// 	sourceMap: confirm.build.productionSourceMap,
+		// 	parallel: true,
+		// 	cache: true
+		// }),
 		/* chunk 加到 html 中 */
 		new HtmlInlineChunkPlugin({
 			inlineChunks: ['manifest']
