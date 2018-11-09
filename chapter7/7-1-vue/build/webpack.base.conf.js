@@ -20,6 +20,7 @@ const createLintingRule = () => ({
 })
 
 module.exports = {
+  // 上下文, 定位到根目录
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
@@ -34,8 +35,9 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
+      // 确切匹配
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   module: {
