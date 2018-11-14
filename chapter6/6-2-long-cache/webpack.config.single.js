@@ -1,4 +1,5 @@
-﻿const merge = require('webpack-merge')
+﻿/* 多页面单配置 */
+const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpack = require('clean-webpack-plugin')
 const ExtractTextWebpackPlguin = require('extract-text-webpack-plugin')

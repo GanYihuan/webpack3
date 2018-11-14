@@ -1,9 +1,10 @@
-﻿const webpack = require('webpack')
+﻿/* 多页面多配置 */
+const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebpack = require('clean-webpack-plugin')
 const ExtractTextWebpackPlguin = require('extract-text-webpack-plugin')
 const path = require('path')
+const CleanWebpack = require('clean-webpack-plugin')
 
 const baseConfig = {
 	entry: {
