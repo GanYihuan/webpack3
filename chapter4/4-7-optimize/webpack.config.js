@@ -90,7 +90,8 @@ module.exports = {
 							loader: 'postcss-loader',
 							options: {
 								/*  webpack requires an identifier (ident) in options when {Function}/require is used (Complex Options). The ident can be freely named as long as it is unique. It's recommended to name it (ident: 'postcss') */
-								ident: 'postcss',
+                /* below plugin use for postcss */
+                ident: 'postcss',
 								plugins: [
 									/* css3 Attribute added vendor prefix */
 									require('autoprefixer')(),
@@ -121,7 +122,8 @@ module.exports = {
 					{
 						loader: 'babel-loader',
 						options: {
-							presets: ['@babel/preset-env'],
+              presets: ['@babel/preset-env'],
+              /* for lodash, uglifyjswebpackplugin no working, use babel-plugin-lodash can compress lodash */ 
 							plugins: ['lodash']
 						}
 					}
@@ -216,6 +218,7 @@ module.exports = {
 		/* put ExtractTextWebpackPlugin below */
 		/* css compress */
 		new PurifyCss({
+      /* load mutil path */
 			paths: glob.sync([
 				path.join(__dirname, './*.html'),
 				path.join(__dirname, './src/*.js')

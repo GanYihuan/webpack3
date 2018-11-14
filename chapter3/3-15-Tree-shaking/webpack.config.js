@@ -100,7 +100,8 @@ module.exports = {
 						loader: 'babel-loader',
 						options: {
 							// presets: ['env'],
-							presets: ['@babel/preset-env'],
+              presets: ['@babel/preset-env'],
+              /* uglifyjswebpackplugin no working, use babel-plugin-lodash can compress lodash */ 
 							plugins: ['lodash']
 						}
 					}
