@@ -30,4 +30,29 @@ console.log(a())
 // import { chunk } from 'lodash-es'
 // console.log(chunk([1, 2, 3, 4, 5], 2))
 
-// $.get('https://m.weibo.cn/api/comments/show', {})
+/* eslint-disable no-undef */
+$('div').addClass('new')
+$.get(
+	'https://m.weibo.cn/api/comments/show',
+	{
+		id: '4193586758833502',
+		page: 1
+	},
+	function(data) {
+		console.log(data)
+	}
+)
+$.get(
+	'/msg/index',
+	{
+		format: 'cards'
+	},
+	function(data) {
+		console.log(data)
+	}
+)
+
+if (module.hot) {
+  // need hot refresh
+	module.hot.accept()
+}

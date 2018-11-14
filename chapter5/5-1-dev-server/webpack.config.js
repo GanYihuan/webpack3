@@ -6,9 +6,9 @@ const PurifyCss = require('purifycss-webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
 const glob = require('glob-all')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 	.BundleAnalyzerPlugin
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
 	mode: 'production',
@@ -46,21 +46,24 @@ module.exports = {
 			jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
 		}
 	},
-	// 此选项控制是否生成，以及如何生成 source map
+	/* 此选项控制是否生成，以及如何生成 source map */
 	devtool: 'cheap-module-source-map',
 	devServer: {
+		/* browser page status bar. tell use package status */
+		// inline: false,
 		// Tell dev-server to watch the files served
 		contentBase: path.join(__dirname, 'dist'),
 		compress: true,
 		// Specify a port number to listen for requests on
 		port: 9001,
-		// Shows a full-screen overlay in the browser when there are compiler errors or warnings
+		// Shows full-screen overlay in the browser when there are compiler errors or warnings
 		overlay: true,
 		// Enable webpack's Hot Module Replacement feature
-    hot: true,
-    // Enables Hot Module Replacement (see devServer.hot) without page refresh as fallback in case of build failures.
-    hotOnly: true,
-		// When using the HTML5 History API, the index.html page will likely have to be served in place of any 404 responses
+		hot: true,
+		// Enables Hot Module Replacement without page refresh as fallback in case of build failures.
+		hotOnly: true,
+		/* 重定向接口请求 */
+		// HTML5 History API, the index.html page will likely have to be served in place of any 404 responses
 		historyApiFallback: {
 			rewrites: [
 				{
@@ -82,12 +85,12 @@ module.exports = {
 			'/': {
 				// 请求远端服务器
 				target: 'https://m.weibo.cn',
-				// 找到真实请求的地址
+				// 找到真实请求的地址, 代理元 dot 到 url
 				changeOrigin: true,
 				// http 请求头
-				// headers: {
-				//   Cookie: ''
-				// },
+				headers: {
+					Cookie: ''
+				},
 				// 控制台信息
 				logLevel: 'debug',
 				// 重定向接口请求
@@ -104,7 +107,7 @@ module.exports = {
 				test: /\.scss$/,
 				use: [
 					{
-						/* 在引入css时，在最后生成的js文件中进行处理，动态创建style标签，塞到head标签里 */
+						/* 在引入 css 时，在最后生成的 js 文件中进行处理，动态创建 style 标签，塞到 head 标签里 */
 						loader: 'style-loader',
 						options: {
 							// singleton 会阻止 sourceMap, 可以关闭 singleton
@@ -162,6 +165,8 @@ module.exports = {
 			},
 			{
 				test: /\.js$/,
+				include: path.resolve(__dirname, 'src'),
+				exclude: path.resolve(__dirname, 'src/libs'),
 				use: [
 					{
 						loader: 'babel-loader',
@@ -229,17 +234,17 @@ module.exports = {
 					}
 				]
 			},
-			{
-				test: path.resolve(__dirname, 'src/app.js'),
-				use: [
-					{
-						loader: 'imports-loader',
-						options: {
-							$: 'jquery'
-						}
-					}
-				]
-			},
+			// {
+			// 	test: path.resolve(__dirname, 'src/app.js'),
+			// 	use: [
+			// 		{
+			// 			loader: 'imports-loader',
+			// 			options: {
+			// 				$: 'jquery'
+			// 			}
+			// 		}
+			// 	]
+			// },
 			{
 				test: /\.html$/,
 				use: [
@@ -293,11 +298,11 @@ module.exports = {
 		new HtmlInlineChunkPlugin({
 			inlineChunks: ['manifest']
 		}),
-		// 打包清除目录
+		// 打包后清除目录
 		new CleanWebpackPlugin(['dist']),
 		// 热更新
 		new webpack.HotModuleReplacementPlugin(),
-		// 路径输出
+		// 热更新时路径输出
 		new webpack.NamedModulesPlugin()
 	]
 }

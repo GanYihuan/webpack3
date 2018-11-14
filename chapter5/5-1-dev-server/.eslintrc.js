@@ -11,7 +11,10 @@ module.exports = {
 		// https://github.com/standard/standard/blob/master/docs/RULES-en.md
 		'standard'
 	],
-	plugins: [],
+  plugins: [],
+  globals: {
+    $: true
+  },
 	rules: {
 		quotes: 0,
 		'spaced-comment': 0,
