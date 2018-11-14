@@ -1,9 +1,10 @@
-const path = require('path')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const PurifyCss = require('purifycss-webpack')
-const glob = require('glob-all')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin')
+const PurifyCssWebpack = require('purifycss-webpack')
+const path = require('path')
+const globAll = require('glob-all')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+	.BundleAnalyzerPlugin
 
 module.exports = {
 	mode: 'production',
@@ -19,9 +20,9 @@ module.exports = {
 		filename: '[name].bundle.js',
 		/* dynamic packaged file name */
 		chunkFilename: '[name].bundle.js'
-  },
+	},
 	optimization: {
-    /* package, Multiple files can only work */
+		/* package, Multiple files can only work */
 		// [splitChunks](https://webpack.docschina.org/plugins/split-chunks-plugin/)
 		splitChunks: {
 			// name of the split chunk
@@ -38,8 +39,8 @@ module.exports = {
 			// maxInitialRequests: 1
 		}
 	},
-  module: {
-    rules: [
+	module: {
+		rules: [
 			{
 				test: /\.scss$/,
 				/* Processe from the back to the front */
@@ -55,7 +56,7 @@ module.exports = {
 							transform: './css.transform.js'
 						}
 					},
-          use: [
+					use: [
 						{
 							/* interprets @import and url() like import/require() and will resolve them. */
 							loader: 'css-loader',
@@ -75,8 +76,8 @@ module.exports = {
 								/*  webpack requires an identifier (ident) in options when {Function}/require is used (Complex Options). The ident can be freely named as long as it is unique. It's recommended to name it (ident: 'postcss') */
 								ident: 'postcss',
 								plugins: [
-                  /* css3 Attribute added vendor prefix */
-                  // 'autoprefixer' <-- already included in postcss-cssnext
+									/* css3 Attribute added vendor prefix */
+									// 'autoprefixer' <-- already included in postcss-cssnext
 									require('autoprefixer')(),
 									/* Use future css syntax */
 									require('postcss-cssnext')(),
@@ -90,38 +91,40 @@ module.exports = {
 							loader: 'sass-loader'
 						}
 					]
-        })
-      },
-      {
-        test: /\.js$/,
-        use: [{
-          loader: 'babel-loader',
-          options: {
-            // presets: ['env'],
-            presets: ['@babel/preset-env'],
-            plugins: ['lodash']
-          }
-        }]
-      }
-    ]
-  },
-  plugins: [
-    new BundleAnalyzerPlugin(),
-    /* Extract text from a bundle, or bundles, into a separate file. */
+				})
+			},
+			{
+				test: /\.js$/,
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							// presets: ['env'],
+							presets: ['@babel/preset-env'],
+							plugins: ['lodash']
+						}
+					}
+				]
+			}
+		]
+	},
+	plugins: [
+		new BundleAnalyzerPlugin(),
+		/* Extract text from a bundle, or bundles, into a separate file. */
 		new ExtractTextWebpackPlugin({
 			filename: '[name].min.css',
 			/* Extract from all additional chunks(by default it extracts only from the initial chunk) */
 			allChunks: false
 		}),
-    /* put ExtractTextWebpackPlugin below */
-    new PurifyCss({
-      // glob: 加载多路径
-      paths: glob.sync([
-        path.join(__dirname, './*.html'),
-        path.join(__dirname, './src/*.js')
-      ])
-    }),
-    /* js compress */
-    new UglifyJsPlugin()
-  ]
+		/* put ExtractTextWebpackPlugin below */
+		new PurifyCssWebpack({
+			// glob: 加载多路径
+			paths: globAll.sync([
+				path.join(__dirname, './*.html'),
+				path.join(__dirname, './src/*.js')
+			])
+		}),
+		/* js compress */
+		new UglifyJsWebpackPlugin()
+	]
 }
