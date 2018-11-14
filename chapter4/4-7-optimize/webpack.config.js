@@ -138,11 +138,11 @@ module.exports = {
 							name: '[name]-[hash:5].[ext]',
 							/* over 1000 handle to base64 */
 							limit: 1000,
-							/* Set absolute path */
+							/* Set absolute path, remove above 'dist/' path */
 							publicPath: '',
-							/* put dist file dialog */
+						  /* put in dist file */
 							outputPath: 'dist/',
-							/* Set relative path */
+							/* set relative path, put in assets/imgs file */
 							useRelativePath: true
 						}
 					},
@@ -169,11 +169,11 @@ module.exports = {
 							name: '[name]-[hash:5].[ext]',
 							/* over 5000 handle to base64 */
 							limit: 5000,
-							/* Set absolute path */
+							/* Set absolute path, remove above 'dist/' path */
 							publicPath: '',
-							/* put dist file dialog */
+							/* put in dist file */
 							outputPath: 'dist/',
-							/* Set relative path */
+							/* set relative path, put in assets/imgs file */
 							useRelativePath: true
 						}
 					}
@@ -196,10 +196,9 @@ module.exports = {
 				test: /\.html$/,
 				use: [
 					{
-						/* Exports HTML as string */
+            /* HTML which handle by webpack, comporess optimize */
 						loader: 'html-loader',
 						options: {
-							/* HTML handle import img */
 							attrs: ['img:src', 'img:data-src']
 						}
 					}
@@ -231,16 +230,17 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			$: 'jquery'
 		}),
-		/* The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles */
+    /* The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles */
+    /* auto load css, js file */
 		new HtmlWebpackPlugin({
 			/* output file name */
 			filename: 'index.html',
 			template: './index.html',
-			/* css, js Insert into the page by label */
+			/* css, js file insert into the html by tag */
 			// inject: false,
-			/* Specify which ones to add to the html page */
-			chunks: ['app'],
-			/* compress */
+			/* Specify which entry to add to the html page */
+			// chunks: ['app'],
+			/* compress html file */
 			minify: {
 				collapseWhitespace: true
 			}
