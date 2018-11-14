@@ -1,7 +1,7 @@
 ﻿const path = require('path')
 const webpack = require('webpack')
 const proxy = require('./proxy')
-const historyFallback = require('./historyFallback')
+const historyFallback = require('./historyfallback')
 
 module.exports = {
 	devtool: 'cheap-module-source-map',

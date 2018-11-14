@@ -65,6 +65,8 @@ module.exports = {
 		/* 重定向接口请求 */
 		// HTML5 History API, the index.html page will likely have to be served in place of any 404 responses
 		historyApiFallback: {
+			// 指定文件类型, 匹配了才重定向
+			// htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
 			rewrites: [
 				{
 					from: /^\/([a-zA-Z0-9]+\/?)([a-zA-Z0-9]+)/,
