@@ -10,7 +10,7 @@ module.exports = {
 		vendor: ['lodash']
 	},
 	output: {
-		/* path.resolve(): return the absolute path of the current working directory */
+		/* return the absolute path of the current working directory */
     path: path.resolve(__dirname, './dist'),
     /* introduce resource paths */
 		// publicPath: './dist/',
@@ -21,14 +21,15 @@ module.exports = {
 	},
 	/* Extract common code */
 	optimization: {
-    /* package, Multiple files can only work */
+    /* package, Multiple entry can only work */
 		// [splitChunks](https://webpack.docschina.org/plugins/split-chunks-plugin/)
 		splitChunks: {
 			// name of the split chunk
-			name: 'vendor',
+      name: 'vendor',
+      // names: ['vendor', 'manifest'],
 			// which chunks will be selected for optimization, "initial" | "all"(default) | "async",
 			chunks: 'initial',
-			// Minimum size for a chunk to be generated.
+			// mini size for a chunk to be generated.
 			minSize: 30000,
 			// mini number of chunks that must share a module before splitting
 			minChunks: 2,
@@ -39,8 +40,8 @@ module.exports = {
 		}
   },
   plugins: [
-    /* webpack3 abandon */
     new BundleAnalyzerPlugin()
+    /* webpack3 abandon */
     // new webpack.optimize.CommonsChunkPlugin({
 	  //   name: 'common',
 	  //   minChunks: 2

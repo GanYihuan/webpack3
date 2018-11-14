@@ -8,8 +8,8 @@ module.exports = {
 	},
 	output: {
 		/* path.resolve() will return the absolute path of the current working directory. */
-		path: path.resolve(__dirname, 'dist'),
-		/* Introducing resource paths */
+		path: path.resolve(__dirname, './dist'),
+		/* dynamic load code path */
 		// publicPath: './dist/',
 		/* Initialize packaged file name */
 		filename: '[name].bundle.js',

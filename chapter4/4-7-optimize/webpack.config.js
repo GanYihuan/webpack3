@@ -15,9 +15,9 @@ module.exports = {
 		app: './src/app.js'
 	},
 	output: {
-		/* path.resolve() will return the absolute path of the current working directory. */
+		/* return the absolute path of the current working directory. */
 		path: path.resolve(__dirname, 'dist'),
-		/* Introducing resource paths */
+		/* dynamic load code path */
 		publicPath: '/',
 		/* Initialize packaged file name */
 		filename: '[name].bundle.js',
@@ -26,9 +26,10 @@ module.exports = {
 	},
 	// webpack4 replace webpack.optimize.CommonsChunkPlugin, extract public code
 	optimization: {
-		// only mutil file can work
+		/* package, Multiple entry can only work */
 		splitChunks: {
-			name: 'manifest',
+      name: 'manifest',
+      // names: ['vendor', 'manifest'],
 			// which type will package to public code, "initial" | "all"(default) | "async",
 			chunks: 'initial',
 			// min generate chunk size
@@ -57,7 +58,11 @@ module.exports = {
 					/* `loader` should be used when the CSS is not extracted */
 					fallback: {
 						/* Adds CSS to the DOM by injecting a <style> tag */
-						loader: 'style-loader',
+            loader: 'style-loader',
+            /* Adds CSS to the DOM by injecting a <link/> tag */
+            // loader: 'style-loader/url',
+            /* wether use style-loader */
+						// loader: 'style-loader/useable',
 						options: {
 							/* Reuses a single <style></style> element, instead of adding/removing individual elements for each required module */
 							singleton: true,
@@ -70,7 +75,7 @@ module.exports = {
 							/* The css-loader interprets @import and url() like import/require() and will resolve them. */
 							loader: 'css-loader',
 							options: {
-								/* 在 css-loader 前应用的 loader 的数量 */
+								/* number of loaders applied before CSS loader */
 								// importLoaders: 2,
 								/* compress? */
 								minimize: true,
