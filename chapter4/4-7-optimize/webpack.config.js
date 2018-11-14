@@ -24,16 +24,16 @@ module.exports = {
 		/* dynamic packaged file name */
 		chunkFilename: '[name].bundle.js'
 	},
-	// webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码
+	// webpack4 replace webpack.optimize.CommonsChunkPlugin, extract public code
 	optimization: {
-		// 多文件才能工作
+		// only mutil file can work
 		splitChunks: {
 			name: 'manifest',
-			// 那种会被打包到公共代码里, "initial" | "all"(default) | "async",
+			// which type will package to public code, "initial" | "all"(default) | "async",
 			chunks: 'initial',
-			// 最小生成 chunk 大小
+			// min generate chunk size
 			minSize: 30000,
-			// 最少出现 ？ 次就将其提取到公共代码里
+			// min appear times extract to public code
 			minChunks: 2
 			// max number of parallel requests when on-demand loading.
 			// maxAsyncRequests: 1,
@@ -44,7 +44,7 @@ module.exports = {
 	resolve: {
 		/* Create alias to import or require certain modules more easily */
 		alias: {
-			/* local js import */
+			/* local jq import */
 			jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
 		}
 	},
@@ -93,7 +93,7 @@ module.exports = {
 									require('postcss-cssnext')(),
 									/* Compression optimization css */
 									require('cssnano')(),
-									/* Sprite: Merge into a single picture */
+									/* mutil sprites picture merge into a single picture */
 									require('postcss-sprites')({
 										/* Specify output path */
 										spritePath: 'dist/assets/imgs/sprites',
@@ -237,7 +237,7 @@ module.exports = {
 				collapseWhitespace: true
 			}
 		}),
-		/* chunk 加到 html 中 */
+		/* chunk add to html */
 		new HtmlInlineChunkPlugin({
 			inlineChunks: ['manifest']
 		})
