@@ -1,11 +1,11 @@
 ﻿const webpack = require('webpack')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-const PurifyCss = require('purifycss-webpack')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const HtmlWebpackInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
+const PurifyCssWebpack = require('purifycss-webpack')
+const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
-const glob = require('glob-all')
+const globAll = require('glob-all')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin
 const CleanWebpackPlugin = require('clean-webpack-plugin')
@@ -283,15 +283,15 @@ module.exports = {
       allChunks: false
     }),
     /* 去除多余的 css */
-    new PurifyCss({
+    new PurifyCssWebpack({
       /* load mutil path */
-      paths: glob.sync([
+      paths: globAll.sync([
         path.join(__dirname, './*.html'),
         path.join(__dirname, './src/*.js')
       ])
     }),
     /* 去除多余的 js */
-    new UglifyJsPlugin(),
+    new UglifyJsWebpackPlugin(),
     /* Automatically load modules instead of having to import or require them everywhere. */
     /* third-party modules js import (use npm) */
     new webpack.ProvidePlugin({
@@ -315,7 +315,7 @@ module.exports = {
       }
     }),
     /* chunk 加到 html 中 */
-    new HtmlInlineChunkPlugin({
+    new HtmlWebpackInlineChunkPlugin({
       inlineChunks: ['manifest']
     }),
     // 打包后清除目录
