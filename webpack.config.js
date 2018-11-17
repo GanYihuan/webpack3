@@ -1,7 +1,0 @@
-const webpack = require('webpack')
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-const PurifyCss = require('purifycss-webpack')
-const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin')
-const path = require('path')

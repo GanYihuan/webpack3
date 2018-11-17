@@ -6,8 +6,7 @@ const PurifyCssWebpack = require('purifycss-webpack')
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
 const globAll = require('glob-all')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
@@ -128,11 +127,9 @@ module.exports = {
             }
           },
           {
-            /* 打包时把css文件拆出来，css相关模块最终打包到一个指定的css文件中，我们手动用link标签去引入这个css文件就可以了 */
+            /* 打包时把 css 文件拆出来，css 相关模块最终打包到一个指定的c ss 文件中，我们手动用 link 标签去引入这个 css 文件 */
             loader: 'css-loader',
             options: {
-              /* number of loaders applied before CSS loader */
-              // importLoaders: 2,
               sourceMap: true,
               /* 在 css-loader 前应用的 loader 的数量 */
               importLoaders: 2,
@@ -214,7 +211,7 @@ module.exports = {
               publicPath: '',
               /* put in dist file */
               outputPath: 'dist/',
-              /* set relative path, put in assets/imgs file */
+              /* put in assets/imgs file */
               useRelativePath: true
             }
           },
