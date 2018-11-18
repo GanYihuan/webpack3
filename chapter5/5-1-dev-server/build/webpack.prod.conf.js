@@ -1,4 +1,4 @@
-﻿const webpack = require('webpack')
+﻿// const webpack = require('webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const PurifyCss = require('purifycss-webpack')
 const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
@@ -8,90 +8,52 @@ const path = require('path')
 // const env = require('../config.prod.env')
 
 module.exports = {
-	devtool: 'cheap-module-source-map',
-	// webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码
-	optimization: {
-		splitChunks: {
-			name: 'manifest'
-		}
-	},
-	resolve: {
-		alias: {
-			/* 找到本地的 jquery */
-			jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
-		}
-	},
-	devServer: {
-		contentBase: path.join(__dirname, 'dist'),
-		compress: true,
-		port: 9001,
-		// 当出现编译器错误或警告时，在浏览器中显示全屏覆盖层
-		overlay: true,
-		// 热更新
-		hot: true,
-		// 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html
-		historyApiFallback: true,
-		// 在同域名下发送 API 请求
-		proxy: {
-			'/api': {
-				// 请求远端服务器
-				target: 'https://m.weibo.cn',
-				// 找到真实请求的地址
-				changeOrigin: true,
-				// 控制台信息
-				logLevel: 'debug',
-				// 重定向
-				pathRewrite: {
-					'^/comments': '/api/comments'
-				}
-			}
-		}
-	},
-	plugins: [
-		// new Happypack({
-		// 	id: 'vue',
-		// 	loaders: [
-		// 		{
-		// 			laoder: 'eslint-laoder',
-		// 			option: require('./eslint-loader.conf')
-		// 		}
-		// 	]
-		// }),
-		new webpack.NamedChunksPlugin(),
-		new webpack.NamedModulesPlugin(),
-		// new webpack.DellReferencePlugin({
-		// 	// manifest: require('../src/dll/ui-mannifest.json')
-		// }),
-		// new webpack.DellReferencePlugin({
-		// 	// manifest: require('../src/dll/vue-manifest.json')
-		// }),
-		// new webpack.DefinePlugin({
-		// 	'process.env': env
-		// }),
-		/* 去除多余的 css */
-		new PurifyCss({
-			paths: glob.sync([
-				path.join(__dirname, './*.html'),
-				path.join(__dirname, './src/*.js')
-			])
-		}),
-		/* 去除多余的 js */
-		new UglifyJsPlugin(),
-		// new UglifyJsPlugin({
-		// 	uglifyOptions: {
-		// 		compress: {
-		// 			warnings: false
-		// 		}
-		// 	},
-		// 	sourceMap: confirm.build.productionSourceMap,
-		// 	parallel: true,
-		// 	cache: true
-		// }),
-		/* chunk 加到 html 中 */
-		new HtmlInlineChunkPlugin({
-			inlineChunks: ['manifest']
-		}),
-		// 打包清除
-		new CleanWebpackPlugin(['dist'])
-	]
+  optimization: {
+    splitChunks: {
+      name: 'manifest'
+    }
+  },
+  plugins: [
+    // new webpack.NamedChunksPlugin(),
+    // new webpack.NamedModulesPlugin(),
+    new PurifyCss({
+      paths: glob.sync([
+        path.join(__dirname, './*.html'),
+        path.join(__dirname, './src/*.js')
+      ])
+    }),
+    new UglifyJsPlugin(),
+    new HtmlInlineChunkPlugin({
+      inlineChunks: ['manifest']
+    }),
+    new CleanWebpackPlugin(['dist'])
+    // new Happypack({
+    // 	id: 'vue',
+    // 	loaders: [
+    // 		{
+    // 			laoder: 'eslint-laoder',
+    // 			option: require('./eslint-loader.conf')
+    // 		}
+    // 	]
+    // }),
+    // new webpack.DellReferencePlugin({
+    // 	// manifest: require('../src/dll/ui-mannifest.json')
+    // }),
+    // new webpack.DellReferencePlugin({
+    // 	// manifest: require('../src/dll/vue-manifest.json')
+    // }),
+    // new webpack.DefinePlugin({
+    // 	'process.env': env
+    // }),
+    // new UglifyJsPlugin({
+    // 	uglifyOptions: {
+    // 		compress: {
+    // 			warnings: false
+    // 		}
+    // 	},
+    // 	sourceMap: confirm.build.productionSourceMap,
+    // 	parallel: true,
+    // 	cache: true
+    // }),
+  ]
 }
