@@ -47,7 +47,8 @@ module.exports = {
 							minimize: true,
 							/* enable css-modules ? */
 							modules: true,
-							/* configure the generate ident */
+              /* configure the generate ident */
+              /* 定义 css-modules 编译出来文件的名称 */
 							localIdentName: '[path][name]_[local]_[hash:base64:5]'
 						}
 					},

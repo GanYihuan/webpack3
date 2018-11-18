@@ -12,29 +12,36 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = {
   mode: 'production',
   entry: {
-    app: './src/app.js'
+    app: './src/app.js',
+    // third-part package
+    vendor: ['lodash']
   },
   output: {
-    /* 输出到指定目录下 */
+    /* 输出到 dist 目录下 */
     path: path.resolve(__dirname, 'dist'),
-    /* 输出文件都带有 / 前缀 */
+    // 修改引入资源路径, 使其带有 '/' 前缀
     publicPath: '/',
-    /* Initialize packaged file name */
+    /* 初始化打包 */
     filename: 'js/[name]-bundle-[hash:5].js',
-    /* dynamic packaged file name */
+    /* 动态打包, 如异步引入的文件 */
     chunkFilename: '[name].bundle.js'
   },
-  // webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码
+  // webpack4 替代 webpack.optimize.CommonsChunkPlugin, 打包公共代码
   optimization: {
+    // 适用于多 entry 情况
     splitChunks: {
       // name of the split chunk
-      name: 'vendor',
+      name: 'manifest',
       // which chunks will be selected for optimization, "initial" | "all"(default) | "async",
+      // 指定提取范围
       chunks: 'initial',
       // mini size for a chunk to be generated.
       minSize: 30000,
       // mini number of chunks that must share a module before splitting.
+      // 需要提取的公共代码出现的次数，出现 2 次提取到公共代码
       minChunks: 2,
+      // 第三方模块与代码区分开提取
+      // minChunks: Infinity,
       // max number of parallel requests when on-demand loading.
       maxAsyncRequests: 1,
       // max number of parallel requests at an entry point.
@@ -109,25 +116,41 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
+        // 用在生产环境中
+        // use: ExtractTextWebpackPlugin.extract({
+				// 	fallback: {
+				// 		loader: 'style-loader',
+				// 		options: {
+				// 			singleton: true,
+				// 			transform: './css.transform.js'
+				// 		}
+				// 	},
+				// 	use: [
+				// 		{
+				// 			loader: 'sass-loader'
+				// 		}
+				// 	]
+				// })
+        /* 处理过程, 从后往前 */
         use: [
           {
-            /* 在引入 css 时，在最后生成的 js 文件中进行处理，动态创建 style 标签，塞到 head 标签里 */
+            /* 在最后生成的 js 文件中进行处理，动态创建 style 标签，塞到 head 标签里 */
             loader: 'style-loader',
             /* Adds CSS to the DOM by injecting a <link/> tag */
             // loader: 'style-loader/url',
-            /* wether use style-loader */
+            /* 控制样式是否插入页面中, 多了 .use() & .unuse() 方法 */
             // loader: 'style-loader/useable',
             options: {
-              // singleton 会阻止 sourceMap, 可以关闭 singleton
+              // singleton 会阻止 sourceMap
               sourceMap: true,
               /* singleton(是否只使用一个 style 标签) */
               // singleton: true,
-              /* transform(转化, 浏览下, 插入页面前, 根据不同浏览器配置不同样式) */
+              /* 插入页面前, 根据不同浏览器配置不同样式 */
               transform: './css.transform.js'
             }
           },
           {
-            /* 打包时把 css 文件拆出来，css 相关模块最终打包到一个指定的c ss 文件中，我们手动用 link 标签去引入这个 css 文件 */
+            // 让 js 能 @import css 文件进来
             loader: 'css-loader',
             options: {
               sourceMap: true,
@@ -137,7 +160,7 @@ module.exports = {
               minimize: true,
               /* 启用 css-modules */
               modules: true,
-              /* 定义编译出来的名称 */
+              /* 定义 css-modules 编译出来文件的名称 */
               localIdentName: '[path][name]_[local]_[hash:base64:5]'
             }
           },
@@ -146,21 +169,20 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              /*  webpack requires an identifier (ident) in options when {Function}/require is used (Complex Options). The ident can be freely named as long as it is unique. It's recommended to name it (ident: 'postcss') */
-              /* below plugin use for postcss */
+              // 下面的插件给 postcss 使用
               ident: 'postcss',
               plugins: [
                 /* 加 css 各浏览器前缀 */
                 require('autoprefixer')(),
+                /* 优化 & 压缩 css */
+                require('cssnano')(),
                 /* 使用未来的 css 语法 */
                 require('postcss-cssnext')(),
-                /* 压缩 css */
-                require('cssnano')(),
                 /* 图片合并成一张图 */
                 require('postcss-sprites')({
-                  /* Specify output path */
+                  /* 输出路径 */
                   spritePath: 'dist/assets/imgs/sprites',
-                  /* handle retina screen */
+                  /* 处理苹果 retina 屏幕 */
                   retina: true
                 })
               ]
@@ -183,10 +205,12 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              // presets: ['env'],
+              // 自动转换 es5+ 为 es5
               presets: ['@babel/preset-env'],
-              /* for lodash, uglifyjswebpackplugin no working, use babel-plugin-lodash can compress lodash */
-              plugins: ['lodash']
+              // UglifyJsWebpackPlugin 对 lodash 无用, 使用 babel-plugin-lodash 能去除 lodash 多余 js
+              // transform-runtime: 能写 es7/8 新方法, 开发组件类库中使
+              // babel-polyfill: 能写 es7/8 新方法, 开发应用使用, main.js 中引用 `import babel-polyfill`
+              plugins: ['lodash', '@babel/transform-runtime']
             }
           },
           {
@@ -275,13 +299,16 @@ module.exports = {
     new BundleAnalyzerPlugin(),
     /* 提取 css */
     new ExtractTextWebpackPlugin({
+      // 提取出来的 css 名称, 手动用 link 标签引入
       filename: '[name].min.css',
-      /* 指定提取css范围, 提取初始化 */
+      /* 指定提取 css 范围, 提取初始化的 css, 异步引入的 css 代码不包括 */
+      // import ('./css/components/a.scss').then(function () {
       allChunks: false
     }),
+    /* 放置 ExtractTextWebpackPlugin 之后 */
     /* 去除多余的 css */
     new PurifyCssWebpack({
-      /* load mutil path */
+      /* 针对指定路径文件来处理 */
       paths: globAll.sync([
         path.join(__dirname, './*.html'),
         path.join(__dirname, './src/*.js')
@@ -296,7 +323,7 @@ module.exports = {
       $: 'jquery'
     }),
     /* 生成创建 html 入口文件 */
-    /* auto load css, js file */
+    // 自动加载 css, js 文件
     new HtmlWebpackPlugin({
       /* filename: 输出文件的名字 */
       filename: 'index.html',
@@ -321,5 +348,10 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     // 热更新时路径输出
     new webpack.NamedModulesPlugin()
+    /* webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码 */
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'common',
+    //   minChunks: 2
+    // })
   ]
 }

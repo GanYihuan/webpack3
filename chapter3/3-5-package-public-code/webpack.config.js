@@ -19,19 +19,21 @@ module.exports = {
     /* dynamic packaged fileName */
 		chunkFilename: '[name].chunk.js'
 	},
-	/* Extract common code */
+  // webpack4 替代 webpack.optimize.CommonsChunkPlugin, 打包公共代码
 	optimization: {
-    /* package, Multiple entry can only work */
+    /* 适用于多 entry 情况 */
 		// [splitChunks](https://webpack.docschina.org/plugins/split-chunks-plugin/)
 		splitChunks: {
 			// name of the split chunk
       name: 'vendor',
       // names: ['vendor', 'manifest'],
 			// which chunks will be selected for optimization, "initial" | "all"(default) | "async",
-			chunks: 'initial',
+      // 指定提取范围
+      chunks: 'initial',
 			// mini size for a chunk to be generated.
 			minSize: 30000,
-			// mini number of chunks that must share a module before splitting
+      // mini number of chunks that must share a module before splitting
+      // 需要提取的公共代码出现的次数，出现 2 次提取到公共代码
 			minChunks: 2,
 			// Maximum number of parallel requests when on-demand loading.
 			maxAsyncRequests: 1,
