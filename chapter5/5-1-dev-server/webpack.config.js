@@ -25,7 +25,9 @@ module.exports = {
     // 修改引入资源路径, 使其带有 '/' 前缀
     publicPath: '/',
     /* 初始化打包 */
-    filename: 'js/[name]-bundle-[hash:5].js',
+    // filename: 'js/[name]-bundle-[hash:5].js',
+    // 有利于长缓存优化
+    filename: 'js/[name]-bundle-[chunkhash:5].js',
     /* 动态打包, 如异步引入的文件 */
     chunkFilename: '[name].bundle.js'
   },
@@ -33,18 +35,19 @@ module.exports = {
   optimization: {
     // 适用于多 entry 情况
     splitChunks: {
+      // 第三方模块与代码区分开提取, 有利于长缓存优化
       // name of the split chunk
       name: 'manifest',
+      // mini number of chunks that must share a module before splitting.
+      // 需要提取的公共代码出现的次数，出现 2 次提取到公共代码
+      // minChunks: 2,
+      // 区分开提取
+      minChunks: Infinity,
       // which chunks will be selected for optimization, "initial" | "all"(default) | "async",
       // 指定提取范围
       chunks: 'initial',
       // mini size for a chunk to be generated.
       minSize: 30000,
-      // mini number of chunks that must share a module before splitting.
-      // 需要提取的公共代码出现的次数，出现 2 次提取到公共代码
-      minChunks: 2,
-      // 第三方模块与代码区分开提取
-      // minChunks: Infinity,
       // max number of parallel requests when on-demand loading.
       maxAsyncRequests: 1,
       // max number of parallel requests at an entry point.
@@ -317,6 +320,11 @@ module.exports = {
   },
   plugins: [
     new BundleAnalyzerPlugin(),
+    // 引入新模块，模块顺序变化，vendor hash 不变, 有利于长缓存优化
+    // chunk 的版本号从数字改成文件名字
+    new webpack.NamedChunksPlugin(),
+    // module 的版本号从数字改成相对路径
+    new webpack.NamedModulesPlugin(),
     /* 提取 css */
     extractLess,
     // new ExtractTextWebpackPlugin({
@@ -336,7 +344,17 @@ module.exports = {
       ])
     }),
     /* 去除多余的 js */
-    new UglifyJsWebpackPlugin(),
+    // new UglifyJsWebpackPlugin(),
+    // 优化打包速度
+    new UglifyJsWebpackPlugin({
+      uglifyOptions: {
+        compress: {
+          warnings: false
+        }
+      },
+      sourceMap: false,
+      parallel: true
+    }),
     /* 第三方模块 js 注入 (use npm install) */
     new webpack.ProvidePlugin({
       $: 'jquery'

@@ -13,7 +13,7 @@ const path = require('path')
   },
   optimization: {
     splitChunks: {
-      name: 'vendor',
+      name: 'manifest',
       chunks: 'initial',
       minChunks: Infinity
     }

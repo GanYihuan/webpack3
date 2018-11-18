@@ -22,7 +22,18 @@ module.exports = {
         path.join(__dirname, './src/*.js')
       ])
     }),
-    new UglifyJsPlugin(),
+    // new UglifyJsPlugin(),
+    // 优化打包速度
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        compress: {
+          warnings: false
+        }
+      },
+      sourceMap: false,
+      parallel: true,
+      cache: true
+    }),
     new HtmlInlineChunkPlugin({
       inlineChunks: ['manifest']
     }),
@@ -44,16 +55,6 @@ module.exports = {
     // }),
     // new webpack.DefinePlugin({
     // 	'process.env': env
-    // }),
-    // new UglifyJsPlugin({
-    // 	uglifyOptions: {
-    // 		compress: {
-    // 			warnings: false
-    // 		}
-    // 	},
-    // 	sourceMap: confirm.build.productionSourceMap,
-    // 	parallel: true,
-    // 	cache: true
     // }),
   ]
 }
