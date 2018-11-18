@@ -8,6 +8,9 @@ const path = require('path')
 const globAll = require('glob-all')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const extractLess = new ExtractTextWebpackPlugin({
+  filename: 'css/[name]-bundle-[hash:5].css'
+})
 
 module.exports = {
   mode: 'production',
@@ -118,19 +121,19 @@ module.exports = {
         test: /\.scss$/,
         // 用在生产环境中
         // use: ExtractTextWebpackPlugin.extract({
-				// 	fallback: {
-				// 		loader: 'style-loader',
-				// 		options: {
-				// 			singleton: true,
-				// 			transform: './css.transform.js'
-				// 		}
-				// 	},
-				// 	use: [
-				// 		{
-				// 			loader: 'sass-loader'
-				// 		}
-				// 	]
-				// })
+        // 	fallback: {
+        // 		loader: 'style-loader',
+        // 		options: {
+        // 			singleton: true,
+        // 			transform: './css.transform.js'
+        // 		}
+        // 	},
+        // 	use: [
+        // 		{
+        // 			loader: 'sass-loader'
+        // 		}
+        // 	]
+        // })
         /* 处理过程, 从后往前 */
         use: [
           {
@@ -225,17 +228,30 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/,
         use: [
+          // 开发环境使用
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     name: '[name]-[hash:5].[ext]',
+          //     publicPath: '',
+          //     outputPath: 'dist/',
+          //     useRelativePath: true
+          //   }
+          // },
+          // 生成环境使用
           {
+            // 处理成 base64
             loader: 'url-loader',
             options: {
+              // 生成的图片名称
               name: '[name]-[hash:5].[ext]',
               /* 超出 1000 处理成 base64 */
               limit: 1000,
-              /* Set absolute path, remove above 'dist/' path */
+              /* 打头的路径目录为 '' */
               publicPath: '',
-              /* put in dist file */
+              /* 放置在 dist */
               outputPath: 'dist/',
-              /* put in assets/imgs file */
+              /* 放置在 assets/imgs, 因为图片原本路径为 (aseets/imgs) */
               useRelativePath: true
             }
           },
@@ -243,7 +259,7 @@ module.exports = {
             /* 压缩图片 */
             loader: 'img-loader',
             options: {
-              /* .png */
+              /* .png 图片处理 */
               pngquant: {
                 /* 压缩 png */
                 quality: 80
@@ -257,15 +273,12 @@ module.exports = {
         test: /\.(eot|woff2?|ttf|svg)$/,
         use: [
           {
-            /* A loader for webpack which transforms files into base64 URIs */
             loader: 'url-loader',
             options: {
               name: '[name]-[hash:5].[ext]',
               /* 超出 5000 处理成 base64 */
               limit: 5000,
-              // publicPaths: '',
               outputPath: 'assets/imgs/'
-              // useRelativePath: true
             }
           }
         ]
@@ -285,7 +298,7 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            /* HTML which handle by webpack, comporess optimize */
+            /* HTML 哪部分交由 webpack 处理 */
             loader: 'html-loader',
             options: {
               attrs: ['img:src', 'img:data-src']
@@ -298,13 +311,14 @@ module.exports = {
   plugins: [
     new BundleAnalyzerPlugin(),
     /* 提取 css */
-    new ExtractTextWebpackPlugin({
-      // 提取出来的 css 名称, 手动用 link 标签引入
-      filename: '[name].min.css',
-      /* 指定提取 css 范围, 提取初始化的 css, 异步引入的 css 代码不包括 */
-      // import ('./css/components/a.scss').then(function () {
-      allChunks: false
-    }),
+    extractLess,
+    // new ExtractTextWebpackPlugin({
+    //   // 提取出来的 css 名称, 手动用 link 标签引入
+    //   filename: '[name].min.css',
+    //   /* 指定提取 css 范围, 提取初始化的 css, 异步引入的 css 代码不包括 */
+    //   // import ('./css/components/a.scss').then(function () {
+    //   allChunks: false
+    // }),
     /* 放置 ExtractTextWebpackPlugin 之后 */
     /* 去除多余的 css */
     new PurifyCssWebpack({
@@ -316,29 +330,26 @@ module.exports = {
     }),
     /* 去除多余的 js */
     new UglifyJsWebpackPlugin(),
-    /* Automatically load modules instead of having to import or require them everywhere. */
-    /* third-party modules js import (use npm) */
+    /* 第三方模块 js 注入 (use npm install) */
     new webpack.ProvidePlugin({
-      /* 使用 install jquery */
       $: 'jquery'
     }),
-    /* 生成创建 html 入口文件 */
-    // 自动加载 css, js 文件
+    // 生成 html, 即使 css, js 文件名称变化时, 能自动加载配对的 css, js 文件
     new HtmlWebpackPlugin({
-      /* filename: 输出文件的名字 */
+      /* 输出文件的名字 */
       filename: 'index.html',
-      /* template: 本地模版的位置 */
+      /* 本地模版的位置 */
       template: './index.html',
       /* 向 template 或者 templateContent 中注入所有静态资源 */
       // inject: false,
-      /* 允许插入到模板中的一些 chunk */
-      // chunks: ['app'],
+      /* 插入到 html 的 entry chunk */
+      chunks: ['app'],
       /* 压缩 */
       minify: {
         collapseWhitespace: true
       }
     }),
-    /* chunk 加到 html 中 */
+    /* chunk 加到 html */
     new HtmlWebpackInlineChunkPlugin({
       inlineChunks: ['manifest']
     }),

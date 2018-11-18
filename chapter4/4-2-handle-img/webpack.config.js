@@ -95,22 +95,21 @@ module.exports = {
 			{
 				test: /\.(png|jpg|jpeg|gif)$/,
 				use: [
-					{
-						loader: 'url-loader',
-						options: {
-							name: '[name]-[hash:5].[ext]',
-							/* over 1000 handle to base64 */
+          {
+            loader: 'url-loader',
+            options: {
+              // 生成的图片名称
+              name: '[name]-[hash:5].[ext]',
+              /* 超出 1000 处理成 base64 */
               limit: 1000,
-              /* 使其位于绝对路径地址 */
-							/* Set absolute path */
-							publicPath: '',
-							/* put dist file dialog */
-							outputPath: 'dist/',
-              /* 不设置的话, 放在 dist 里, 设置后放在 assets 下 */
-							/* Set relative path */
-							useRelativePath: true
-						}
-					},
+              /* 打头的路径目录为 '' */
+              publicPath: '',
+              /* 放置在 dist */
+              outputPath: 'dist/',
+              /* 放置在 assets/imgs */
+              useRelativePath: true
+            }
+          },
 					{
 						/* compress img */
 						loader: 'img-loader',
