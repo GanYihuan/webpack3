@@ -58,27 +58,31 @@ module.exports = {
       jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
     }
   },
-  /* 此选项控制是否生成，以及如何生成 source map */
+  /* 如何生成 source-map */
+  // source-map: 追踪错误和警告
   devtool: 'cheap-module-source-map',
+  // 提供一个 web 服务器，能实时重新加载刷新浏览器
   devServer: {
-    /* browser page status bar. tell use package status */
+    /* 页面状态栏 */
     // inline: false,
-    // Tell dev-server to watch the files served
+    // 提供内容路径, 内容是静态要指定
     contentBase: path.join(__dirname, 'dist'),
+    // 压缩
     compress: true,
-    // Specify a port number to listen for requests on
+    // 监听那个端口
     port: 9001,
-    // Shows full-screen overlay in the browser when there are compiler errors or warnings
+    // 编译错误提示遮罩
     overlay: true,
-    // Enable webpack's Hot Module Replacement feature
+    // 模块热更新, 不刷新浏览器下, 更新代码
     hot: true,
     // Enables Hot Module Replacement without page refresh as fallback in case of build failures.
     hotOnly: true,
     /* 重定向接口请求 */
-    // HTML5 History API, the index.html page will likely have to be served in place of any 404 responses
+    // 使用 HTML5 History API, 访问某个路径不会导致 404, 指定一个规则让页面实现服务端渲染
     historyApiFallback: {
       // 指定文件类型, 匹配了才重定向
       // htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
+      // 重定向规则
       rewrites: [
         {
           from: /^\/([a-zA-Z0-9]+\/?)([a-zA-Z0-9]+)/,
@@ -88,13 +92,13 @@ module.exports = {
         }
       ]
     },
-    // Specify a page to navigate to when opening the browser
+    // 指定 dev-server 最先浏览器打开那个页面
     // openPage: '',
-    // the dev-server will only compile the bundle when it gets requested
+    // 刚开始启动 dev-server 时不打包任何东西，当访问某些内容时才会去编译
     // lazy: true,
-    // By default dev-server will be served over HTTP. It can optionally be served over HTTP/2 with HTTPS
+    // 生成相关证书
     // https: true,
-    // send API requests on the same domain
+    // 代理远程接口请求
     proxy: {
       '/': {
         // 请求远端服务器
@@ -105,7 +109,7 @@ module.exports = {
         headers: {
           Cookie: ''
         },
-        // 控制台信息
+        // 控制台显示代理信息
         logLevel: 'debug',
         // 重定向接口请求
         pathRewrite: {
@@ -202,7 +206,9 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        // 处理目录
         include: path.resolve(__dirname, 'src'),
+        // 不处理目录
         exclude: path.resolve(__dirname, 'src/libs'),
         use: [
           {
@@ -217,9 +223,10 @@ module.exports = {
             }
           },
           {
-            // 放置 babel-loader 之后
+            // 放置 babel-loader 之后, eslint 校验代码格式
             loader: 'eslint-loader',
             options: {
+              // 报错时输入内容的格式更友好
               formatter: require('eslint-friendly-formatter')
             }
           }
