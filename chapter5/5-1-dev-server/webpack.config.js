@@ -36,7 +36,6 @@ module.exports = {
     // 适用于多 entry 情况
     splitChunks: {
       // 第三方模块与代码区分开提取, 有利于长缓存优化
-      // name of the split chunk
       name: 'manifest',
       // mini number of chunks that must share a module before splitting.
       // 需要提取的公共代码出现的次数，出现 2 次提取到公共代码
@@ -319,14 +318,15 @@ module.exports = {
     ]
   },
   plugins: [
-    new BundleAnalyzerPlugin(),
-    // 引入新模块，模块顺序变化，vendor hash 不变, 有利于长缓存优化
-    // chunk 的版本号从数字改成文件名字
-    new webpack.NamedChunksPlugin(),
-    // module 的版本号从数字改成相对路径
-    new webpack.NamedModulesPlugin(),
     /* 提取 css */
     extractLess,
+    new BundleAnalyzerPlugin(),
+    // 热更新
+    new webpack.HotModuleReplacementPlugin(),
+    // module 的版本号从数字改成相对路径 有利于长缓存优化, 热更新时路径输出
+    new webpack.NamedModulesPlugin(),
+    // chunk 的版本号从数字改成文件名字 有利于长缓存优化
+    new webpack.NamedChunksPlugin(),
     // new ExtractTextWebpackPlugin({
     //   // 提取出来的 css 名称, 手动用 link 标签引入
     //   filename: '[name].min.css',
@@ -343,9 +343,7 @@ module.exports = {
         path.join(__dirname, './src/*.js')
       ])
     }),
-    /* 去除多余的 js */
-    // new UglifyJsWebpackPlugin(),
-    // 优化打包速度
+    /* 去除多余的 js 优化打包速度 */
     new UglifyJsWebpackPlugin({
       uglifyOptions: {
         compress: {
@@ -379,11 +377,7 @@ module.exports = {
       inlineChunks: ['manifest']
     }),
     // 打包后清除目录
-    new CleanWebpackPlugin(['dist']),
-    // 热更新
-    new webpack.HotModuleReplacementPlugin(),
-    // 热更新时路径输出
-    new webpack.NamedModulesPlugin()
+    new CleanWebpackPlugin(['dist'])
     /* webpack4 替代 webpack.optimize.CommonsChunkPlugin, 提取公共代码 */
     // new webpack.optimize.CommonsChunkPlugin({
     //   name: 'common',
