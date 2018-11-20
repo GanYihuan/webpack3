@@ -62,7 +62,7 @@ module.exports = {
 		new ExtractTextWebpackPlugin({
 			/* Name of the result file */
 			filename: '[name].min.css',
-			/* Extract from all additional chunks(by default it extracts only from the initial chunk) */
+			/* Extract from all additional chunks (by default it extracts only from the initial chunk) */
 			allChunks: false
 		})
 	]
