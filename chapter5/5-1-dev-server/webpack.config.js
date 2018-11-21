@@ -69,6 +69,8 @@ module.exports = {
     // inline: false,
     // 提供内容路径, 内容是静态要指定
     contentBase: path.join(__dirname, 'dist'),
+    // 自动打开浏览器
+    open: true,
     // 压缩
     compress: true,
     // 监听那个端口

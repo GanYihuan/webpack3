@@ -8,7 +8,8 @@
     "watch": "webpack --watch",
     "server": "webpack-dev-server --open --env development --config build/webpack.common.conf.js",
     "build": "webpack --env production --config build/webpack.common.conf.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --open"
   },
   "author": "",
   "license": "ISC",
