@@ -74,6 +74,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
+// 端口占用了处理
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port
   portfinder.getPort((err, port) => {

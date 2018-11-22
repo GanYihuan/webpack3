@@ -8,6 +8,7 @@ const path = require('path')
 const globAll = require('glob-all')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+// develoment
 const extractLess = new ExtractTextWebpackPlugin({
   filename: 'css/[name]-bundle-[hash:5].css'
 })
@@ -42,11 +43,11 @@ module.exports = {
       // minChunks: 2,
       // 区分开提取
       minChunks: Infinity,
+      // mini size for a chunk to be generated.
+      minSize: 30000,
       // which chunks will be selected for optimization, "initial" | "all"(default) | "async",
       // 指定提取范围
       chunks: 'initial',
-      // mini size for a chunk to be generated.
-      minSize: 30000,
       // max number of parallel requests when on-demand loading.
       maxAsyncRequests: 1,
       // max number of parallel requests at an entry point.
@@ -239,7 +240,7 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/,
         use: [
-          // 开发环境使用
+          // // 开发环境使用
           // {
           //   loader: 'file-loader',
           //   options: {
@@ -329,6 +330,7 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     // chunk 的版本号从数字改成文件名字 有利于长缓存优化
     new webpack.NamedChunksPlugin(),
+    // // production
     // new ExtractTextWebpackPlugin({
     //   // 提取出来的 css 名称, 手动用 link 标签引入
     //   filename: '[name].min.css',
