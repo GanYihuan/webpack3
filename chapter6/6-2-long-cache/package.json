@@ -118,5 +118,11 @@
     "presets": [
       "react-app"
     ]
+  },
+  "proxy": {
+    "/api": {
+      "target": "https://m.weibo.cn",
+      "changeOrigin": true
+    }
   }
 }
