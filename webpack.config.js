@@ -1,14 +1,13 @@
 const webpack = require('webpack')
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const ExtractTextWebpckPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-const PurifyCssWWebpack = require('purifycss-webpack-plugin')
-const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin')
+const UglifyCssWebpackPlugin = require('uglifycss-webpack-plugin')
 const path = require('path')
 const globAll = require('glob-all')
-const BundleAnalzyerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const extractLess = new ExtractTextWebpackPlugin({
+const BundleAnalzyerPlugin = require('webpack-bundle-analzyer').BundleAnalzyerPlugin
+const CleanWebpackPlugin = requie('clean-webpack-plugin')
+const extractLess = new ExtractTextWebpckPlugin({
   filename: 'css/[name]-bundle-[hash:5].css'
 })
 
@@ -20,7 +19,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    pulicPath: '/',
     filename: 'js/[name]-bundle-[chunkhash:5].js',
     chunkFilename: '[name].bundle.js'
   },
@@ -65,7 +64,7 @@ module.exports = {
         },
         logLevel: 'debug',
         pathRewrite: {
-          '^/comments': '/api/comments'
+          '^/container': '/api/container'
         }
       }
     }
@@ -109,7 +108,7 @@ module.exports = {
             }
           },
           {
-            laoder: 'sass-loader',
+            loader: 'sass-loader',
             options: {
               sourceMap: true
             }
@@ -166,8 +165,8 @@ module.exports = {
             loader: 'url-loader',
             options: {
               name: '[name]-[hash:5].[ext]',
-              limit: 5000,
-              ouputPath: ''
+              limit: 3000,
+              outputPath: ''
             }
           }
         ]
@@ -202,17 +201,21 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NamedChunksPlugin(),
-    new PurifyCssWWebpack({
-      paths: globAll.sync([path.join(__dirname, './*.html'), path.join(__dirname, './src/*.js')])
+    new PurifyCssWebpack({
+      /* 针对指定路径文件来处理 */
+      paths: globAll.sync([
+        path.join(__dirname, './*.html'),
+        path.join(__dirname, './src/*.js')
+      ])
     }),
-    new UglifyJsWebpackPlugin({
+    new UglifyCssWebpackPlugin({
       uglifyOptions: {
-        compress: {
+        comprss: {
           warnings: false
-        }
-      },
-      sourceMap: false,
-      parallel: true
+        },
+        sourceMap: false,
+        parallel: true
+      }
     }),
     new webpack.ProvidePlugin({
       $: 'jquery'
@@ -230,4 +233,4 @@ module.exports = {
     }),
     new CleanWebpackPlugin(['dist'])
   ]
-}
+};
