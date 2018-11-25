@@ -27,7 +27,7 @@ module.exports = {
     publicPath: '/',
     /* 初始化打包 */
     // filename: 'js/[name]-bundle-[hash:5].js',
-    // 有利于长缓存优化
+    // chunkhash 有利于长缓存优化
     filename: 'js/[name]-bundle-[chunkhash:5].js',
     /* 动态打包, 如异步引入的文件 */
     chunkFilename: '[name].bundle.js'

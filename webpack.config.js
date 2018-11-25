@@ -2,11 +2,11 @@ const webpack = require('webpack')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-const PurifyCssPlugin = require('purifycss-webpack')
+const PurifyCssWWebpack = require('purifycss-webpack-plugin')
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
 const globAll = require('glob-all')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const BundleAnalzyerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const extractLess = new ExtractTextWebpackPlugin({
   filename: 'css/[name]-bundle-[hash:5].css'
@@ -50,7 +50,7 @@ module.exports = {
       rewrites: [
         {
           from: /^\/([a-zA-Z0-9]+\/?)([a-zA-Z0-9]+)/,
-          to: function (context) {
+          to: function(context) {
             return '/' + context.match[1] + context.match[2] + '.html'
           }
         }
@@ -73,7 +73,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.scss$/,
+        test: /\.scss$/,
         use: [
           {
             loader: 'style-loader',
@@ -109,7 +109,7 @@ module.exports = {
             }
           },
           {
-            loader: 'sass-loader',
+            laoder: 'sass-loader',
             options: {
               sourceMap: true
             }
@@ -125,7 +125,7 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
-              plugins: ['lodash']
+              plugins: ['lodash', '@babel/transform-runtime']
             }
           },
           {
@@ -167,7 +167,18 @@ module.exports = {
             options: {
               name: '[name]-[hash:5].[ext]',
               limit: 5000,
-              outputPath: ''
+              ouputPath: ''
+            }
+          }
+        ]
+      },
+      {
+        test: path.resolve(__dirname, ''),
+        use: [
+          {
+            loader: 'imports-loader',
+            options: {
+              $: 'jquery'
             }
           }
         ]
@@ -187,15 +198,12 @@ module.exports = {
   },
   plugins: [
     extractLess,
-    new BundleAnalyzerPlugin(),
+    new BundleAnalzyerPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NameModulesPlugin(),
+    new webpack.NamedModulesPlugin(),
     new webpack.NamedChunksPlugin(),
-    new PurifyCssWebpack({
-      paths: globAll.sync([
-        path.join(__dirname, './*.html'),
-        path.join(__dirname, './src/*.js')
-      ])
+    new PurifyCssWWebpack({
+      paths: globAll.sync([path.join(__dirname, './*.html'), path.join(__dirname, './src/*.js')])
     }),
     new UglifyJsWebpackPlugin({
       uglifyOptions: {
@@ -222,4 +230,4 @@ module.exports = {
     }),
     new CleanWebpackPlugin(['dist'])
   ]
-};
+}
