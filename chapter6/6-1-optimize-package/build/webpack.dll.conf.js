@@ -11,6 +11,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '../src/dll/'),
     filename: '[name].dll.js',
+    // 产生全局变量
     library: '[name]'
   },
   plugins: [
