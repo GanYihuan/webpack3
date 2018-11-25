@@ -91,7 +91,7 @@ module.exports = {
       rewrites: [
         {
           from: /^\/([a-zA-Z0-9]+\/?)([a-zA-Z0-9]+)/,
-          to: function (context) {
+          to: function(context) {
             return '/' + context.match[1] + context.match[2] + '.html'
           }
         }
@@ -342,10 +342,7 @@ module.exports = {
     /* 去除多余的 css */
     new PurifyCssWebpack({
       /* 针对指定路径文件来处理 */
-      paths: globAll.sync([
-        path.join(__dirname, './*.html'),
-        path.join(__dirname, './src/*.js')
-      ])
+      paths: globAll.sync([path.join(__dirname, './*.html'), path.join(__dirname, './src/*.js')])
     }),
     /* 去除多余的 js 优化打包速度 */
     new UglifyJsWebpackPlugin({

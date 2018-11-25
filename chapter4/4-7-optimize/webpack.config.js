@@ -6,8 +6,6 @@ const PurifyCss = require('purifycss-webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
 const glob = require('glob-all')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-	.BundleAnalyzerPlugin
 
 module.exports = {
 	mode: 'production',
@@ -207,7 +205,6 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new BundleAnalyzerPlugin(),
 		/* Extract text from a bundle, or bundles, into a separate file. */
 		new ExtractTextWebpackPlugin({
 			filename: '[name].min.css',

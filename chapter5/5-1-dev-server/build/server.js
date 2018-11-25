@@ -34,7 +34,7 @@ app.use(
 app.use(webpackHotMiddelwrare(compiler))
 
 // 端口回调
-app.listen(port, function () {
+app.listen(port, function() {
   console.log('success listen to ' + port)
   opn('http://localhost:' + port)
 })
