@@ -1,6 +1,5 @@
 const path = require('path')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
 	mode: 'production',
@@ -74,7 +73,6 @@ module.exports = {
 		]
 	},
 	plugins: [
-    new BundleAnalyzerPlugin(),
 		/* Extract text from a bundle, or bundles, into a separate file. */
 		new ExtractTextWebpackPlugin({
 			filename: '[name].min.css',

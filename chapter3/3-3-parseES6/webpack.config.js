@@ -1,6 +1,4 @@
-﻿const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-
-module.exports = {
+﻿module.exports = {
   mode: 'production',
   entry: {
     app: './app.js'
@@ -36,8 +34,5 @@ module.exports = {
         exclude: '/node_modules/'
       }
     ]
-  },
-  plugins: [
-    new BundleAnalyzerPlugin()
-  ]
+  }
 }
