@@ -17,10 +17,7 @@ module.exports = {
     // new webpack.NamedChunksPlugin(),
     // new webpack.NamedModulesPlugin(),
     new PurifyCss({
-      paths: glob.sync([
-        path.join(__dirname, './*.html'),
-        path.join(__dirname, './src/*.js')
-      ])
+      paths: glob.sync([path.join(__dirname, './*.html'), path.join(__dirname, './src/*.js')])
     }),
     // new UglifyJsPlugin(),
     // 优化打包速度
