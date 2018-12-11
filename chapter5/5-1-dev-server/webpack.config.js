@@ -250,12 +250,12 @@ module.exports = {
           //     useRelativePath: true
           //   }
           // },
-          /* 生成环境使用 */
+          /* 生产环境使用 */
           {
             /* 处理成 base64 */
             loader: 'url-loader',
             options: {
-              // 生成的图片名称
+              /* 生成的图片名称 */
               name: '[name]-[hash:5].[ext]',
               /* 超出 1000 处理成 base64 */
               limit: 1000,
@@ -366,7 +366,7 @@ module.exports = {
       filename: 'index.html',
       /* 本地模版的位置 */
       template: './index.html',
-      /* 向 template 或者 templateContent 中注入所有静态资源 */
+      /* js, css 通过标签插入到 html 中 */
       // inject: false,
       /* 插入到 html 的 entry chunk */
       chunks: ['app'],
@@ -375,7 +375,7 @@ module.exports = {
         collapseWhitespace: true
       }
     }),
-    /* chunk 加到 html */
+    /* chunk 加到 html, manifest: 上面操作提取的公共代码 */
     new HtmlWebpackInlineChunkPlugin({
       inlineChunks: ['manifest']
     }),
