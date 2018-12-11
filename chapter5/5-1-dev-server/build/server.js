@@ -20,7 +20,7 @@ const compiler = webpack(config)
 
 // 代理远程接口请求
 const proxyTable = require('./proxy')
-for (let context in proxyTable) {
+for (const context in proxyTable) {
   app.use(proxyMiddleware(context, proxyTable[context]))
 }
 /* 重定向接口请求 */

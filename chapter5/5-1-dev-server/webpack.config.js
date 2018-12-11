@@ -59,14 +59,13 @@ module.exports = {
       jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
     }
   },
-  /* 如何生成 source-map */
-  // source-map: 追踪错误和警告
+  /* 如何生成 source-map: 追踪错误和警告 */
   devtool: 'cheap-module-source-map',
   /* 提供一个 web 服务器，能实时重新加载刷新浏览器 */
   devServer: {
     /* 页面状态栏 */
     // inline: false,
-    /* 提供内容路径, 内容是静态要指定 */
+    /* 提供内容的路径, 内容是静态要指定 */
     contentBase: path.join(__dirname, 'dist'),
     /* 自动打开浏览器 */
     open: true,

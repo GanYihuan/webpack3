@@ -18,14 +18,14 @@ const generateConfig = env => {
     env === 'production'
       ? []
       : [
-          {
-            loader: 'eslint-loader',
-            // loader: 'happypack/loader?id=eslint',
-            options: {
-              formatter: require('eslint-friendly-formatter')
-            }
+        {
+          loader: 'eslint-loader',
+          // loader: 'happypack/loader?id=eslint',
+          options: {
+            formatter: require('eslint-friendly-formatter')
           }
-        ]
+        }
+      ]
   )
   const cssLoaders = [
     {
@@ -46,9 +46,9 @@ const generateConfig = env => {
         plugins: [require('autoprefixer')(), require('postcss-cssnext')(), require('cssnano')()].concat(
           env === 'production'
             ? require('postcss-sprites')({
-                spritePath: 'dist/assets/imgs/sprites',
-                retina: true
-              })
+              spritePath: 'dist/assets/imgs/sprites',
+              retina: true
+            })
             : []
         )
       }
@@ -63,35 +63,35 @@ const generateConfig = env => {
   const styleLoader =
     env === 'production'
       ? extractLess.extract({
-          fallback: 'style-loader',
-          use: cssLoaders
-        })
+        fallback: 'style-loader',
+        use: cssLoaders
+      })
       : [
-          {
-            loader: 'style-loader'
-          }
-        ].concat(cssLoaders)
+        {
+          loader: 'style-loader'
+        }
+      ].concat(cssLoaders)
   const fileLoader =
     env === 'development'
       ? [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name]-[hash:5].[ext]',
-              outputPath: 'assets/imgs/'
-            }
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[name]-[hash:5].[ext]',
+            outputPath: 'assets/imgs/'
           }
-        ]
+        }
+      ]
       : [
-          {
-            loader: 'url-loader',
-            options: {
-              name: '[name]-[hash:5].[ext]',
-              limit: 1000,
-              outputPath: 'assets/imgs/'
-            }
+        {
+          loader: 'url-loader',
+          options: {
+            name: '[name]-[hash:5].[ext]',
+            limit: 1000,
+            outputPath: 'assets/imgs/'
           }
-        ]
+        }
+      ]
 
   return {
     entry: {
@@ -124,13 +124,13 @@ const generateConfig = env => {
           test: /\.(png|jpg|jpeg|gif)$/,
           use: fileLoader.concat(env === 'production')
             ? {
-                loader: 'img-loader',
-                options: {
-                  pngquant: {
-                    quality: 80
-                  }
+              loader: 'img-loader',
+              options: {
+                pngquant: {
+                  quality: 80
                 }
               }
+            }
             : []
         },
         {
@@ -156,6 +156,6 @@ const generateConfig = env => {
 }
 
 module.exports = env => {
-  let config = env === 'production' ? productionConfig : developmentConfig
+  const config = env === 'production' ? productionConfig : developmentConfig
   return merge(generateConfig(env), config)
 }

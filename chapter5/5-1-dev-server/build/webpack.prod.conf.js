@@ -36,22 +36,22 @@ module.exports = {
     }),
     new CleanWebpackPlugin(['dist'])
     // new Happypack({
-    // 	id: 'vue',
-    // 	loaders: [
-    // 		{
-    // 			laoder: 'eslint-laoder',
-    // 			option: require('./eslint-loader.conf')
-    // 		}
-    // 	]
+    //   id: 'vue',
+    //   loaders: [
+    //     {
+    //       laoder: 'eslint-laoder',
+    //       option: require('./eslint-loader.conf')
+    //     }
+    //   ]
     // }),
     // new webpack.DellReferencePlugin({
-    // 	// manifest: require('../src/dll/ui-mannifest.json')
+    //    manifest: require('../src/dll/ui-mannifest.json')
     // }),
     // new webpack.DellReferencePlugin({
-    // 	// manifest: require('../src/dll/vue-manifest.json')
+    //    manifest: require('../src/dll/vue-manifest.json')
     // }),
     // new webpack.DefinePlugin({
-    // 	'process.env': env
-    // }),
+    //   'process.env': env
+    // })
   ]
 }
