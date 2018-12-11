@@ -3,8 +3,8 @@
 /* webpack.config.js */
 /* loader: 'style-loader/useable' */
 /* 是否使用 style-loader */
-base.use()
-base.unuse()
+// base.use()
+// base.unuse()
 
 var flag = false
 

@@ -23,7 +23,7 @@ module.exports = {
   output: {
     /* 输出到 dist 目录下 */
     path: path.resolve(__dirname, 'dist'),
-    /* 修改引入资源路径, 使其带有 '/' 前缀 */
+    /* 修改项目引入资源路径, 使其带有 '/' 前缀 */
     publicPath: '/',
     /* 初始化打包 */
     // filename: 'js/[name]-bundle-[hash:5].js',
@@ -62,7 +62,7 @@ module.exports = {
   /* 如何生成 source-map */
   // source-map: 追踪错误和警告
   devtool: 'cheap-module-source-map',
-  // 提供一个 web 服务器，能实时重新加载刷新浏览器
+  /* 提供一个 web 服务器，能实时重新加载刷新浏览器 */
   devServer: {
     /* 页面状态栏 */
     // inline: false,
@@ -151,6 +151,8 @@ module.exports = {
             /* 控制样式是否插入页面中, 多了 .use() & .unuse() 方法 */
             // loader: 'style-loader/useable',
             options: {
+              /* 插入 dom 位置 */
+              insertInto: '#app',
               /* singleton 会阻止 sourceMap */
               sourceMap: true,
               /* singleton(是否只使用一个 style 标签) */
@@ -175,7 +177,7 @@ module.exports = {
             }
           },
           {
-            /* 将css3属性添加上厂商前缀 */
+            /* 将 css3 属性添加上厂商前缀 */
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
@@ -328,18 +330,17 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     /* chunk 的版本号从数字改成文件名字 有利于长缓存优化 */
     new webpack.NamedChunksPlugin(),
-    // // production
+    /* 生产环境 */
     // new ExtractTextWebpackPlugin({
-    //   // 提取出来的 css 名称, 手动用 link 标签引入
+    /* 提取出来的 css 名称, 手动用 link 标签引入 */
     //   filename: '[name].min.css',
     //   /* 指定提取 css 范围, 提取初始化的 css, 异步引入的 css 代码不包括 */
     //   // import ('./css/components/a.scss').then(function () {
     //   allChunks: false
     // }),
-    /* 放置 ExtractTextWebpackPlugin 之后 */
-    /* 去除多余的 css */
+    /* 去除多余的 css, 放置 ExtractTextWebpackPlugin 之后 */
     new PurifyCssWebpack({
-      /* 针对指定路径文件来处理 */
+      /* 针对指定路径文件来处理, glob-all: 加载多路径 */
       paths: globAll.sync([
         path.join(__dirname, './*.html'),
         path.join(__dirname, './src/*.js')

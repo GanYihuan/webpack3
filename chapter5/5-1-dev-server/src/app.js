@@ -4,7 +4,7 @@
 /* style-loader/useable */
 import { a } from './common/util'
 import base from './css/base.scss'
-import * as _ from 'lodash'
+// import * as _ from 'lodash'
 // import common from './css/common.scss'
 
 // var flag = false
@@ -32,7 +32,7 @@ console.log(a())
 // console.log(chunk([1, 2, 3, 4, 5], 2))
 
 /* eslint-disable no-undef */
-let api = 'https://m.weibo.cn/api/container/getIndex'
+// let api = 'https://m.weibo.cn/api/container/getIndex'
 $('div').addClass('new')
 $.get(
   '/container/getIndex',
