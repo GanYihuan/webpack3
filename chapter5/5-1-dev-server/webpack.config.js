@@ -17,7 +17,7 @@ module.exports = {
   mode: 'production',
   entry: {
     app: './src/app.js',
-    /* third-part package */
+    /* 第三方模块 */
     vendor: ['lodash']
   },
   output: {
@@ -40,7 +40,7 @@ module.exports = {
       name: 'manifest',
       /* 需要提取的公共代码出现的次数，出现 2 次提取到公共代码 */
       // minChunks: 2,
-      /* 区分开提取 */
+      /* 区分开提取, Infinity 不会将任何模块打包进去 */
       minChunks: Infinity,
       /* 要生成的 chunks 的最小大小 */
       minSize: 30000,
@@ -128,19 +128,19 @@ module.exports = {
         test: /\.scss$/,
         /* 生产环境 */
         // use: ExtractTextWebpackPlugin.extract({
-        // 	fallback: {
-        // 		loader: 'style-loader',
-        // 		options: {
-        // 			singleton: true,
-        // 			transform: './css.transform.js'
-        // 		}
-        // 	},
-        // 	use: [
-        // 		{
-        // 			loader: 'sass-loader'
-        // 		}
-        // 	]
-        // })
+        //   fallback: {
+        //     loader: 'style-loader',
+        //     options: {
+        //       singleton: true,
+        //       transform: './css.transform.js'
+        //     }
+        //   },
+        //   use: [
+        //     {
+        //       loader: 'sass-loader'
+        //     }
+        //   ]
+        // }),
         /* 处理过程, 从后往前 */
         use: [
           {
@@ -217,7 +217,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              /* 自动转换 es5+ 为 es5 */
+              /* 将 ES6 的代码转成 ES5 */
               presets: ['@babel/preset-env'],
               /* UglifyJsWebpackPlugin 对 lodash 无用, 使用 babel-plugin-lodash 能去除 lodash 多余 js */
               /* transform-runtime: 能写 es7/8 新方法, 开发组件类库中使 */
@@ -238,7 +238,7 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/,
         use: [
-          // // 开发环境使用
+          /* 开发环境使用 */
           // {
           //   loader: 'file-loader',
           //   options: {
@@ -294,15 +294,15 @@ module.exports = {
         ]
       },
       // {
-      // 	test: path.resolve(__dirname, 'src/app.js'),
-      // 	use: [
-      // 		{
-      // 			loader: 'imports-loader',
-      // 			options: {
-      // 				$: 'jquery'
-      // 			}
-      // 		}
-      // 	]
+      //   test: path.resolve(__dirname, 'src/app.js'),
+      //   use: [
+      //     {
+      //       loader: 'imports-loader',
+      //       options: {
+      //         $: 'jquery'
+      //       }
+      //     }
+      //   ]
       // },
       {
         test: /\.html$/,
