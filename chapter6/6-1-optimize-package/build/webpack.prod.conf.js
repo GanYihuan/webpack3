@@ -38,7 +38,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         }
       ]
     }),
-    // 这个插件是在 webpack 主配置文件中设置的， 这个插件把只有 dll 的 bundle(们)(dll-only-bundle(s)) 引用到需要的预编译的依赖。
     new webpack.DllReferencePlugin({
       manifest: require('../src/dll/ui-manifest.json')
     }),
