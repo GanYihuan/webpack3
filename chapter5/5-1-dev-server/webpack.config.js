@@ -375,7 +375,7 @@ module.exports = {
         collapseWhitespace: true
       }
     }),
-    /* chunk 加到 html, manifest: 上面操作提取的公共代码 */
+    /* chunk 加到 html, 提前载入 webpack 加载代码, manifest: 上面操作提取的公共代码 */
     new HtmlWebpackInlineChunkPlugin({
       inlineChunks: ['manifest']
     }),
