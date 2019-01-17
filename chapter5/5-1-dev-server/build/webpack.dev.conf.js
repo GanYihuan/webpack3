@@ -14,5 +14,8 @@ module.exports = {
     historyApiFallback: historyFallback,
     proxy: proxy
   },
-  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin()]
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
+  ]
 }

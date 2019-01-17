@@ -239,7 +239,7 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/,
         use: [
-          /* 开发环境使用 */
+          /* 开发环境 */
           // {
           //   loader: 'file-loader',
           //   options: {
@@ -249,7 +249,7 @@ module.exports = {
           //     useRelativePath: true
           //   }
           // },
-          /* 生产环境使用 */
+          /* 生产环境 */
           {
             /* 处理成 base64 */
             loader: 'url-loader',

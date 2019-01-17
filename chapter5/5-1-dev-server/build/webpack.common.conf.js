@@ -43,7 +43,11 @@ const generateConfig = env => {
       options: {
         sourceMap: env === 'developement',
         ident: 'postcss',
-        plugins: [require('autoprefixer')(), require('postcss-cssnext')(), require('cssnano')()].concat(
+        plugins: [
+          require('autoprefixer')(),
+          require('postcss-cssnext')(),
+          require('cssnano')()
+        ].concat(
           env === 'production'
             ? require('postcss-sprites')({
               spritePath: 'dist/assets/imgs/sprites',
