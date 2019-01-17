@@ -64,7 +64,7 @@ module.exports = {
   /* 提供一个 web 服务器，能实时重新加载刷新浏览器 */
   devServer: {
     /* 页面状态栏 */
-    // inline: false,
+    inline: false,
     /* 提供内容的路径, 内容是静态要指定 */
     contentBase: path.join(__dirname, 'dist'),
     /* 自动打开浏览器 */
@@ -95,11 +95,11 @@ module.exports = {
       ]
     },
     /* 指定 dev-server 最先浏览器打开那个页面 */
-    // openPage: '',
+    openPage: '',
     /* 刚开始启动 dev-server 时不打包任何东西，当访问某些内容时才会去编译 */
-    // lazy: true,
+    lazy: true,
     /* 生成本地证书 */
-    // https: true,
+    https: true,
     /* 代理远程接口请求 */
     proxy: {
       '/': {
