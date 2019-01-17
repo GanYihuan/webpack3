@@ -1,13 +1,13 @@
 ﻿{
-	"presets": [
-		[
-			"@babel/preset-env",
-			{
-				"targets": {
-					"browsers": ["> 1%", "last 2 versions"]
-				}
-			}
-		] 
-	],
-	"plugins": ["@babel/transform-runtime"]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["> 1%", "last 2 versions"]
+        }
+      }
+    ]
+  ],
+  "plugins": ["@babel/transform-runtime"]
 }

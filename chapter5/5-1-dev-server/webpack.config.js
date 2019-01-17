@@ -1,13 +1,14 @@
 ﻿const webpack = require('webpack')
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlWebpackInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-const PurifyCssWebpack = require('purifycss-webpack')
-const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin') // 生成 html, 即使 css, js 文件名称变化时 , 能自动加载配对的 css, js 文件
+const HtmlWebpackInlineChunkPlugin = require('html-webpack-inline-chunk-plugin') // chunk 加到 html
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin') // 提取 css
+const PurifyCssWebpack = require('purifycss-webpack') // 去除多余的 css
+const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin') // js 压缩
 const path = require('path')
-const globAll = require('glob-all')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const globAll = require('glob-all') // 加载多路径
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin // 打包分析
+const CleanWebpackPlugin = require('clean-webpack-plugin') // 打包后清除目录
+
 /* develoment */
 const extractLess = new ExtractTextWebpackPlugin({
   filename: 'css/[name]-bundle-[hash:5].css'
@@ -322,6 +323,7 @@ module.exports = {
   plugins: [
     /* 提取 css */
     extractLess,
+    // 打包分析
     new BundleAnalyzerPlugin(),
     /* 热更新 */
     new webpack.HotModuleReplacementPlugin(),
