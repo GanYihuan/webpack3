@@ -1,6 +1,6 @@
 ﻿const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin') // 生成 html, 即使 css, js 文件名称变化时 , 能自动加载配对的 css, js 文件
-const HtmlWebpackInlineChunkPlugin = require('html-webpack-inline-chunk-plugin') // chunk 加到 html
+const HtmlWebpackPlugin = require('html-webpack-plugin') // 生成 html, 即使 css, js 文件名称变化, 能自动加载配对的 css, js 文件
+const HtmlWebpackInlineChunkPlugin = require('html-webpack-inline-chunk-plugin') // chunk 加到 html, 提前载入 webpack 加载代码
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin') // 提取 css
 const PurifyCssWebpack = require('purifycss-webpack') // 去除多余的 css
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin') // js 压缩
@@ -37,13 +37,13 @@ module.exports = {
   optimization: {
     /* 适用于多 entry 情况 */
     splitChunks: {
-      /* 第三方模块与代码区分开提取, 有利于长缓存优化 */
+      /* 混合第三方模块提取 */
+      // name: 'vendor',
+      /* 第三方模块与代码区分开提取, 有利于长缓存优化 (区分开提取) */
       name: 'manifest',
-      /* 需要提取的公共代码出现的次数，出现 2 次提取到公共代码 */
-      // minChunks: 2,
-      /* 区分开提取, Infinity 不会将任何模块打包进去 */
+      /* 需要提取的公共代码出现的次数, Infinity 不会将任何模块打包进去 (区分开提取) */
       minChunks: Infinity,
-      /* 要生成的 chunks 的最小大小 */
+      /* 生成的 chunks 的最小大小 */
       minSize: 30000,
       /* 指定提取范围. 选择哪些块进行优化, "initial" | "all"(default) | "async" */
       chunks: 'initial',
@@ -54,7 +54,6 @@ module.exports = {
     }
   },
   resolve: {
-    /* Create alias to import or require certain modules more easily */
     alias: {
       /* 找到本地的 jquery */
       jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
@@ -146,7 +145,7 @@ module.exports = {
           {
             /* 在最后生成的 js 文件中进行处理，动态创建 style 标签，塞到 head 标签里 */
             loader: 'style-loader',
-            /* Adds CSS to the DOM by injecting a <link/> tag */
+            /* 在最后生成的 js 文件中进行处理，动态创建 link 标签，塞到 head 标签里, 不能处理多样式 */
             // loader: 'style-loader/url',
             /* 控制样式是否插入页面中, 多了 .use() & .unuse() 方法 */
             // loader: 'style-loader/useable',
@@ -181,7 +180,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              // 下面的插件给 postcss 使用
+              /* 下面的插件给 postcss 使用 */
               ident: 'postcss',
               plugins: [
                 /* 加 css 各浏览器前缀 */
@@ -323,7 +322,7 @@ module.exports = {
   plugins: [
     /* 提取 css */
     extractLess,
-    // 打包分析
+    /* 打包分析 */
     new BundleAnalyzerPlugin(),
     /* 热更新 */
     new webpack.HotModuleReplacementPlugin(),
@@ -336,7 +335,7 @@ module.exports = {
     /* 提取出来的 css 名称, 手动用 link 标签引入 */
     //   filename: '[name].min.css',
     //   /* 指定提取 css 范围, 提取初始化的 css, 异步引入的 css 代码不包括 */
-    //   // import ('./css/components/a.scss').then(function () {
+    //   import ('./css/components/a.scss').then(function () {
     //   allChunks: false
     // }),
     /* 去除多余的 css, 放置 ExtractTextWebpackPlugin 之后 */
@@ -369,7 +368,7 @@ module.exports = {
       template: './index.html',
       /* js, css 通过标签插入到 html 中 */
       // inject: false,
-      /* 插入到 html 的 entry chunk */
+      /* entry chunk 插入到 html */
       chunks: ['app'],
       /* 压缩 */
       minify: {
