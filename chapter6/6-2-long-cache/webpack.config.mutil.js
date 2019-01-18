@@ -48,7 +48,7 @@ const baseConfig = {
   ]
 }
 
-const generatePage = function ({
+const generatePage = function({
   title = '',
   entry = '',
   template = './src/index.html',
