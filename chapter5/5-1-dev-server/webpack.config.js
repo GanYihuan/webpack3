@@ -167,7 +167,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              /* 在 css-loader 前应用的 loader 的数量 */
+              /* 在 css-loader 前应用的 loader 的数量, 后往前处理 (sass-loader, postcss-loader 共 2 个) */
               importLoaders: 2,
               /* 是否压缩 */
               minimize: true,
