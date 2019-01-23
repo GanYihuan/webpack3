@@ -318,6 +318,7 @@ module.exports = {
             /* HTML 哪部分交由 webpack 处理 */
             loader: 'html-loader',
             options: {
+              // html 中引入图片
               attrs: ['img:src', 'img:data-src']
             }
           }
