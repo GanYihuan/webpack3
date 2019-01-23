@@ -16,11 +16,13 @@ const extractLess = new ExtractTextWebpackPlugin({
 
 module.exports = {
   mode: 'production',
+  // 代码入口 打包入口
   entry: {
     app: './src/app.js',
     /* 第三方模块 */
     vendor: ['lodash']
   },
+  // 打包生成的文件
   output: {
     /* 输出到 dist 目录下 */
     path: path.resolve(__dirname, 'dist'),
@@ -65,20 +67,26 @@ module.exports = {
   devServer: {
     /* 页面状态栏 */
     inline: false,
-    /* 提供内容的路径, 内容是静态要指定 */
-    contentBase: path.join(__dirname, 'dist'),
     /* 自动打开浏览器 */
     open: true,
     /* 压缩 */
     compress: true,
-    /* 监听哪个端口 */
-    port: 9001,
     /* 遮罩, 编译错误提示 */
     overlay: true,
     /* 模块热更新, 不刷新浏览器下, 更新代码 */
     hot: true,
     /* 在构建失败的情况下，启用热模块替换 */
     hotOnly: true,
+    /* 刚开始启动 dev-server 时不打包任何东西，当访问某些内容时才会去编译 */
+    lazy: true,
+    /* 生成本地证书 */
+    https: true,
+    /* 提供内容的路径, 内容是静态要指定 */
+    contentBase: path.join(__dirname, 'dist'),
+    /* 监听哪个端口 */
+    port: 9001,
+    /* 指定 dev-server 最先浏览器打开那个页面 */
+    openPage: '',
     /* 使用 HTML5 History API, 访问某个路径不会导致 404, 指定一个规则让页面实现服务端渲染 */
     // historyApiFallback: true,
     historyApiFallback: {
@@ -94,12 +102,6 @@ module.exports = {
         }
       ]
     },
-    /* 指定 dev-server 最先浏览器打开那个页面 */
-    openPage: '',
-    /* 刚开始启动 dev-server 时不打包任何东西，当访问某些内容时才会去编译 */
-    lazy: true,
-    /* 生成本地证书 */
-    https: true,
     /* 代理远程接口请求 */
     proxy: {
       '/': {
@@ -150,10 +152,10 @@ module.exports = {
             /* 控制样式是否插入页面中, 多了 .use() & .unuse() 方法 */
             // loader: 'style-loader/useable',
             options: {
-              /* 插入 dom 位置 */
-              insertInto: '#app',
               /* singleton 会阻止 sourceMap */
               sourceMap: true,
+              /* 插入 dom 位置 */
+              insertInto: '#app',
               /* singleton(是否只使用一个 style 标签) */
               // singleton: true,
               /* 插入页面前, 根据不同浏览器配置不同样式 */

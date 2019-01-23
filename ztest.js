@@ -1,12 +1,12 @@
 ﻿const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const ExtractTextWebpackPlugin = require('exract-text-webpack-plugin')
 const PurifyCssWebpack = require('purifycss-webpack')
-const UglifyJsWebpackPlugin = require('uglifyjs-wbepack-plugin')
+const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
 const globAll = require('glob-all')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer-plugin').BundleAnalyzerPlugin
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const extractLess = new ExtractTextWebpackPlugin({
@@ -30,26 +30,28 @@ module.exports = {
       name: 'manifest',
       minChunks: Infinity,
       minSize: 30000,
-      chunks: 'initail',
+      chunks: 'initial',
       maxAsyncRequests: 1,
-      maxInitailRequest: 1
+      maxInitalReuqests: 1
     }
   },
   resolve: {
     alias: {
-      jquery$: path.resolve(__dirname, '')
+      jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js')
     }
   },
   devtool: 'cheap-module-source-map',
   devServer: {
     inline: false,
-    contentBase: path.join(__dirname, 'dist'),
-    open: true,
-    compress: true,
-    port: 9001,
-    overlay: true,
     hot: true,
     hotOnly: true,
+    compress: true,
+    lazy: true,
+    https: true,
+    open: true,
+    contentBase: path.join(__dirname, 'dist'),
+    port: 9001,
+    openPage: '',
     historyApiFallback: {
       rewrites: [
         {
@@ -58,18 +60,16 @@ module.exports = {
         }
       ]
     },
-    openPage: '',
-    lazy: true,
-    https: true,
     proxy: {
-      '': {
+      '/': {
         target: '',
-        changeOrigin: '',
+        changeOrigin: true,
         headers: {
           Cookie: ''
         },
         logLevel: 'debug',
-        pathRewrite: {
+        pathRewrites: {
+          '^/container': '/api/container'
         }
       }
     }
@@ -80,11 +80,11 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            laoder: 'style-laoder',
+            loader: 'style-loader',
             options: {
-              insertInto: '#app',
               sourceMap: true,
-              transform: ''
+              insertInto: '#app',
+              transform: './css.transform.js'
             }
           },
           {
@@ -124,7 +124,7 @@ module.exports = {
       {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src'),
-        exclude: path.resolve(__dirname, ''),
+        exclude: path.resolve(__dirname, 'src/libs'),
         use: [
           {
             loader: 'babel-loader',
@@ -168,7 +168,7 @@ module.exports = {
         test: /\.(eot|woff2?|ttf|svg)$/,
         use: [
           {
-            loader: 'url-loader',
+            loder: 'url-loader',
             options: {
               name: '[name]-[hash:5].[ext]',
               limit: 5000,
@@ -194,12 +194,12 @@ module.exports = {
     extractLess,
     new BundleAnalyzerPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
     new webpack.NamedChunksPlugin(),
+    new webpack.NamedModulesPlugin(),
     new PurifyCssWebpack({
       paths: globAll.sync([
-        path.join(__dirname, ''),
-        path.join(__dirname, '')
+        path.join(__dirname, './*.html'),
+        path.join(__dirname, './src/*.js')
       ])
     }),
     new UglifyJsWebpackPlugin({
