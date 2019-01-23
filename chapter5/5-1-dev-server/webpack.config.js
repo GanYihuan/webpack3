@@ -172,6 +172,10 @@ module.exports = {
               /* 是否压缩 */
               minimize: true,
               /* 启用 css-modules */
+              // :local                  本地
+              // :global                 全局
+              // compose                 继承
+              // composes ... from       引入
               modules: true,
               /* 定义 css-modules 编译出来文件的名称 */
               localIdentName: '[path][name]_[local]_[hash:base64:5]'
