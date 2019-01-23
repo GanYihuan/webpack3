@@ -327,16 +327,8 @@ module.exports = {
   },
   // 参与打包整个过程
   plugins: [
-    /* 提取 css */
+    /* 提取 css, 开发环境 */
     extractLess,
-    /* 打包分析 */
-    new BundleAnalyzerPlugin(),
-    /* 热更新 */
-    new webpack.HotModuleReplacementPlugin(),
-    /* module 的版本号从数字改成相对路径 有利于长缓存优化, 热更新时路径输出 */
-    new webpack.NamedModulesPlugin(),
-    /* chunk 的版本号从数字改成文件名字 有利于长缓存优化 */
-    new webpack.NamedChunksPlugin(),
     /* 生产环境 */
     // new ExtractTextWebpackPlugin({
     /* 提取出来的 css 名称, 手动用 link 标签引入 */
@@ -345,6 +337,14 @@ module.exports = {
     //   import ('./css/components/a.scss').then(function () {
     //   allChunks: false
     // }),
+    /* 打包分析 */
+    new BundleAnalyzerPlugin(),
+    /* 热更新 */
+    new webpack.HotModuleReplacementPlugin(),
+    /* module 的版本号从数字改成相对路径 有利于长缓存优化, 热更新时路径输出 */
+    new webpack.NamedModulesPlugin(),
+    /* chunk 的版本号从数字改成文件名字 有利于长缓存优化 */
+    new webpack.NamedChunksPlugin(),
     /* 去除多余的 css, 放置 ExtractTextWebpackPlugin 之后 */
     new PurifyCssWebpack({
       /* 针对指定路径文件来处理, glob-all: 加载多路径 */
