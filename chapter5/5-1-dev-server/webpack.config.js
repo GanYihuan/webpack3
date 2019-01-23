@@ -28,7 +28,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     /* 修改项目引入资源路径, 使其带有 '/' 前缀 */
     publicPath: '/',
-    /* 初始化打包 */
+    /* 初始化打包 [name] 对应上面的 entry 名称 */
     // filename: 'js/[name]-bundle-[hash:5].js',
     /* chunkhash 有利于长缓存优化 */
     filename: 'js/[name]-bundle-[chunkhash:5].js',
@@ -321,6 +321,7 @@ module.exports = {
       }
     ]
   },
+  // 参与打包整个过程
   plugins: [
     /* 提取 css */
     extractLess,
