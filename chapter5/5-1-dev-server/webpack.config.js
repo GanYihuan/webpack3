@@ -9,7 +9,7 @@ const globAll = require('glob-all') // 加载多路径
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin // 打包分析
 const CleanWebpackPlugin = require('clean-webpack-plugin') // 打包后清除目录
 
-/* develoment */
+/* 开发环境 */
 const extractLess = new ExtractTextWebpackPlugin({
   filename: 'css/[name]-bundle-[hash:5].css'
 })
@@ -28,7 +28,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     /* 修改项目引入资源路径, 使其带有 '/' 前缀 */
     publicPath: '/',
-    /* 初始化打包 [name] 对应上面的 entry 名称 */
+    /* 初始化打包, [name] 对应上面的 entry 名称 */
     // filename: 'js/[name]-bundle-[hash:5].js',
     /* chunkhash 有利于长缓存优化 */
     filename: 'js/[name]-bundle-[chunkhash:5].js',
