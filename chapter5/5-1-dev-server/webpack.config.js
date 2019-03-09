@@ -335,7 +335,7 @@ module.exports = {
     /* 提取出来的 css 名称, 手动用 link 标签引入 */
     //   filename: '[name].min.css',
     //   /* 指定提取 css 范围, 提取初始化的 css, 异步引入的 css 代码不包括 */
-    //   import ('./css/components/a.scss').then(function () {
+    //   /* 异步引入的文件: import ('./css/components/a').then(function () { */
     //   allChunks: false
     // }),
     /* 打包分析 */
