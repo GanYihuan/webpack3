@@ -315,7 +315,7 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            /* HTML 哪部分交由 webpack 处理 */
+            /* 将HTML导出为字符串。当编译器需要时，HTML被最小化。 */
             loader: 'html-loader',
             options: {
               // html 中引入图片
