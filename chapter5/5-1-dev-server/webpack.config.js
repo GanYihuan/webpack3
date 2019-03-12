@@ -65,30 +65,29 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   /* 提供一个 web 服务器，能实时重新加载刷新浏览器 */
   devServer: {
-    /* 页面状态栏 */
+    /* 构建消息将会出现在浏览器控制台 */
     inline: false,
-    /* 自动打开浏览器 */
+    /* 告诉 dev-server 在 server 启动后打开浏览器 */
     open: true,
+    /* 指定打开浏览器时的导航页面 */
+    openPage: '',
+    /* 默认情况下，dev-server 通过 HTTP 提供服务 使用自签名证书 */
+    https: true,
+    /* 指定要监听请求的端口号 */
+    port: 9001,
     /* 压缩 */
     compress: true,
-    /* 遮罩, 编译错误提示 */
+    /* 当出现编译器错误或警告时，在浏览器中显示全屏覆盖层 */
     overlay: true,
     /* 模块热更新, 不刷新浏览器下, 更新代码 */
     hot: true,
-    /* 在构建失败的情况下，启用热模块替换 */
+    /* 启用热模块替换，在构建失败时不刷新页面作为回退 */
     hotOnly: true,
-    /* 刚开始启动 dev-server 时不打包任何东西，当访问某些内容时才会去编译 */
+    /* 在请求时才编译包 webpack 不会监视任何文件改动 */
     lazy: true,
-    /* 生成本地证书 */
-    https: true,
-    /* 提供内容的路径, 内容是静态要指定 */
+    /* 告诉服务器从哪个目录中提供内容。只有在你想要提供静态文件时才需要 */
     contentBase: path.join(__dirname, 'dist'),
-    /* 监听哪个端口 */
-    port: 9001,
-    /* 指定 dev-server 最先浏览器打开那个页面 */
-    openPage: '',
-    /* 使用 HTML5 History API, 访问某个路径不会导致 404, 指定一个规则让页面实现服务端渲染 */
-    // historyApiFallback: true,
+    /* 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html */
     historyApiFallback: {
       /* 指定文件类型, 匹配了才重定向 */
       // htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
@@ -102,12 +101,12 @@ module.exports = {
         }
       ]
     },
-    /* 代理远程接口请求 */
+    /* 如果你有单独的后端开发服务器 API，并且希望在同域名下发送 API 请求 ，那么代理某些 URL 会很有用 */
     proxy: {
       '/': {
         /* 请求远端服务器 */
         target: 'https://m.weibo.cn',
-        /* 找到真实请求的地址, 代理元 dom 到 url */
+        /* 默认情况下代理时保留主机头的原点，您可以将changeOrigin设置为true以覆盖此行为 */
         changeOrigin: true,
         /* http 请求头 */
         headers: {
