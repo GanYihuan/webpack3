@@ -200,7 +200,7 @@ module.exports = {
           {
             loader: 'img-loader', // 压缩图片
             options: {
-              pngquant: {// .png 图片处理
+              pngquant: { // .png 图片处理
                 quality: 80// 压缩 png
               }
             }
